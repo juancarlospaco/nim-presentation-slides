@@ -93,6 +93,15 @@
 
 -----
 
+##### GoLib
+
+Wrapper para Go que permite usar caracteristicas Go en Nim,
+como Go Channels y GoRoutines, requiere Go instalado, usa syntax Nim.
+
+- https://github.com/stefantalpalaru/golib-nim
+
+-----
+
 ##### Inmutable en Nim
 
 - `var` Mutable, como en Python.
