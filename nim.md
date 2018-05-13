@@ -177,26 +177,6 @@ Nim       | Python | Ejemplo     | Comentarios                |
 
 -----
 
-##### Nim Syntax Skins
-
-- Podes escribirlo estilo JavaScript/C++.
-- Tal vez atrae gente de NodeJS (?).
-
-```nim
-#? braces
-
-proc main() {
-  echo("Hola mundo");
-};
-
-when (isMainModule) {
-  main();
-};
-
-```
-
------
-
 ##### Velocidad
 
 - Nim fue pensado para ir muy rapido.
