@@ -112,6 +112,8 @@ Error: 'bar' cannot be assigned to
 Error: 'baz' cannot be assigned to
 ```
 
+*Si se te complica, podes usar `var` en todos lados.*
+
 -----
 
 ##### Tipos Basicos
@@ -193,6 +195,15 @@ Nim       | Python | Ejemplo     | Comentarios                |
 Ejemplo, mismo RayTracer implementado en varios lenguajes:
 
 ![raytracer](raytracer.png)
+
+-----
+
+##### Peso
+
+- Nim fue pensado para ser liviano.
+- Nim no usa Runtime, VM, Interprete.
+- Raspis, Routers, IoT, etc.
+- [HolaMundo Go 2Mb, HolaMundo Nim 20Kb.](http://linkode.org/#narWOQnU9i2UDswu9NDYo1)
 
 -----
 
@@ -333,6 +344,16 @@ suite "Nombre del test":
 - Awesome Nim https://github.com/VPashkov/awesome-nim
 - Comunidad Online Nim AR https://t.me/NimArgentina
 - Comunidad Online Nim EN https://t.me/nim_lang
+
+-----
+
+##### Instalar
+
+- [Windows, es 1 ZIP.](https://nim-lang.org/install_windows.html)
+- [Docker](https://hub.docker.com/r/nimlang/nim/), imagen `nimlang/nim`.
+- Os X, igual a Linux.
+- Linux, paquete de Distro o [ChooseNim.](https://github.com/dom96/choosenim#choosenim)
+- Manual, codigo fuente en cualquier OS.
 
 -----
 
