@@ -93,15 +93,6 @@
 
 -----
 
-##### GoLib
-
-Wrapper para Go que permite usar caracteristicas Go en Nim,
-como Go Channels y GoRoutines, requiere Go instalado, usa syntax Nim.
-
-- https://github.com/stefantalpalaru/golib-nim
-
------
-
 ##### Inmutable en Nim
 
 - `var` Mutable, como en Python.
@@ -139,13 +130,21 @@ Nim       | Python | Ejemplo     | Comentarios                |
  array    | -      | [1,2,3]     | Tamanio fijo, mismo tipo   |
  subrange | -      | range[0..2] | solo int de 0 a 2          |
 
+-----
+
+##### Detalles
+
 - Python `def` es Nim `proc`.
-- Python `lambda` es Nim `proc` *(sin nombre)*.
+- Python `lambda` es Nim `proc` (sin nombre).
 - Python `f"{foo},{1+1}"` es Nim `fmt"{foo},{1+1}"`.
+- Python `dict` es Nim `table` o `OrderedTable`.
+- Python `NamedTuple` es Nim `tuple`.
+- Python `set` es Nim `HashSet` o `OrderedSet`.
+- Python Operador Ternario es Nim `if..else` inline.
+- Python Comprension de Lista en modulo `future`.
+- Nim string es `""`, no `''` (es `char`).
 - Go `defer` es Nim `defer`.
 - Go `channels` es Nim `channels`.
-- Python `asyncio` es Nim `async` pragma.
-- Python Comprension de Lista en modulo `future`.
 - JavaScript Arrows Functions en modulo `future`.
 
 -----
@@ -300,6 +299,28 @@ suite "Nombre del test":
 
 -----
 
+##### Paquetes interesantes
+
+*Terminal:*
+
+- Colores https://github.com/molnarmark/colorize
+- Spinners https://github.com/molnarmark/spinny
+- ProgressBar https://github.com/euantorano/progress.nim
+- Graficos https://github.com/FedericoCeratto/nim-dashing
+- Configs https://github.com/euantorano/dotenv.nim
+
+*Web:*
+
+- Frontend SPA https://github.com/pragmagic/karax
+- Web Creator https://github.com/ThomasTJdev/nim_websitecreator
+- Web Framework https://github.com/dom96/jester
+- Markdown a HTML https://github.com/h3rald/hastyscribe
+- Scrapper https://github.com/OpenSystemsLab/q.nim
+- Jupyter Kernel https://github.com/stisa/jupyter-nim-kernel
+- Poors Woman Design https://github.com/juancarlospaco/nim-random-font-color
+
+-----
+
 ##### Extras recomendados
 
 - Homepage https://nim-lang.org
@@ -319,8 +340,6 @@ suite "Nombre del test":
 
 ![JuanCarlos](stackoverflow-copypaste.jpg)
 
-* Juan Carlos.
-* [GitHub](https://github.com/juancarlospaco)
-* [Twitter](https://twitter.com/juancarlospaco)
+* Juan Carlos, [GitHub](https://github.com/juancarlospaco) & [Twitter](https://twitter.com/juancarlospaco)
 
 [*Presentacion hecha en Markdown con Microraptor.*](https://github.com/juancarlospaco/microraptor#microraptor)
