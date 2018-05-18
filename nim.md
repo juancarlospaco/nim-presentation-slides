@@ -200,26 +200,27 @@ Ejemplo, mismo RayTracer implementado en varios lenguajes:
 
 ##### Peso
 
-- Nim fue pensado para ser liviano.
-- Nim no usa Runtime, VM, Interprete.
-- Raspis, Routers, IoT, etc.
+- Nim fue pensado para ser liviano (Raspi, Router, IoT, etc).
+- Nim no incrusta Runtime, VM, Interprete, etc.
 - [HolaMundo Go 2Mb, HolaMundo Nim 20Kb.](http://linkode.org/#narWOQnU9i2UDswu9NDYo1)
+
+![cat](node-modules.jpg)
 
 -----
 
 ##### Generador de Documentacion
 
-**Formato entrada:**
+*Formato entrada:*
 - Codigo fuente texto plano Nim `*.nim`
 
-**Formato salida:**
+*Formato salida:*
 - HTML5 (TOC, Search, links, index, etc).
 - reStructuredText.
 - JSON.
 - LaTeX.
 
-**Uso:**
-- Comentarios con `##` parseados a RST o texto.
+*Uso:*
+- Comentarios con `##` parsea a RST o texto.
 
 -----
 
@@ -313,7 +314,6 @@ suite "Nombre del test":
 ##### Paquetes interesantes
 
 *Terminal:*
-
 - Colores https://github.com/molnarmark/colorize
 - Spinners https://github.com/molnarmark/spinny
 - ProgressBar https://github.com/euantorano/progress.nim
@@ -321,7 +321,6 @@ suite "Nombre del test":
 - Configs https://github.com/euantorano/dotenv.nim
 
 *Web:*
-
 - Frontend SPA https://github.com/pragmagic/karax
 - Web Creator https://github.com/ThomasTJdev/nim_websitecreator
 - Web Framework https://github.com/dom96/jester
@@ -349,11 +348,13 @@ suite "Nombre del test":
 
 ##### Instalar
 
-- [Windows, es 1 ZIP.](https://nim-lang.org/install_windows.html)
+- Windows, es [1 ZIP.](https://nim-lang.org/install_windows.html)
 - [Docker](https://hub.docker.com/r/nimlang/nim/), imagen `nimlang/nim`.
 - Os X, igual a Linux.
 - Linux, paquete de Distro o [ChooseNim.](https://github.com/dom96/choosenim#choosenim)
 - Manual, codigo fuente en cualquier OS.
+
+*Solo requiere un Compilador de C.*
 
 -----
 
