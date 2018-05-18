@@ -10,12 +10,12 @@
 * Python Syntax y rendimiento de C.
 * Compilado (Binario ejecutable).
 * Tipado estatico fuerte (con Inferencia).
-* Compila a C (de Microchips a Servidores).
+* Compila a C.
 * Compila a JavaScript (DOM API).
+* Linux, Windows, Os X.
 * Facil hacer modulos de Python.
 * Facil usar librerias en C.
-* Output en Terminal Coloreado en todos lados.
-* La mayoria son Devs Python.
+* Muchos son Devs Python.
 
 -----
 
@@ -311,22 +311,21 @@ suite "Nombre del test":
 
 -----
 
-##### Paquetes interesantes
-
-*Terminal:*
+*Paquetes interesantes Terminal:*
 - Colores https://github.com/molnarmark/colorize
 - Spinners https://github.com/molnarmark/spinny
 - ProgressBar https://github.com/euantorano/progress.nim
 - Graficos https://github.com/FedericoCeratto/nim-dashing
 - Configs https://github.com/euantorano/dotenv.nim
 
-*Web:*
+*Paquetes interesantes Web:*
 - Frontend SPA https://github.com/pragmagic/karax
 - Web Creator https://github.com/ThomasTJdev/nim_websitecreator
 - Web Framework https://github.com/dom96/jester
 - Markdown a HTML https://github.com/h3rald/hastyscribe
 - Scrapper https://github.com/OpenSystemsLab/q.nim
 - Jupyter Kernel https://github.com/stisa/jupyter-nim-kernel
+- Plotly https://github.com/brentp/nim-plotly
 - Poors Woman Design https://github.com/juancarlospaco/nim-random-font-color
 
 -----
