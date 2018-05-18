@@ -318,7 +318,6 @@ suite "Nombre del test":
 - ProgressBar https://github.com/euantorano/progress.nim
 - Graficos https://github.com/FedericoCeratto/nim-dashing
 - Configs https://github.com/euantorano/dotenv.nim
-- JSON https://github.com/Araq/packedjson
 
 *Paquetes interesantes Web:*
 - Frontend SPA https://github.com/pragmagic/karax
@@ -363,6 +362,6 @@ suite "Nombre del test":
 
 ![JuanCarlos](stackoverflow-copypaste.jpg)
 
-* Juan Carlos, [GitHub](https://github.com/juancarlospaco) & [Twitter](https://twitter.com/juancarlospaco)
+Juan Carlos, https://github.com/juancarlospaco & https://twitter.com/juancarlospaco
 
 [*Presentacion hecha en Markdown con Microraptor.*](https://github.com/juancarlospaco/microraptor#microraptor)
