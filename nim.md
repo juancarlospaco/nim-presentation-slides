@@ -9,7 +9,7 @@
 
 * Python Syntax y rendimiento de C.
 * Compilado (Binario ejecutable).
-* Tipado estatico fuerte (con Inferencia).
+* Tipado estatico fuerte con Inferencia.
 * Compila a C.
 * Compila a JavaScript (DOM API).
 * Linux, Windows, Os X.
@@ -21,11 +21,10 @@
 
 ##### Herramientas
 
-- Linter `nim check` revisa archivos individuales.
-- Linter `nimble check` revisa projectos enteros.
+- Linter `nim check` y `nimble check`.
 - Generador de Documentacion integrado.
 - Paquetes y docs hosteados https://nimble.directory
-- Compila y Ejecuta `nim c -r` o `nim compile` + `nim run`.
+- Compila y Ejecuta `nim c -r`.
 - Template de nuevo projecto `nimble init`.
 - Task Runner `nimble tasks` *(tipo Grunt/Gulp)*.
 - Publicar paquete `nimble publish` *(PR en GitHub)*.
@@ -47,7 +46,7 @@
 ##### Syntaxis
 
 - Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.
-- Comentarios empiezan con `#`, Nim DocString con `##` (HTML docs).
+- Comentarios empiezan con `#`, DocStrings con `##`.
 - Tracebacks a color simil Python con linea y tipado del error.
 - Magias syntax sugar, tipo Python Jupiter Notebook.
 - Templates, reemplazan su invocacion con su contenido en compilacion.
@@ -64,7 +63,7 @@
 ##### PyLib
 
 - Copia *(aun mas)* la syntaxis de Python en Nim.
-- `nimble install pylib` y luego `import pylib`.
+- `nimble install pylib`, luego `import pylib`.
 
 ```python
 >>> import pylib
@@ -118,19 +117,21 @@ Error: 'baz' cannot be assigned to
 
 ##### Tipos Basicos
 
-Nim       | Python | Ejemplo     | Comentarios                |
-----------|:-------|:-----------:|:--------------------------:|
- str      | str    | "foo"       | Unicode, UTF8, Emoji, etc  |
- char     | -      | 'a'         | 1 char, Optimizado a int   |
- int      | int    | 42          | int8, int16, int32, int64  |
- float    | float  | 2.0         | float32, float64, float    |
- bool     | bool   | True,False  | true,false en Nim          |
- tuple    | tuple  | (1,2,3)     | NamedTuple en Nim          |
- seq      | list   | [1,2,3]     | Mismo Tipo en Nim          |
- set      | set    | {1,2,3}     | int, char, bool en Nim     |
- enum     | enum   | -           | En Python no los usa nadie |
- array    | -      | [1,2,3]     | Tamanio fijo, mismo tipo   |
- subrange | -      | range[0..2] | solo int de 0 a 2          |
+Nim         | Python  | Ejemplo     | Comentarios                |
+------------|:--------|:-----------:|:--------------------------:|
+ `str`      | `str`   | "foo"       | Unicode, UTF8, Emoji, etc  |
+ `char`     | -       | 'a'         | 1 char, Optimizado a int   |
+ `int`      | `int`   | 42          | int8, int16, int32, int64  |
+ `float`    | `float` | 2.0         | float32, float64, float    |
+ `bool`     | `bool`  | True,False  | true,false en Nim          |
+ `tuple`    | `tuple` | (1,2,3)     | NamedTuple en Nim          |
+ `seq`      | `list`  | [1,2,3]     | Mismo Tipo en Nim          |
+ `set`      | `set`   | {1,2,3}     | int, char, bool en Nim     |
+ `enum`     | `enum`  | -           | En Python no los usa nadie |
+ `array`    | -       | [1,2,3]     | Tamanio fijo, mismo tipo   |
+ `subrange` | -       | range[0..2] | solo int de 0 a 2          |
+
+*Tipos de Nim estan optimizados para performance.*
 
 -----
 
