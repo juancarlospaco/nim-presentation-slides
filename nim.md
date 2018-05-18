@@ -362,6 +362,6 @@ suite "Nombre del test":
 
 ![JuanCarlos](stackoverflow-copypaste.jpg)
 
-Juan Carlos, https://github.com/juancarlospaco & https://twitter.com/juancarlospaco
+<sub>Juan Carlos, https://github.com/juancarlospaco, https://twitter.com/juancarlospaco</sub>
 
-[*Presentacion hecha en Markdown con Microraptor.*](https://github.com/juancarlospaco/microraptor#microraptor)
+[<sub>Presentacion hecha en Markdown con Microraptor.</sub>](https://github.com/juancarlospaco/microraptor#microraptor)
