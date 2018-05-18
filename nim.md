@@ -318,6 +318,7 @@ suite "Nombre del test":
 - ProgressBar https://github.com/euantorano/progress.nim
 - Graficos https://github.com/FedericoCeratto/nim-dashing
 - Configs https://github.com/euantorano/dotenv.nim
+- JSON https://github.com/Araq/packedjson
 
 *Paquetes interesantes Web:*
 - Frontend SPA https://github.com/pragmagic/karax
