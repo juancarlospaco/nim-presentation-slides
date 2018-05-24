@@ -117,19 +117,19 @@ Error: 'baz' cannot be assigned to
 
 ##### Tipos Basicos
 
-Nim         | Python  | Ejemplo     | Comentarios                |
-------------|:--------|:-----------:|:--------------------------:|
- `str`      | `str`   | "foo"       | Unicode, UTF8, Emoji, etc  |
- `char`     | -       | 'a'         | 1 char, Optimizado a int   |
- `int`      | `int`   | 42          | int8, int16, int32, int64  |
- `float`    | `float` | 2.0         | float32, float64, float    |
- `bool`     | `bool`  | True,False  | true,false en Nim          |
- `tuple`    | `tuple` | (1,2,3)     | NamedTuple en Nim          |
- `seq`      | `list`  | [1,2,3]     | Mismo Tipo en Nim          |
- `set`      | `set`   | {1,2,3}     | int, char, bool en Nim     |
- `enum`     | `enum`  | -           | En Python no los usa nadie |
- `array`    | -       | [1,2,3]     | Tamanio fijo, mismo tipo   |
- `subrange` | -       | range[0..2] | solo int de 0 a 2          |
+Nim         | Python  | Ejemplo       | Comentarios                           |
+------------|:--------|:-------------:|:-------------------------------------:|
+ `str`      | `str`   | `"foo"`       | Unicode, UTF8, Emoji, etc             |
+ `char`     | -       | `'a'`         | 1 char, Optimizado internamente a int |
+ `int`      | `int`   | `42`          | int8, int16, int32, int64, int        |
+ `float`    | `float` | `2.0`         | float32, float64, float               |
+ `bool`     | `bool`  | `True, False` | true, false en Nim                    |
+ `tuple`    | `tuple` | `(1, 2, 3)`   | tuple de Nim es como NamedTuple de Py |
+ `seq`      | `list`  | `@[1, 2, 3]`  | Mismo Tipo en todos los items en Nim  |
+ `set`      | `set`   | `{1, 2, 3}`   | int, char, bool en Nim                |
+ `enum`     | `enum`  | -             | En Python no los usa nadie            |
+ `array`    | -       | `[1, 2, 3]`   | Tamanio fijo, mismo tipo en los items |
+ `subrange` | -       | `range[0..2]` | Solo aceptara int de 0 a 2            |
 
 *Tipos de Nim estan optimizados para performance.*
 
@@ -152,7 +152,7 @@ Nim         | Python  | Ejemplo     | Comentarios                |
 
 -----
 
-##### Nim Unified Call Syntax
+##### Nim Unified Functions Call Syntax
 
 - Todas las formas son validas y equivalentes.
 
@@ -209,22 +209,6 @@ Ejemplo, mismo RayTracer implementado en varios lenguajes:
 
 -----
 
-##### Generador de Documentacion
-
-*Formato entrada:*
-- Codigo fuente texto plano Nim `*.nim`
-
-*Formato salida:*
-- HTML5 (TOC, Search, links, index, etc).
-- reStructuredText.
-- JSON.
-- LaTeX.
-
-*Uso:*
-- Comentarios con `##` parsea a RST o texto.
-
------
-
 ##### NimScript
 
 - Lenguaje interpretado *(Nim limitado, no std lib)*.
@@ -278,6 +262,22 @@ suite "Nombre del test":
 
 -----
 
+##### Generador de Documentacion
+
+*Formato entrada:*
+- Codigo fuente texto plano Nim `*.nim`
+
+*Formato salida:*
+- HTML5 (TOC, Search, links, index, etc).
+- reStructuredText.
+- JSON.
+- LaTeX.
+
+*Uso:*
+- Comentarios con `##` parsea a RST o texto.
+
+-----
+
 ##### Template Engine
 
 - Template Engine integrado (ala Jinja).
@@ -312,6 +312,22 @@ suite "Nombre del test":
 
 -----
 
+##### Nim Frontend
+
+- Nim compila a JavaScript.
+- Nim tiene API del DOM.
+- JavaScript es "First Class Citizen".
+- Nim wrappea Libs JS facilmente.
+- Nim Frontend va muy rapido tambien.
+- Hay paquetes con Libs Frontend en Nimble.
+- Podes compilar Nim a JavaScript y usarlo en HTML Estatico.
+
+Ejemplos:
+- Frontend SPA (React-like) https://github.com/pragmagic/karax
+- Foro Nim esta hecho en Nim https://forum.nim-lang.org
+
+-----
+
 *Paquetes interesantes Terminal:*
 - Colores https://github.com/molnarmark/colorize
 - Spinners https://github.com/molnarmark/spinny
@@ -320,7 +336,6 @@ suite "Nombre del test":
 - Configs https://github.com/euantorano/dotenv.nim
 
 *Paquetes interesantes Web:*
-- Frontend SPA https://github.com/pragmagic/karax
 - Web Creator https://github.com/ThomasTJdev/nim_websitecreator
 - Web Framework https://github.com/dom96/jester
 - Markdown a HTML https://github.com/h3rald/hastyscribe
