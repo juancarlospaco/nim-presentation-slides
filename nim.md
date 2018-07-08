@@ -10,9 +10,9 @@
 * Python Syntax y rendimiento de C.
 * Compilado (Binario ejecutable).
 * Tipado estatico fuerte con Inferencia.
-* Compila a C.
+* Compila a C / C++.
 * Compila a JavaScript (DOM API).
-* Linux, Windows, Os X.
+* Linux, Windows, Os X, etc.
 * Facil hacer modulos de Python.
 * Facil usar librerias en C.
 * Muchos son Devs Python.
@@ -21,7 +21,7 @@
 
 ##### Herramientas
 
-- Linter `nim check` y `nimble check`.
+- Linters `nim check`, `nimble check` y `nim pretty`.
 - Generador de Documentacion integrado.
 - Paquetes y docs hosteados https://nimble.directory
 - Compila y Ejecuta `nim c -r`.
@@ -52,8 +52,6 @@
 - Templates, reemplazan su invocacion con su contenido en compilacion.
 - Macros, bloques que agregan funcionalidad en tiempo de ejecucion.
 - Overload en funciones, dependiendo el tipo de argumento.
-- `include` Copipastea el archivo entero en el lugar en compilacion.
-- `static_read()` Lee el archivo entero en compilacion (devuelve str).
 - Exportar objetos con `*`, `cosa` es privado, `cosa*` es exportado.
 - `import modulito` importa todo lo que tenga `*` en `modulito.nim`
 - [Algunos modulos de Python fueron clonados en Nim.](https://nimble.directory/search?query=python)
@@ -115,21 +113,32 @@ Error: 'baz' cannot be assigned to
 
 -----
 
+##### Ejecutar en Tiempo de Compilacion
+
+- `include("incluir.nim")` Copia el archivo entero en el lugar.
+- `static_read("archivo.json")` Lee el archivo entero y devuelve string.
+- `static_exec("1 + 1")` Ejecuta los argumentos y devuelve el retorno.
+- `static: echo("at compile time")` Ejecuta Bloques de codigo.
+
+*Lo que se ejecuta en tiempo de compilacion no tiene costo en tiempo de ejecucion.*
+
+-----
+
 ##### Tipos Basicos
 
-Nim         | Python  | Ejemplo       | Comentarios                           |
-------------|:--------|:-------------:|:-------------------------------------:|
- `str`      | `str`   | `"foo"`       | Unicode, UTF8, Emoji, etc             |
- `char`     | -       | `'a'`         | 1 char, Optimizado internamente a int |
- `int`      | `int`   | `42`          | int8, int16, int32, int64, int        |
- `float`    | `float` | `2.0`         | float32, float64, float               |
- `bool`     | `bool`  | `True, False` | true, false en Nim                    |
- `tuple`    | `tuple` | `(1, 2, 3)`   | tuple de Nim es como NamedTuple de Py |
- `seq`      | `list`  | `@[1, 2, 3]`  | Mismo Tipo en todos los items en Nim  |
- `set`      | `set`   | `{1, 2, 3}`   | int, char, bool en Nim                |
- `enum`     | `enum`  | -             | En Python no los usa nadie            |
- `array`    | -       | `[1, 2, 3]`   | Tamanio fijo, mismo tipo en los items |
- `subrange` | -       | `range[0..2]` | Solo aceptara int de 0 a 2            |
+Nim         | Python  | Ejemplo       | Comentarios                               |
+------------|:--------|:-------------:|:-----------------------------------------:|
+ `string`   | `str`   | `"foo"`       | Unicode, UTF8, Emoji, etc                 |
+ `char`     | -       | `'a'`         | 1 char, Optimizado internamente a int     |
+ `int`      | `int`   | `42`          | int8, int16, int32, int64, int            |
+ `float`    | `float` | `2.0`         | float32, float64, float                   |
+ `bool`     | `bool`  | `True, False` | true, false en Nim                        |
+ `tuple`    | `tuple` | `(1, 2, 3)`   | tuple de Nim es como NamedTuple de Py     |
+ `seq`      | `list`  | `@[1, 2, 3]`  | Mismo Tipo en todos los items en Nim      |
+ `set`      | `set`   | `{1, 2, 3}`   | int, char, bool en Nim                    |
+ `enum`     | `enum`  | -             | En Python no los usa nadie                |
+ `array`    | -       | `[1, 2, 3]`   | Tamanio fijo, mismo tipo en los items     |
+ `subrange` | -       | `range[0..2]` | Solo acepta int de 0 a 2,puede usar float |
 
 *Tipos de Nim estan optimizados para performance.*
 
@@ -144,11 +153,11 @@ Nim         | Python  | Ejemplo       | Comentarios                           |
 - Python `NamedTuple` es Nim `tuple`.
 - Python `set` es Nim `HashSet` o `OrderedSet`.
 - Python Operador Ternario es Nim `if..else` inline.
-- Python Comprension de Lista en modulo `future`.
+- Python Comprension de Lista en modulo `sugar`.
 - Nim string es `""`, no `''` (es `char`).
 - Go `defer` es Nim `defer`.
 - Go `channels` es Nim `channels`.
-- JavaScript Arrows Functions en modulo `future`.
+- JavaScript Arrows Functions en modulo `sugar`.
 
 -----
 
@@ -203,6 +212,7 @@ Ejemplo, mismo RayTracer implementado en varios lenguajes:
 
 - Nim fue pensado para ser liviano (Raspi, Router, IoT, etc).
 - Nim no incrusta Runtime, VM, Interprete, etc.
+- Nim puede usar `strip` y `upx`.
 - [HolaMundo Go 2Mb, HolaMundo Nim 20Kb.](http://linkode.org/#narWOQnU9i2UDswu9NDYo1)
 
 ![cat](node-modules.jpg)
@@ -275,6 +285,29 @@ suite "Nombre del test":
 
 *Uso:*
 - Comentarios con `##` parsea a RST o texto.
+
+-----
+
+##### CrossCompilar
+
+Basicamente hay que pasarle la ruta donde esta el Compilador (GCC usualmente).
+
+```
+$ cd /tmp/
+$ mkdir prueba_nim_crosscompile
+$ cd prueba_nim_crosscompile/
+$ echo 'echo "Hola Mundo"' > hello.nim
+$ nim c --cpu:amd64 --os:windows --gcc.exe:x86_64-w64-mingw32-gcc --gcc.linkerexe:x86_64-w64-mingw32-gcc hello.nim
+Hint: operation successful (1717 lines compiled; 1.6 sec total; 21.8MiB peakmem) [SuccessX]
+$ wine hello.exe
+Hola Mundo
+```
+
+Las libs de crosscompile se instalan instalando `mingw-w64-gcc` (Arch).
+
+http://linkode.org/#1FCAxFC9JPKRc12pyupxu6
+
+*Dependera un poco que tan amigable es tu Distro con las Libs de crosscompile.*
 
 -----
 
@@ -363,10 +396,11 @@ Ejemplos:
 
 ##### Instalar
 
+- [ChooseNim](https://github.com/dom96/choosenim#choosenim)
 - Windows, es [1 ZIP.](https://nim-lang.org/install_windows.html)
 - [Docker](https://hub.docker.com/r/nimlang/nim/), imagen `nimlang/nim`.
 - Os X, igual a Linux.
-- Linux, paquete de Distro o [ChooseNim.](https://github.com/dom96/choosenim#choosenim)
+- Linux, paquete de Distro o ChooseNim.
 - Manual, codigo fuente en cualquier OS.
 
 *Solo requiere un Compilador de C.*
