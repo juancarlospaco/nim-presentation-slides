@@ -71,7 +71,7 @@ http://linkode.org/#dozWhq9aNZOYnVVZtldpb1
 
 -----
 
-### Enchufar Web
+##### Enchufar Web
 
 <sub>JavaScript &dzigrarr; Nim</sub>
 
@@ -114,7 +114,7 @@ http://linkode.org/#f8iTgfh1FPYCDQi4PJhHg7
 - Macros, bloques que agregan funcionalidad en tiempo de ejecucion.
 - Overload en funciones, dependiendo el tipo de argumento.
 - Exportar objetos con `*`, `cosa` es privado, `cosa*` es exportado.
-- `import modulo` importa todo lo que tenga `*` en `modulo.nim`
+- `import modulo` importa todo lo que tenga `*` en `modulo.nim`.
 - [Algunos modulos de Python fueron clonados en Nim.](https://nimble.directory/search?query=python)
 
 -----
@@ -124,7 +124,7 @@ http://linkode.org/#f8iTgfh1FPYCDQi4PJhHg7
 - Linters `nim check`, `nimble check` y `nim pretty`.
 - Generador de Documentacion integrado `nim doc`.
 - Paquetes y docs hosteados https://nimble.directory
-- Compila y Ejecuta `nim c -r`.
+- Nim esta escrito en Nim, facil de hackear.
 - Template de nuevo projecto `nimble init`.
 - Task Runner `nimble tasks` *(tipo Grunt/Gulp)*.
 - Publicar paquete `nimble publish` *(PR en GitHub)*.
@@ -192,10 +192,11 @@ Error: 'baz' cannot be assigned to
 
 ##### Ejecutar en Tiempo de Compilacion
 
+- `const constante = "compile time"` Constante de compilacion.
 - `include("incluir.nim")` Copia el archivo entero en el lugar.
 - `static_read("foo.json")` Lee archivo entero y devuelve string.
 - `static_exec("1 + 1")` Ejecuta argumentos y devuelve el retorno.
-- `static: echo("at compile time")` Ejecuta Bloques de codigo.
+- `static: echo("compile time")` Ejecuta Bloques de codigo.
 
 *Lo que se ejecuta en tiempo de compilacion no tiene costo en tiempo de ejecucion.*
 
@@ -206,6 +207,7 @@ Error: 'baz' cannot be assigned to
 Nim         | Python  | Ejemplo Nim   | Ejemplo Python  | Comentarios                               |
 ------------|:--------|:-------------:|:---------------:|------------------------------------------:|
  `string`   | `str`   | `"foo"`       | `"foo"`         | Unicode, UTF8, Emoji, etc                 |
+ `string`   | `str`   | `"""bar"""`   | `"""bar"""`     | String Multi-linea                        |
  `char`     | -       | `'a'`         | -               | 1 char, Optimizado internamente a int     |
  `int`      | `int`   | `42`          | `42`            | int8, int16, int32, int64, int            |
  `float`    | `float` | `2.0`         | `2.0`           | float32, float64, float                   |
@@ -287,9 +289,17 @@ Ejemplo, mismo RayTracer implementado en varios lenguajes:
 
 ##### Peso
 
+```
+$ echo 'echo "Hola Mundo"' > hello.nim
+$ nim c -d:release --app:console --opt:size hello.nim
+$ strip --strip-all hello
+$ upx --best --ultra-brute hello
+$ du -h hello
+15K     hello
+```
+
 - Nim fue pensado para ser liviano (Raspi, Router, IoT, etc).
 - Nim no incrusta Runtime, VM, Interprete, etc.
-- Nim puede usar `strip` y `upx`.
 - [HolaMundo Go 2Mb, HolaMundo Nim 20Kb.](http://linkode.org/#narWOQnU9i2UDswu9NDYo1)
 
 ![cat](node-modules.jpg)
@@ -370,13 +380,10 @@ suite "Nombre del test":
 Basicamente hay que pasarle la ruta donde esta el Compilador.
 
 ```
-$ cd /tmp/
-$ mkdir prueba_nim_crosscompile
-$ cd prueba_nim_crosscompile/
+$ mkdir /tmp/prueba_nim_crosscompile ; cd /tmp/prueba_nim_crosscompile/
 $ echo 'echo "Hola Mundo"' > hello.nim
 $ nim c --cpu:amd64 --os:windows --gcc.exe:x86_64-w64-mingw32-gcc \
         --gcc.linkerexe:x86_64-w64-mingw32-gcc hello.nim
-Hint: operation successful (717 lines compiled; 1 sec total; 21MiB peakmem)
 $ wine hello.exe
 Hola Mundo
 ```
