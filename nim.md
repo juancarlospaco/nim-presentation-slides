@@ -1,7 +1,9 @@
 
-# Nim para Pythonerxs
+# Intro a Nim
 
 ![cat](sarcastic-cat.jpg)
+
+*...para Pythoneras*
 
 -----
 
@@ -22,7 +24,7 @@
 ##### Herramientas
 
 - Linters `nim check`, `nimble check` y `nim pretty`.
-- Generador de Documentacion integrado.
+- Generador de Documentacion integrado `nim doc`.
 - Paquetes y docs hosteados https://nimble.directory
 - Compila y Ejecuta `nim c -r`.
 - Template de nuevo projecto `nimble init`.
@@ -53,7 +55,7 @@
 - Macros, bloques que agregan funcionalidad en tiempo de ejecucion.
 - Overload en funciones, dependiendo el tipo de argumento.
 - Exportar objetos con `*`, `cosa` es privado, `cosa*` es exportado.
-- `import modulito` importa todo lo que tenga `*` en `modulito.nim`
+- `import modulo` importa todo lo que tenga `*` en `modulo.nim`
 - [Algunos modulos de Python fueron clonados en Nim.](https://nimble.directory/search?query=python)
 
 -----
@@ -116,8 +118,8 @@ Error: 'baz' cannot be assigned to
 ##### Ejecutar en Tiempo de Compilacion
 
 - `include("incluir.nim")` Copia el archivo entero en el lugar.
-- `static_read("archivo.json")` Lee el archivo entero y devuelve string.
-- `static_exec("1 + 1")` Ejecuta los argumentos y devuelve el retorno.
+- `static_read("foo.json")` Lee archivo entero y devuelve string.
+- `static_exec("1 + 1")` Ejecuta argumentos y devuelve el retorno.
 - `static: echo("at compile time")` Ejecuta Bloques de codigo.
 
 *Lo que se ejecuta en tiempo de compilacion no tiene costo en tiempo de ejecucion.*
@@ -126,19 +128,19 @@ Error: 'baz' cannot be assigned to
 
 ##### Tipos Basicos
 
-Nim         | Python  | Ejemplo       | Comentarios                               |
-------------|:--------|:-------------:|:-----------------------------------------:|
- `string`   | `str`   | `"foo"`       | Unicode, UTF8, Emoji, etc                 |
- `char`     | -       | `'a'`         | 1 char, Optimizado internamente a int     |
- `int`      | `int`   | `42`          | int8, int16, int32, int64, int            |
- `float`    | `float` | `2.0`         | float32, float64, float                   |
- `bool`     | `bool`  | `True, False` | true, false en Nim                        |
- `tuple`    | `tuple` | `(1, 2, 3)`   | tuple de Nim es como NamedTuple de Py     |
- `seq`      | `list`  | `@[1, 2, 3]`  | Mismo Tipo en todos los items en Nim      |
- `set`      | `set`   | `{1, 2, 3}`   | int, char, bool en Nim                    |
- `enum`     | `enum`  | -             | En Python no los usa nadie                |
- `array`    | -       | `[1, 2, 3]`   | Tamanio fijo, mismo tipo en los items     |
- `subrange` | -       | `range[0..2]` | Solo acepta int de 0 a 2,puede usar float |
+Nim         | Python  | Ejemplo Nim   | Ejemplo Python  | Comentarios                               |
+------------|:--------|:-------------:|:---------------:|------------------------------------------:|
+ `string`   | `str`   | `"foo"`       | `"foo"`         | Unicode, UTF8, Emoji, etc                 |
+ `char`     | -       | `'a'`         | -               | 1 char, Optimizado internamente a int     |
+ `int`      | `int`   | `42`          | `42`            | int8, int16, int32, int64, int            |
+ `float`    | `float` | `2.0`         | `2.0`           | float32, float64, float                   |
+ `bool`     | `bool`  | `true, false` | `True, False`   | true, false en Nim                        |
+ `tuple`    | `tuple` | `(1, 2, 3)`   | `(1, 2, 3)`     | tuple de Nim es como NamedTuple de Py     |
+ `seq`      | `list`  | `@[1, 2, 3]`  | `[1, 2, 3]`     | Mismo Tipo en todos los items en Nim      |
+ `set`      | `set`   | `{1, 2, 3}`   | `{1, 2, 3}`     | int, char, bool en Nim                    |
+ `enum`     | `enum`  | ?             | ?               | En Python no los usa nadie                |
+ `array`    | -       | `[1, 2, 3]`   | -               | Tamanio fijo, mismo tipo en los items     |
+ `subrange` | -       | `range[0..2]` | -               | Solo acepta int de 0 a 2,puede usar float |
 
 *Tipos de Nim estan optimizados para performance.*
 
@@ -290,15 +292,16 @@ suite "Nombre del test":
 
 ##### CrossCompilar
 
-Basicamente hay que pasarle la ruta donde esta el Compilador (GCC usualmente).
+Basicamente hay que pasarle la ruta donde esta el Compilador.
 
 ```
 $ cd /tmp/
 $ mkdir prueba_nim_crosscompile
 $ cd prueba_nim_crosscompile/
 $ echo 'echo "Hola Mundo"' > hello.nim
-$ nim c --cpu:amd64 --os:windows --gcc.exe:x86_64-w64-mingw32-gcc --gcc.linkerexe:x86_64-w64-mingw32-gcc hello.nim
-Hint: operation successful (1717 lines compiled; 1.6 sec total; 21.8MiB peakmem) [SuccessX]
+$ nim c --cpu:amd64 --os:windows --gcc.exe:x86_64-w64-mingw32-gcc \
+        --gcc.linkerexe:x86_64-w64-mingw32-gcc hello.nim
+Hint: operation successful (717 lines compiled; 1 sec total; 21MiB peakmem)
 $ wine hello.exe
 Hola Mundo
 ```
@@ -375,6 +378,7 @@ Ejemplos:
 - Scrapper https://github.com/OpenSystemsLab/q.nim
 - Jupyter Kernel https://github.com/stisa/jupyter-nim-kernel
 - Plotly https://github.com/brentp/nim-plotly
+- GUI super facil https://github.com/juancarlospaco/nim-kdialog
 - Poors Woman Design https://github.com/juancarlospaco/nim-random-font-color
 
 -----
@@ -411,6 +415,6 @@ Ejemplos:
 
 ![JuanCarlos](stackoverflow-copypaste.jpg)
 
-<sub>Juan Carlos, https://github.com/juancarlospaco, https://twitter.com/juancarlospaco</sub>
+Juan Carlos, [<sub>github.com/juancarlospaco</sub>](https://github.com/juancarlospaco), [<sub>twitter.com/juancarlospaco</sub>](https://twitter.com/juancarlospaco)</sub>
 
 [<sub>Presentacion hecha en Markdown con Microraptor.</sub>](https://github.com/juancarlospaco/microraptor#microraptor)
