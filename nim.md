@@ -56,11 +56,13 @@ http://linkode.org/#yUMlOf6JwzPfLGV1ulezc5
 
 ```
 $ mkdir /tmp/prueba ; cd /tmp/prueba/
-$ echo 'int suma2Enteros(int a, int b) { return a + b; }' > suma.c
+$ echo 'int suma2Enteros(int a, int b) {return a + b;}' > suma.c
+
 $ cat ejemplo.nim
 {.compile: "suma.c".}
 proc suma2Enteros(a, b: cint): cint {.importc.}
 echo suma2Enteros(1, 2)
+
 $ nim c -r ejemplo.nim
 3
 ```
