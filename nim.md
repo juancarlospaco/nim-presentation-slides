@@ -14,9 +14,106 @@
 * Tipado estatico fuerte con Inferencia.
 * Compila a C / C++.
 * Compila a JavaScript (DOM API).
-* Linux, Windows, Mac, etc.
+* Linux, Windows, Mac, Web, etc.
 * Facil hacer modulos de Python.
 * Facil usar librerias en C.
+
+-----
+
+### Hola Mundo!
+
+```
+$ mkdir /tmp/prueba ; cd /tmp/prueba/
+$ echo 'echo "Hola Mundo"' > hello.nim
+$ nim c -r hello.nim          # C
+Hola Mundo
+$ nim cpp -r hello.nim        # C++
+Hola Mundo
+$ nim c --cpu:amd64 --os:windows hello.nim
+$ wine hello.exe              # Windows
+Hola Mundo
+$ nim js -d:nodejs hello.nim  # NodeJS
+$ nodejs hello.js
+Hola Mundo
+$ nim js hello.nim            # Web (Frontend)
+$ lsb_release -d
+Description:  Arch Linux
+```
+
+http://linkode.org/#yUMlOf6JwzPfLGV1ulezc5
+
+-----
+
+### Interprete Interactivo
+
+![inim](inim.gif)
+
+- `nimble install inim`
+
+-----
+
+### Enchufar C
+
+```
+$ mkdir /tmp/prueba ; cd /tmp/prueba/
+$ echo 'int suma2Enteros(int a, int b) { return a + b; }' > suma.c
+$ cat ejemplo.nim
+{.compile: "suma.c".}
+proc suma2Enteros(a, b: cint): cint {.importc.}
+echo suma2Enteros(1, 2)
+$ nim c -r ejemplo.nim
+3
+```
+
+http://linkode.org/#dozWhq9aNZOYnVVZtldpb1
+
+-----
+
+### Enchufar Web
+
+<sub>JavaScript &dzigrarr; Nim</sub>
+
+```
+$ cat index.html
+<script>function suma2Enteros(a, b) {return alert(a + b)}</script>
+<script src="ejemplo.js"></script>
+$ cat ejemplo.nim
+proc suma2Enteros(a, b: cint): cint {.importc.}
+echo suma2Enteros(1, 2)
+$ nim js -o:ejemplo.js ejemplo.nim
+$ xdg-open index.html
+```
+
+http://linkode.org/#P41hU4NNSDAKB2ZXpyaMp3
+
+<sub>Nim &dzigrarr; JavaScript</sub>
+
+```
+$ cat index2.html
+<script src="ejemplo2.js"></script>
+<script>alert(suma2Enteros(1, 2))</script>
+$ cat ejemplo2.nim
+proc suma2Enteros(a, b: cint): cint {.exportc.} = a + b
+$ nim js -o:ejemplo2.js ejemplo2.nim
+$ xdg-open index2.html
+```
+
+http://linkode.org/#f8iTgfh1FPYCDQi4PJhHg7
+
+-----
+
+##### Syntaxis
+
+- Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.
+- Comentarios empiezan con `#`, DocStrings con `##`.
+- Tracebacks a color simil Python con linea y tipado del error.
+- Magias syntax sugar, tipo Python Jupiter Notebook.
+- Templates, reemplazan su invocacion con su contenido en compilacion.
+- Macros, bloques que agregan funcionalidad en tiempo de ejecucion.
+- Overload en funciones, dependiendo el tipo de argumento.
+- Exportar objetos con `*`, `cosa` es privado, `cosa*` es exportado.
+- `import modulo` importa todo lo que tenga `*` en `modulo.nim`
+- [Algunos modulos de Python fueron clonados en Nim.](https://nimble.directory/search?query=python)
 
 -----
 
@@ -33,29 +130,6 @@
 - NimInst autogenerador de instaladores (InnoSetup, Bash).
 - NimGrep Grep optimizado para Nim (CamelCase vs snake_case).
 - Garbage Collector GC personalizable o desactivado.
-
------
-
-#### Interprete Interactivo
-
-![inim](inim.gif)
-
-- `nimble install inim`
-
------
-
-##### Syntaxis
-
-- Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.
-- Comentarios empiezan con `#`, DocStrings con `##`.
-- Tracebacks a color simil Python con linea y tipado del error.
-- Magias syntax sugar, tipo Python Jupiter Notebook.
-- Templates, reemplazan su invocacion con su contenido en compilacion.
-- Macros, bloques que agregan funcionalidad en tiempo de ejecucion.
-- Overload en funciones, dependiendo el tipo de argumento.
-- Exportar objetos con `*`, `cosa` es privado, `cosa*` es exportado.
-- `import modulo` importa todo lo que tenga `*` en `modulo.nim`
-- [Algunos modulos de Python fueron clonados en Nim.](https://nimble.directory/search?query=python)
 
 -----
 
