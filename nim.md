@@ -7,17 +7,16 @@
 
 -----
 
-##### Nim?
+![use nim cat](nim-bad-cat.jpg)
 
 * Python Syntax y rendimiento de C.
 * Compilado (Binario ejecutable).
 * Tipado estatico fuerte con Inferencia.
 * Compila a C / C++.
 * Compila a JavaScript (DOM API).
-* Linux, Windows, Os X, etc.
+* Linux, Windows, Mac, etc.
 * Facil hacer modulos de Python.
 * Facil usar librerias en C.
-* Muchos son Devs Python.
 
 -----
 
@@ -415,6 +414,6 @@ Ejemplos:
 
 ![JuanCarlos](stackoverflow-copypaste.jpg)
 
-Juan Carlos, [<sub>github.com/juancarlospaco</sub>](https://github.com/juancarlospaco), [<sub>twitter.com/juancarlospaco</sub>](https://twitter.com/juancarlospaco)</sub>
+<sub>Juan Carlos</sub> [<sub>github.com/juancarlospaco</sub>](https://github.com/juancarlospaco) [<sub>twitter.com/juancarlospaco</sub>](https://twitter.com/juancarlospaco)
 
-[<sub>Presentacion hecha en Markdown con Microraptor.</sub>](https://github.com/juancarlospaco/microraptor#microraptor)
+[<sub><i>Presentacion hecha en Markdown con Microraptor.</i></sub>](https://github.com/juancarlospaco/microraptor#microraptor)
