@@ -262,7 +262,9 @@ Nim         | Python  | Ejemplo Nim   | Ejemplo Python  | Comentarios           
 
 ##### Nim Case Insensitive
 
-- CamelCase y snake_case podes usarlo como te guste.
+![Nim is Cool](nim-cool.jpg)
+
+- camelCase y snake_case podes usarlo como te guste.
 - Todas las formas son validas y equivalentes.
 
 ```nim
@@ -460,7 +462,6 @@ Ejemplos:
 - Scrapper https://github.com/OpenSystemsLab/q.nim
 - Jupyter Kernel https://github.com/stisa/jupyter-nim-kernel
 - Plotly https://github.com/brentp/nim-plotly
-- GUI super facil https://github.com/juancarlospaco/nim-kdialog
 - Poors Woman Design https://github.com/juancarlospaco/nim-random-font-color
 
 -----
@@ -474,6 +475,7 @@ Ejemplos:
 - Rosetta http://rosettacode.org/wiki/Category:Nim
 - Tutorial https://nim-lang.org/docs/tut1.html
 - Syntax Python https://github.com/Yardanico/nimpylib
+- GUI super facil https://github.com/juancarlospaco/nim-kdialog
 - Awesome Nim https://github.com/VPashkov/awesome-nim
 - Comunidad Online Nim AR https://t.me/NimArgentina
 - Comunidad Online Nim EN https://t.me/nim_lang
@@ -490,6 +492,26 @@ Ejemplos:
 - Manual, codigo fuente en cualquier OS.
 
 *Solo requiere un Compilador de C.*
+
+-----
+
+##### Editor / IDE soporte para Nim
+
+![nim-spacemacs](nim-spacemacs.png)
+
+Vim, Emacs, Atom, Kate, Aporia, VS Code, etc etc.
+
+- https://github.com/nim-lang/Nim/wiki/editor-support
+
+-----
+
+### Nim necesita mas Comunidad
+
+![Nim Community](gatas.jpg)
+
+- https://t.me/NimArgentina
+
+*Que empieze el hype !*
 
 -----
 
