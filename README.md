@@ -7,10 +7,10 @@ made with [Microraptor](https://github.com/juancarlospaco/microraptor#microrapto
   <summary>Preview Screenshots</summary><br>
 
 
-![Preview Screenshot](nim-slide0.jpg)
+![Preview Screenshot](nim-slide0.jpg "WIP Screenshot")
 
 
-![Preview Screenshot](nim-slide1.jpg)
+![Preview Screenshot](nim-slide1.jpg "WIP Screenshot")
 
 </details>
 
