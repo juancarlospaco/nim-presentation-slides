@@ -47,7 +47,7 @@ $ lsb_release -d
 Description:  Arch Linux
 ```
 
-http://linkode.org/#yUMlOf6JwzPfLGV1ulezc5
+[<sub>Codigo de todos los slides esta en el Repo</sub>](etc/hello.nim)
 
 -----
 
@@ -76,7 +76,7 @@ $ nim c -r ejemplo.nim
 
 ```
 
-http://linkode.org/#dozWhq9aNZOYnVVZtldpb1
+[<sub>Codigo en Repo</sub>](etc/ejemplo.nim)
 
 -----
 
@@ -87,35 +87,33 @@ http://linkode.org/#dozWhq9aNZOYnVVZtldpb1
 ```bash
 $ cat index.html
 <script>function suma2Enteros(a, b) {return alert(a + b)}</script>
-<script src="ejemplo.js"></script>
+<script src="ejemplojs2nim.js"></script>
 
-$ cat ejemplo.nim
+$ cat ejemplojs2nim.nim
 proc suma2Enteros(a, b: cint): cint {.importc.}
 echo suma2Enteros(1, 2)
 
-$ nim js -o:ejemplo.js ejemplo.nim
+$ nim js -o:ejemplojs2nim.js ejemplojs2nim.nim
 
 $ xdg-open index.html
 ```
-
-http://linkode.org/#P41hU4NNSDAKB2ZXpyaMp3
 
 <sub>Nim &dzigrarr; JavaScript</sub>
 
 ```bash
 $ cat index2.html
-<script src="ejemplo2.js"></script>
+<script src="ejemplonim2js.js"></script>
 <script>alert(suma2Enteros(1, 2))</script>
 
-$ cat ejemplo2.nim
+$ cat ejemplonim2js.nim
 proc suma2Enteros(a, b: cint): cint {.exportc.} = a + b
 
-$ nim js -o:ejemplo2.js ejemplo2.nim
+$ nim js -o:ejemplonim2js.js ejemplonim2js.nim
 
 $ xdg-open index2.html
 ```
 
-http://linkode.org/#f8iTgfh1FPYCDQi4PJhHg7
+[<sub>Codigo en Repo</sub>](etc/)
 
 -----
 
