@@ -4,7 +4,7 @@
 made with [Microraptor](https://github.com/juancarlospaco/microraptor#microraptor).
 
 <details open >
-  <summary>Preview Screenshots</summary><br><br>
+  <summary>Preview Screenshots</summary><br>
 
 
 ![Preview Screenshot](nim-slide0.jpg)
