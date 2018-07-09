@@ -511,7 +511,7 @@ Vim, Emacs, Atom, Kate, Aporia, VS Code, etc etc.
 
 - https://t.me/NimArgentina
 
-*Que empieze el hype !*
+*Sumate!, Que empieze el hype !*
 
 -----
 
