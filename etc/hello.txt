@@ -1,0 +1,17 @@
+# http://linkode.org/#yUMlOf6JwzPfLGV1ulezc5
+
+$ nim c -r hello.nim          # C
+Hola Mundo
+
+$ nim cpp -r hello.nim        # C++
+Hola Mundo
+
+$ nim c --cpu:amd64 --os:windows hello.nim
+$ wine hello.exe              # Windows
+Hola Mundo
+
+$ nim js -d:nodejs hello.nim  # NodeJS
+$ nodejs hello.js
+Hola Mundo
+
+$ nim js hello.nim            # Web (Frontend)
