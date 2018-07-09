@@ -414,8 +414,6 @@ Hola Mundo
 
 Las libs de crosscompile se instalan instalando `mingw-w64-gcc` (Arch).
 
-http://linkode.org/#1FCAxFC9JPKRc12pyupxu6
-
 *Dependera un poco que tan amigable es tu Distro con las Libs de crosscompile.*
 
 -----
