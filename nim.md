@@ -304,7 +304,7 @@ Nim         | Python  | Ejemplo Nim   | Ejemplo Python  | Comentarios           
 
 Ejemplo, mismo RayTracer implementado en varios lenguajes:
 
-![raytracer](raytracer.png)
+![raytracer](raytracer.jpg)
 
 -----
 
