@@ -22,20 +22,27 @@
 
 ### Hola Mundo!
 
-```
+```bash
 $ mkdir /tmp/prueba ; cd /tmp/prueba/
+
 $ echo 'echo "Hola Mundo"' > hello.nim
+
 $ nim c -r hello.nim          # C
 Hola Mundo
+
 $ nim cpp -r hello.nim        # C++
 Hola Mundo
+
 $ nim c --cpu:amd64 --os:windows hello.nim
 $ wine hello.exe              # Windows
 Hola Mundo
+
 $ nim js -d:nodejs hello.nim  # NodeJS
 $ nodejs hello.js
 Hola Mundo
+
 $ nim js hello.nim            # Web (Frontend)
+
 $ lsb_release -d
 Description:  Arch Linux
 ```
@@ -54,8 +61,9 @@ http://linkode.org/#yUMlOf6JwzPfLGV1ulezc5
 
 ### Enchufar C
 
-```
+```bash
 $ mkdir /tmp/prueba ; cd /tmp/prueba/
+
 $ echo 'int suma2Enteros(int a, int b) {return a + b;}' > suma.c
 
 $ cat ejemplo.nim
@@ -65,6 +73,7 @@ echo suma2Enteros(1, 2)
 
 $ nim c -r ejemplo.nim
 3
+
 ```
 
 http://linkode.org/#dozWhq9aNZOYnVVZtldpb1
@@ -75,14 +84,17 @@ http://linkode.org/#dozWhq9aNZOYnVVZtldpb1
 
 <sub>JavaScript &dzigrarr; Nim</sub>
 
-```
+```bash
 $ cat index.html
 <script>function suma2Enteros(a, b) {return alert(a + b)}</script>
 <script src="ejemplo.js"></script>
+
 $ cat ejemplo.nim
 proc suma2Enteros(a, b: cint): cint {.importc.}
 echo suma2Enteros(1, 2)
+
 $ nim js -o:ejemplo.js ejemplo.nim
+
 $ xdg-open index.html
 ```
 
@@ -90,13 +102,16 @@ http://linkode.org/#P41hU4NNSDAKB2ZXpyaMp3
 
 <sub>Nim &dzigrarr; JavaScript</sub>
 
-```
+```bash
 $ cat index2.html
 <script src="ejemplo2.js"></script>
 <script>alert(suma2Enteros(1, 2))</script>
+
 $ cat ejemplo2.nim
 proc suma2Enteros(a, b: cint): cint {.exportc.} = a + b
+
 $ nim js -o:ejemplo2.js ejemplo2.nim
+
 $ xdg-open index2.html
 ```
 
@@ -246,14 +261,19 @@ Nim         | Python  | Ejemplo Nim   | Ejemplo Python  | Comentarios           
 
 ```nim
 >>> let foo = [1, 2, 3]
+
 >>> foo.len
 3
+
 >>> foo.len()
 3
+
 >>> len(foo)
 3
+
 >>> $foo.len      # Magia convierte a string.
 "3"
+
 >>> foo.len.int8  # Dot chain.
 3 : int8
 ```
@@ -271,6 +291,7 @@ Nim         | Python  | Ejemplo Nim   | Ejemplo Python  | Comentarios           
 >>> let camelCase = 42  # Es lo mismo que camel_case.
 >>> camel_case
 42
+
 >>> let snake_case = 1  # Es lo mismo que snakeCase.
 >>> snakeCase
 1
@@ -291,7 +312,7 @@ Ejemplo, mismo RayTracer implementado en varios lenguajes:
 
 ##### Peso
 
-```
+```bash
 $ echo 'echo "Hola Mundo"' > hello.nim
 $ nim c -d:release --app:console --opt:size hello.nim
 $ strip --strip-all hello
@@ -381,11 +402,14 @@ suite "Nombre del test":
 
 Basicamente hay que pasarle la ruta donde esta el Compilador.
 
-```
+```bash
 $ mkdir /tmp/prueba_nim_crosscompile ; cd /tmp/prueba_nim_crosscompile/
+
 $ echo 'echo "Hola Mundo"' > hello.nim
+
 $ nim c --cpu:amd64 --os:windows --gcc.exe:x86_64-w64-mingw32-gcc \
         --gcc.linkerexe:x86_64-w64-mingw32-gcc hello.nim
+
 $ wine hello.exe
 Hola Mundo
 ```
@@ -520,5 +544,7 @@ Vim, Emacs, Atom, Kate, Aporia, VS Code, etc etc.
 ![JuanCarlos](stackoverflow-copypaste.jpg)
 
 <sub>Juan Carlos</sub> [<sub>github.com/juancarlospaco</sub>](https://github.com/juancarlospaco) [<sub>twitter.com/juancarlospaco</sub>](https://twitter.com/juancarlospaco)
+
+[<sub>Repo de esta Presentacion en GitHub.</sub>](https://github.com/juancarlospaco/nim-presentation-slides#nim-presentation-slides)
 
 [<sub><i>Presentacion hecha en Markdown con Microraptor.</i></sub>](https://github.com/juancarlospaco/microraptor#microraptor)
