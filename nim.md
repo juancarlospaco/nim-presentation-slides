@@ -47,7 +47,7 @@ $ lsb_release -d
 Description:  Arch Linux
 ```
 
-[<sub>Codigo de todos los slides esta en el Repo</sub>](etc/hello.nim)
+[<sub>Codigo de todos los slides esta en el Repo</sub>](ejemplos/hello.nim)
 
 -----
 
@@ -76,7 +76,7 @@ $ nim c -r ejemplo.nim
 
 ```
 
-[<sub>Codigo en Repo</sub>](etc/ejemplo.nim)
+[<sub>Codigo en Repo</sub>](ejemplos/ejemplo.nim)
 
 -----
 
@@ -113,7 +113,7 @@ $ nim js -o:ejemplonim2js.js ejemplonim2js.nim
 $ xdg-open index2.html
 ```
 
-[<sub>Codigo en Repo</sub>](etc/)
+[<sub>Codigo en Repo</sub>](ejemplos/)
 
 -----
 
