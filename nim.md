@@ -61,19 +61,23 @@ Description:  Arch Linux
 
 ### Enchufar C
 
-```bash
-$ mkdir /tmp/prueba ; cd /tmp/prueba/
+C:
 
-$ echo 'int suma2Enteros(int a, int b) {return a + b;}' > suma.c
+```c
+int suma2Enteros(int a, int b) {return a + b;}
+```
 
-$ cat ejemplo.nim
+Nim:
+
+```nim
 {.compile: "suma.c".}
 proc suma2Enteros(a, b: cint): cint {.importc.}
 echo suma2Enteros(1, 2)
+```
 
+```bash
 $ nim c -r ejemplo.nim
 3
-
 ```
 
 [<sub>Codigo en Repo</sub>](ejemplos/ejemplo.nim)
@@ -84,36 +88,40 @@ $ nim c -r ejemplo.nim
 
 <sub>JavaScript &dzigrarr; Nim</sub>
 
-```bash
-$ cat index.html
+```html
+<!-- index.html --->
 <script>function suma2Enteros(a, b) {return alert(a + b)}</script>
 <script src="ejemplojs2nim.js"></script>
+```
 
-$ cat ejemplojs2nim.nim
+```nim
+# ejemplojs2nim.nim
 proc suma2Enteros(a, b: cint): cint {.importc.}
 echo suma2Enteros(1, 2)
+```
 
+```bash
 $ nim js -o:ejemplojs2nim.js ejemplojs2nim.nim
-
-$ xdg-open index.html
+$ xdg-open index.html  # Abre el Navegador Web.
 ```
 
 <sub>Nim &dzigrarr; JavaScript</sub>
 
-```bash
-$ cat index2.html
+```html
+<!-- index2.html --->
 <script src="ejemplonim2js.js"></script>
 <script>alert(suma2Enteros(1, 2))</script>
-
-$ cat ejemplonim2js.nim
-proc suma2Enteros(a, b: cint): cint {.exportc.} = a + b
-
-$ nim js -o:ejemplonim2js.js ejemplonim2js.nim
-
-$ xdg-open index2.html
 ```
 
-[<sub>Codigo en Repo</sub>](ejemplos/)
+```nim
+# ejemplonim2js.nim
+proc suma2Enteros(a, b: cint): cint {.exportc.} = a + b
+```
+
+```bash
+$ nim js -o:ejemplonim2js.js ejemplonim2js.nim
+$ xdg-open index2.html  # Abre el Navegador Web.
+```
 
 -----
 
