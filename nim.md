@@ -456,6 +456,73 @@ Las libs de crosscompile se instalan instalando `mingw-w64-gcc` (Arch).
 
 -----
 
+##### Templates
+
+<sub>Template reemplazan su invocacion con su contenido en tiempo de compilacion.</sub>
+
+```nim
+template templatecita(argumento0, argumento1: string, contenido: untyped): untyped =
+
+  echo 1 + 2       # Simula algo de logica "pre-cocida" dentro del template.
+
+  echo argumento0  # Se puede trabajar con todos los argumentos que recibe.
+  echo argumento1
+
+  # Las variables y nombres dentro de un template son solo locales por defecto.
+  var variable_injectada {.inject.} = "Gatitos" # No es solo local.
+  var variable_solo_local = "Perritos"          # Si es solo local.
+
+  contenido  # Se puede evaluar los contenidos que recibe.
+
+
+templatecita("primer argumento", "segundo argumento"):
+
+  echo variable_injectada
+  # Error: undeclared identifier: 'variable_solo_local'.
+  # No esta Injectada con {.inject.}, no existe fuera del template.
+  # echo variable_solo_local
+
+  echo "Este es el contenido, el cuerpo del template."
+```
+
+*Codigo que hackea codigo a nivel de codigo en compilacion !*
+
+-----
+
+##### Macros
+
+<sub>Macros son como Templates pero en tiempo de ejecucion y hackean el AST al vuelo.</sub>
+
+```nim
+import macros
+
+macro repetir_echo(): untyped =
+  result = newNimNode(nnkStmtList)          # Genera un result vacio.
+
+  var mi_bucle_for = newNimNode(nnkForStmt) # Genera un bucle for vacio.
+  mi_bucle_for.add(ident("indice"))         # Usa variable indice en el bucle.
+
+  var rango_para_iterar = newNimNode(nnkInfix).add(
+    ident("..")).add(newIntLitNode(0), newIntLitNode(9))  # Genera range 0..9.
+
+  var mi_echo = newCall(ident("echo"), newIntLitNode(42)) # Genera echo 42.
+
+  mi_bucle_for.add(rango_para_iterar) # Mete range para iterar en bucle for.
+  mi_bucle_for.add(mi_echo)           # Cuerpo del bucle for.
+
+  result.add(mi_bucle_for)            # Mete el bucle for en el result.
+
+
+repetir_echo()   # Repetir 42 unas 10 veces.
+
+expandMacros:    # Generar y ver el codigo generado por el Macro.
+  repetir_echo() # for indice in 0 .. 9: echo(42)
+```
+
+*Codigo que hackea codigo a nivel de AST en ejecucion !*
+
+-----
+
 ##### Template Engine
 
 - Template Engine integrado (ala Jinja).
@@ -463,30 +530,32 @@ Las libs de crosscompile se instalan instalando `mingw-w64-gcc` (Arch).
 - Lineas con `#` es codigo Nim, sino literal verbatim.
 
 ```nim
-#? stdtmpl | standard
-#proc generateHTMLPage(title, currentTab, content: string,
-#                      tabs: openArray[string]): string =
+#? stdtmpl(subsChar = '$', metaChar = '#')
+#proc generateXML(name, age: string): string =
 #  result = ""
-<head><title>$title</title></head>
+<xml>
+  <name>$name</name>
+  <age>$age</age>
+</xml>
+```
+
+```nim
+#? stdtmpl | standard
+#proc generateHTML(title, content: string, tabs: openArray[string]): string =
+#  result = ""
+<head><title> $title </title></head>
 <body>
-  <div id="menu">
     <ul>
   #for tab in items(tabs):
-    #if currentTab == tab:
-    <li><a id="selected"
-    #else:
-    <li><a
-    #end if
-    href="${tab}.html">$tab</a></li>
+    <li><a href="${tab}.html">$tab</a></li>
   #end for
     </ul>
-  </div>
-  <div id="content">
     $content
     A dollar: $$.
-  </div>
 </body>
 ```
+
+<sub>No confundir Template-Engine con Templates.</sub>
 
 -----
 
@@ -570,7 +639,7 @@ Ejemplos:
 [NeoVim](https://github.com/baabelfish/nvim-nim),
 [Notepad++](https://github.com/jangko/nppnim/releases),
 [LightTable](https://github.com/zah/nim.lt/),
-Aporia,
+[Aporia](https://github.com/nim-lang/Aporia),
 [etc etc...](https://github.com/nim-lang/Nim/wiki/editor-support)
 
 -----
