@@ -117,6 +117,34 @@ $ xdg-open index2.html
 
 -----
 
+##### Enchufar Python
+
+Nim:
+
+```nim
+import nimpy
+proc funcioncita*(nombre: string): string {.exportpy.} = "Hola " & nombre
+```
+
+Python:
+
+```nim
+import nim2python
+print(nim2python.funcioncita("Mundo"))
+```
+
+Instalar puente Python-Nim:
+
+- `nimble install nimpy`.
+
+Compilar:
+
+`nim c --app:lib --out:modulo.so codigo.nim`
+
+<sub>Nim compila 1 *.so luego no requiere Nim para funcionar.</sub>
+
+-----
+
 ##### Syntaxis
 
 - Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.
