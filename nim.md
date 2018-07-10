@@ -306,6 +306,8 @@ Ejemplo, mismo RayTracer implementado en varios lenguajes:
 
 ![raytracer](raytracer.jpg)
 
+[<sub>Source</sub>](http://blog.johnnovak.net/2017/04/22/nim-performance-tuning-for-the-uninitiated/#does-it-all-matter)
+
 -----
 
 ##### Peso
@@ -519,9 +521,21 @@ Ejemplos:
 
 ![nim-spacemacs](nim-spacemacs.png)
 
-Vim, Emacs, Atom, Kate, Aporia, VS Code, etc etc.
-
-- https://github.com/nim-lang/Nim/wiki/editor-support
+[Vim](https://github.com/zah/nim.vim/),
+[Emacs](https://github.com/nim-lang/nim-mode),
+[Atom](https://github.com/russpowers/nim-atom),
+[Sublime](https://github.com/Varriount/NimLime),
+[Kate](https://github.com/juancarlospaco/NimKate#screenshots),
+[Gedit](https://github.com/nim-lang/Aporia/blob/master/share/gtksourceview-2.0/language-specs/nim.lang),
+[Geany](https://github.com/geany/geany/pull/193),
+[KDevelop](https://github.com/xyz32/KDevelop-template),
+[VS Code](https://marketplace.visualstudio.com/items?itemName=kosz78.nim),
+[Spacemacs](https://github.com/juancarlospaco/spacemacs-nim-python#spacemacs-nim-python),
+[NeoVim](https://github.com/baabelfish/nvim-nim),
+[Notepad++](https://github.com/jangko/nppnim/releases),
+[LightTable](https://github.com/zah/nim.lt/),
+Aporia,
+[etc etc...](https://github.com/nim-lang/Nim/wiki/editor-support)
 
 -----
 
@@ -529,9 +543,9 @@ Vim, Emacs, Atom, Kate, Aporia, VS Code, etc etc.
 
 ![Nim Community](gatas.jpg)
 
-- https://t.me/NimArgentina
+- ` https://t.me/NimArgentina `
 
-*Sumate!, Que empieze el hype !*
+*Sumate!, Nim tiene cosas aun mas interesantes; Que empieze el hype !*
 
 -----
 
@@ -539,8 +553,8 @@ Vim, Emacs, Atom, Kate, Aporia, VS Code, etc etc.
 
 ![JuanCarlos](stackoverflow-copypaste.jpg)
 
-<sub>Juan Carlos</sub> [<sub>github.com/juancarlospaco</sub>](https://github.com/juancarlospaco) [<sub>twitter.com/juancarlospaco</sub>](https://twitter.com/juancarlospaco)
+*Juan Carlos*
 
-[<sub>Repo de esta Presentacion en GitHub.</sub>](https://github.com/juancarlospaco/nim-presentation-slides#nim-presentation-slides)
-
-[<sub><i>Presentacion hecha en Markdown con Microraptor.</i></sub>](https://github.com/juancarlospaco/microraptor#microraptor)
+- [<sub>github.com/juancarlospaco</sub>](https://github.com/juancarlospaco) [<sub>twitter.com/juancarlospaco</sub>](https://twitter.com/juancarlospaco) [<sub>t.me/juancarlospaco</sub>](https://t.me/juancarlospaco)
+- [<sub>Repo de esta Presentacion en GitHub.</sub>](https://github.com/juancarlospaco/nim-presentation-slides#nim-presentation-slides)
+- [<sub><i>Presentacion hecha en Markdown con Microraptor.</i></sub>](https://github.com/juancarlospaco/microraptor#microraptor)
