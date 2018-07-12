@@ -1,0 +1,2 @@
+
+echo (proc(): auto = "Gatitos")()
