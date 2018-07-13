@@ -1,3 +1,5 @@
+import marshal  # Gato-to-JSON Serialization.
+
 
 type
   Gato* = object
@@ -43,6 +45,9 @@ for i in 0..9:
 gatito.pulgas = true
 gatito.lavarlo()
 gatito.meow()
+
+echo $$gatito
+
 
 
 # # range[0..100] No permite integers > 100
