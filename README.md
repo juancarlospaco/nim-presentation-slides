@@ -11,9 +11,6 @@ For English version see `nim-en-presentation.html` *(English version is Alpha)*.
 
 ![Preview Screenshot](nim-slide0.jpg "WIP Screenshot")
 
-
-![Preview Screenshot](nim-slide1.jpg "WIP Screenshot")
-
 </details>
 
 [**&DoubleUpArrow;**](#nim-presentation-slides "Go to the top")
