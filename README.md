@@ -11,6 +11,10 @@ For English version see `nim-en-presentation.html` *(English version is Alpha)*.
 
 ![Preview Screenshot](nim-slide0.jpg "WIP Screenshot")
 
+
+![Rlyeh HackLab Flyer](rlyeh-hacklab-flyer.png "Art by <redacted>, Rlyeh HackLab Flyer")
+
+
 </details>
 
 [**&DoubleUpArrow;**](#nim-presentation-slides "Go to the top")
