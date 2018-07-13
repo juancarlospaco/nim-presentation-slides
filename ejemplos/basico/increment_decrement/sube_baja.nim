@@ -10,7 +10,9 @@ dec numerito    # numerito = numerito - 1
 echo numerito
 dec numerito
 echo numerito
-
+echo pred(numerito)  # Predecesor
+echo succ(numerito)  # Sucesor
+echo chr(numerito)   # Char
 
 var charcito = 'a'
 echo charcito
@@ -23,3 +25,6 @@ dec charcito
 echo charcito
 dec charcito
 echo charcito
+echo pred(charcito)
+echo succ(charcito)
+echo ord(charcito)   # Ordinal
