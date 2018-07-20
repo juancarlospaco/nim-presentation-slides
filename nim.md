@@ -467,7 +467,7 @@ se resuelve estaticamente en tiempo de Compilacion (Static Dispatch).
 **func:**
 
 Funcion pura, es como una funcion matematica,
-no modifica variables y cosas globales (no side effects),
+no modifica variables y cosas globales (no side effects, muy segura),
 se resuelve estaticamente en tiempo de Compilacion (Static Dispatch).
 
 **method:**
