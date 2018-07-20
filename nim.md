@@ -461,13 +461,13 @@ Las libs de crosscompile se instalan instalando `mingw-w64-gcc` (Arch).
 **proc:**
 
 Funcion basica, generica,
-puede modificar variables globales (side effects),
+puede modificar variables y cosas globales (side effects),
 se resuelve estaticamente en tiempo de Compilacion (Static Dispatch).
 
 **func:**
 
 Funcion pura, es como una funcion matematica,
-no modifica ninguna variable global (no side effects),
+no modifica variables y cosas globales (no side effects),
 se resuelve estaticamente en tiempo de Compilacion (Static Dispatch).
 
 **method:**
@@ -475,7 +475,7 @@ se resuelve estaticamente en tiempo de Compilacion (Static Dispatch).
 Metodo, para usar herencia (OOP),
 solo cuando pertenece a un objeto definido con `ref object of RootObj` y
 hay otros objetos que heredan de este objeto,
-altera variables globales (con *side effects*),
+puede modificar variables y cosas globales (con *side effects*),
 se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).
 
 *Si se te complica podes usar `proc` para casi todo.*
