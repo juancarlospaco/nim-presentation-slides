@@ -8,19 +8,22 @@ type
     pulgas: bool
     sexo: char
 
-method purr*(this: var Gato) =
+proc purr*(this: var Gato) =
   dec this.comida
   echo "Purr"
 
-method alimentarlo*(this: var Gato) =
+proc alimentarlo*(this: var Gato) =
   inc this.comida
   echo "Nom nom"
 
-method lavarlo*(this: var Gato) =
+proc lavarlo*(this: var Gato) =
   this.pulgas = false
   echo this.pulgas
 
-method meow*(this: Gato) = echo "Meow"
+proc say*(this: var Gato, what="Meow") =
+  echo what
+
+proc meow*(this: Gato) = echo "Meow"
 
 
 
@@ -45,6 +48,7 @@ for i in 0..9:
 gatito.pulgas = true
 gatito.lavarlo()
 gatito.meow()
+gatito.say("Meow Meow Meow!")
 
 echo $$gatito
 
