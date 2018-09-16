@@ -1,2 +1,2 @@
 
-echo (proc(): auto = "Gatitos")()
+echo (func: auto = "Gatitos")()
