@@ -6,5 +6,5 @@ var
   option: bool
 
 rst2latex.initRstGenerator(outLatex, defaultConfig(), "", {})
-renderRstToOut(rst2latex, rstParse("*Hello* **world**", "", 1, 1, option, {}), generatedHTML)
+rst2latex.renderRstToOut(rstParse("*Hello* **world**", "", 1, 1, option, {}), generatedHTML)
 echo generatedHTML
