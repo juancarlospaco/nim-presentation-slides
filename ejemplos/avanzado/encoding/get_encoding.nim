@@ -1,0 +1,2 @@
+import encodings
+echo getCurrentEncoding()
