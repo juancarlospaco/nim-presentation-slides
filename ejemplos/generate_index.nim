@@ -21,6 +21,7 @@ proc main(): string =
         <b>Level:</b><i>{lvl}</i> </details>"""
       else:
         echo "File is Empty: " & it
+  result &= "<br><br><small><i>Made with Nim and crazy ideas by Juan Carlos.</i></small>"
   writeFile("index.html", result)
 
 when is_main_module:

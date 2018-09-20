@@ -26,46 +26,196 @@ details {
     <i>CTRL + F to Search!.</i>
   </center>
 <br><details title="Exponentiation"><summary>Exponentiation</summary>
-        nim c -r expo.nim <br><br> <b>Path:</b>
+        nim c -r expo.nim <br><br> <b>Folder:</b>
         <input type="text" value="./exponentiation/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="Compiler options"><summary>Compiler options</summary>
-         <br><br> <b>Path:</b>
+         <br><br> <b>Folder:</b>
         <input type="text" value="./compiler_options/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="C"><summary>C</summary>
         <p>nim c -r ejemplo.nim</p>
 <p>nim c -r saluda.nim</p>
 <p>nim c -r enchufa_stdio.nim      # Solo Linux.</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./c/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Gui"><summary>Gui</summary>
+        <p><a class="reference external" href="https://github.com/juancarlospaco/nim-kdialog#nim-kdialog">https://github.com/juancarlospaco/nim-kdialog#nim-kdialog</a></p>
+<p>Necesita instalado el paquete de Linux &quot;KDialog&quot;.</p>
+<p>nimble install kdialog</p>
+<p><tt class="docutils literal"><span class="pre">nim c -r gui.nim</span></tt></p>
+ <br><br> <b>Folder:</b>
+        <input type="text" value="./gui/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="Enteros"><summary>Enteros</summary>
-        nim c -r enteros.nim <br><br> <b>Path:</b>
+        nim c -r enteros.nim <br><br> <b>Folder:</b>
         <input type="text" value="./enteros/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Flotantes"><summary>Flotantes</summary>
+        <p>Simple Floating Point Numbers example.</p>
+<p><tt class="docutils literal"><span class="pre">nim c -r flotantes.nim</span></tt></p>
+ <br><br> <b>Folder:</b>
+        <input type="text" value="./flotantes/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="Env"><summary>Env</summary>
-         <br><br> <b>Path:</b>
+         <br><br> <b>Folder:</b>
         <input type="text" value="./env/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Funciones"><summary>Funciones</summary>
+        <p><tt class="docutils literal"><span class="pre">nim c -r funcion.nim</span></tt></p>
+<p>## Ejemplos minimos de funciones. Aca vemos como ir mejorando una misma funcion.</p>
+<p># suma 2 enteros, toma 2 enteros, devuelve un entero. Se puede mejorar como esta escrita, ver debajo...</p>
+<p>```</p>
+<dl class="docutils"><dt>proc mi_funcion(a: int, b: int): int =</dt>
+<dd>return a + b</dd>
+</dl>
+<p>```</p>
+<p># Misma funcion, pero el &quot;return&quot; se puede omitir, simplemente retornara la variable &quot;result&quot;, si no se especifica nada &quot;return result&quot; es automatico. # &quot;result&quot; siempre existe dentro de una funcion, se auto inicializa al tipo de retorno especificado, si es int sera 0, si es bool sera false, etc etc.</p>
+<p>```</p>
+<dl class="docutils"><dt>proc mi_funcion(a: int, b: int): int =</dt>
+<dd>result = a + b</dd>
+</dl>
+<p>```</p>
+<p># Misma funcion, pero el &quot;return&quot; se puede omitir, si no se especifica nada retornara lo ultimo evaluado del bloque de codigo, es automatico.</p>
+<p>```</p>
+<dl class="docutils"><dt>proc mi_funcion(a: int, b: int): int =</dt>
+<dd>a + b</dd>
+</dl>
+<p>```</p>
+<p># Misma funcion, pero el tipo de los argumentos esta especificado 1 vez, si se repite el tipo se puede especificar 1 vez.</p>
+<p>```</p>
+<dl class="docutils"><dt>proc mi_funcion(a, b: int): int =</dt>
+<dd>a + b</dd>
+</dl>
+<p>```</p>
+<p># Misma funcion, esto es opcional!!, el retorno es &quot;auto&quot;, el compilador intentara determinar el tipo de retorno automaticamente.</p>
+<p>```</p>
+<dl class="docutils"><dt>proc mi_funcion(a, b: int): auto =</dt>
+<dd>a + b</dd>
+</dl>
+<p>```</p>
+<p># Misma funcion, pero es Publica, es Exportada, se puede usar desde otro archivo Nim, se puede importar con &quot;import&quot;.</p>
+<p>```</p>
+<dl class="docutils"><dt>proc mi_funcion*(a, b: int): int =</dt>
+<dd>a + b</dd>
+</dl>
+<p>```</p>
+<p># Misma funcion, pero en una linea.</p>
+<p>``` proc mi_funcion*(a, b: int): int = a + b ```</p>
+<p># Misma funcion, pero con OverLoading, dependiendo el tipo de argumento sera cual funcion usara. # No hay colision de nombres (NameSpace Collision/Shadowing), la primera toma int, la segunda toma float.</p>
+<p>``` proc mi_funcion*(a, b: int  ): int = a + b proc mi_funcion*(a, b: float): int = int(a + b) ```</p>
+ <br><br> <b>Folder:</b>
+        <input type="text" value="./funciones/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Python"><summary>Python</summary>
+        <p>Simple example of a Python Module written in Nim.</p>
+<p><tt class="docutils literal"><span class="pre">nim c --app:lib --out:nim2python.so nim2python.nim</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">python ejemplo_nim2python.py</span></tt></p>
+ <br><br> <b>Folder:</b>
+        <input type="text" value="./python/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Variables"><summary>Variables</summary>
+        <tt class="docutils literal"><span class="pre">nim c -r variables.nim</span></tt> <br><br> <b>Folder:</b>
+        <input type="text" value="./variables/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="Char"><summary>Char</summary>
-        nim c -r chars.nim <br><br> <b>Path:</b>
+        nim c -r chars.nim <br><br> <b>Folder:</b>
         <input type="text" value="./char/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Increment decrement"><summary>Increment decrement</summary>
+        <tt class="docutils literal"><span class="pre">nim c -r sube_baja.nim</span></tt> <br><br> <b>Folder:</b>
+        <input type="text" value="./increment_decrement/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Templates"><summary>Templates</summary>
+        <tt class="docutils literal"><span class="pre">nim c -r ejemplo_template.nim</span></tt> <br><br> <b>Folder:</b>
+        <input type="text" value="./templates/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Random bool"><summary>Random bool</summary>
+        <p>Simple example of how to get a Random Boolean (true or false at random).</p>
+<p><tt class="docutils literal"><span class="pre">nim c -r randbool.nim</span></tt></p>
+ <br><br> <b>Folder:</b>
+        <input type="text" value="./random_bool/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Fibonacci"><summary>Fibonacci</summary>
+        Simple Fibonacci example. <br><br> <b>Folder:</b>
+        <input type="text" value="./fibonacci/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Filter map"><summary>Filter map</summary>
+        Simple Map List and Filter List example. <br><br> <b>Folder:</b>
+        <input type="text" value="./filter_map/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="Base64"><summary>Base64</summary>
-         <br><br> <b>Path:</b>
+         <br><br> <b>Folder:</b>
         <input type="text" value="./base64/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="Enum"><summary>Enum</summary>
-        nim c -r enum_parse.nim <br><br> <b>Path:</b>
+        nim c -r enum_parse.nim <br><br> <b>Folder:</b>
         <input type="text" value="./enum/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Objetos"><summary>Objetos</summary>
+        <p>Las Classes se pueden escribir tambien estilo Python importando pylib, ver los ejemplos de pylib.</p>
+<p><tt class="docutils literal"><span class="pre">nim c -r gato.nim</span></tt></p>
+ <br><br> <b>Folder:</b>
+        <input type="text" value="./objetos/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Function string literal"><summary>Function string literal</summary>
+        Simple String-Proc example, similar to Python F-Strings. <br><br> <b>Folder:</b>
+        <input type="text" value="./Function_string_literal/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Hola mundo"><summary>Hola mundo</summary>
+        <p># <a class="reference external" href="http://linkode.org/#yUMlOf6JwzPfLGV1ulezc5">http://linkode.org/#yUMlOf6JwzPfLGV1ulezc5</a></p>
+<p># C</p>
+<p><tt class="docutils literal"><span class="pre">$ nim c -r hello.nim</span></tt></p>
+<p>Hola Mundo</p>
+<p># C++</p>
+<p><tt class="docutils literal"><span class="pre">$ nim cpp -r hello.nim</span></tt></p>
+<p>Hola Mundo</p>
+ <br><br> <b>Folder:</b>
+        <input type="text" value="./hola_mundo/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Logging"><summary>Logging</summary>
+        Simple Logging examples. <br><br> <b>Folder:</b>
+        <input type="text" value="./logging/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Unit test"><summary>Unit test</summary>
+        Simple Unittests example. <br><br> <b>Folder:</b>
+        <input type="text" value="./unit_test/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="File read write"><summary>File read write</summary>
+        Simple read file and write file example. <br><br> <b>Folder:</b>
+        <input type="text" value="./file_read_write/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Unicode"><summary>Unicode</summary>
+        Simple example of Unicode data string manipulations. <br><br> <b>Folder:</b>
+        <input type="text" value="./unicode/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Strings"><summary>Strings</summary>
+        Simple example of String Formatting. <br><br> <b>Folder:</b>
+        <input type="text" value="./strings/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Functional function"><summary>Functional function</summary>
+        Pure Functional Programming proc example. <br><br> <b>Folder:</b>
+        <input type="text" value="./functional_function/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Terminal colores"><summary>Terminal colores</summary>
+        <tt class="docutils literal"><span class="pre">nim c -r colores_terminal.nim</span></tt> <br><br> <b>Folder:</b>
+        <input type="text" value="./terminal_colores/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Operator overload"><summary>Operator overload</summary>
+        Simple example of Operator Overload. <br><br> <b>Folder:</b>
+        <input type="text" value="./operator_overload/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="Check type"><summary>Check type</summary>
-         <br><br> <b>Path:</b>
+         <br><br> <b>Folder:</b>
         <input type="text" value="./check_type/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Is"><summary>Is</summary>
+        <tt class="docutils literal"><span class="pre">nim c -r que_es_que.nim</span></tt> <br><br> <b>Folder:</b>
+        <input type="text" value="./is/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="Basic math"><summary>Basic math</summary>
-         <br><br> <b>Path:</b>
+         <br><br> <b>Folder:</b>
         <input type="text" value="./basic_math/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Json"><summary>Json</summary>
+        <tt class="docutils literal"><span class="pre">nim c -r jotason.nim</span></tt> <br><br> <b>Folder:</b>
+        <input type="text" value="./json/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Html"><summary>Html</summary>
+        <p>Simple example of Generating HTML, this generates a Link anchor.</p>
+<p><tt class="docutils literal"><span class="pre">nim c -r linky.nim</span></tt></p>
+ <br><br> <b>Folder:</b>
+        <input type="text" value="./html/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Open url"><summary>Open url</summary>
+        Simple example of opening an URL/URI. <br><br> <b>Folder:</b>
+        <input type="text" value="./open_url/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="Case"><summary>Case</summary>
-        nim c -r cases.nim <br><br> <b>Path:</b>
+        nim c -r cases.nim <br><br> <b>Folder:</b>
         <input type="text" value="./case/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="If"><summary>If</summary>
+        Simple <tt class="docutils literal"><span class="pre">if...else</span></tt> examples. <br><br> <b>Folder:</b>
+        <input type="text" value="./if/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="Echo color"><summary>Echo color</summary>
         <p>Imprime en la Terminal con Colores.</p>
 <p>nim c -r echo.nim</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./echo_color/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Rst"><summary>Rst</summary>
+        <p>The RestructuredText of Nim also supports basic MarkDown.</p>
+<p>Simple example of RST to HTML / Latex / JSON.</p>
+ <br><br> <b>Folder:</b>
+        <input type="text" value="./rst/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Random range"><summary>Random range</summary>
+        simple example of how to get a Random Range. <br><br> <b>Folder:</b>
+        <input type="text" value="./random_range/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="Critbit"><summary>Critbit</summary>
         <ul class="simple"><li>nim c -r critbit_as_set_empty.nim</li>
 <li>nim c -r critbit_as_set.nim</li>
@@ -73,16 +223,54 @@ details {
 <li>nim c -r critbit_as_dict.nim</li>
 </ul>
 <p><a class="reference external" href="https://cr.yp.to/critbit.html">https://cr.yp.to/critbit.html</a></p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./critbit/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Integer sizes"><summary>Integer sizes</summary>
+        Simple example of Sized Integers, to see how much RAM they use, and whats the max capacity. <br><br> <b>Folder:</b>
+        <input type="text" value="./integer_sizes/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Run at exit"><summary>Run at exit</summary>
+        simple example of running an user provided proc at the app exit time. <br><br> <b>Folder:</b>
+        <input type="text" value="./run_at_exit/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Incrustar archivo"><summary>Incrustar archivo</summary>
+        <tt class="docutils literal"><span class="pre">nim c -r embed.nim</span></tt> <br><br> <b>Folder:</b>
+        <input type="text" value="./incrustar_archivo/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="App skeleton"><summary>App skeleton</summary>
-         <br><br> <b>Path:</b>
+         <br><br> <b>Folder:</b>
         <input type="text" value="./app_skeleton/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Funcion anonima"><summary>Funcion anonima</summary>
+        <tt class="docutils literal"><span class="pre">nim c -r lambda.nim</span></tt> <br><br> <b>Folder:</b>
+        <input type="text" value="./funcion_anonima/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Xml"><summary>Xml</summary>
+        <tt class="docutils literal"><span class="pre">nim c -r crea_xml.nim</span></tt> <br><br> <b>Folder:</b>
+        <input type="text" value="./xml/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Jester"><summary>Jester</summary>
+        Hello World Web App example, using Jester. <br><br> <b>Folder:</b>
+        <input type="text" value="./jester/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Ufcs"><summary>Ufcs</summary>
+        Simple example of how you can write Functions on Nim, with a new code style &quot;The Nim way&quot;. <br><br> <b>Folder:</b>
+        <input type="text" value="./ufcs/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Web"><summary>Web</summary>
+        <p><tt class="docutils literal"><span class="pre">nim js -o:ejemplojs2nim.js ejemplojs2nim.nim</span></tt></p>
+<p>Abrir index.html</p>
+<hr />
+<p><tt class="docutils literal"><span class="pre">nim js -o:ejemplonim2js.js ejemplonim2js.nim</span></tt></p>
+<p>Abrir index2.html</p>
+ <br><br> <b>Folder:</b>
+        <input type="text" value="./web/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="Block"><summary>Block</summary>
-        nim c -r bloquecito.nim <br><br> <b>Path:</b>
+        nim c -r bloquecito.nim <br><br> <b>Folder:</b>
         <input type="text" value="./block/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Http get post"><summary>Http get post</summary>
+        Simple HTTP GET / POST examples, with Header data, Async and other extras. <br><br> <b>Folder:</b>
+        <input type="text" value="./http_get_post/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Tables"><summary>Tables</summary>
+        simple example of Tables (AKA Dict). <br><br> <b>Folder:</b>
+        <input type="text" value="./tables/" readonly/>
+        <b>Level:</b><i>Easy</i> </details><br><details title="Python pylib"><summary>Python pylib</summary>
+        Simple example of Mimicking the Python syntax on Nim (MetaProgramming sugars). <br><br> <b>Folder:</b>
+        <input type="text" value="./python_pylib/" readonly/>
         <b>Level:</b><i>Easy</i> </details><br><details title="Encoding"><summary>Encoding</summary>
-         <br><br> <b>Path:</b>
+         <br><br> <b>Folder:</b>
         <input type="text" value="./encoding/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Crosscompile"><summary>Crosscompile</summary>
         <p># <a class="reference external" href="http://linkode.org/#1FCAxFC9JPKRc12pyupxu6">http://linkode.org/#1FCAxFC9JPKRc12pyupxu6</a></p>
@@ -93,7 +281,7 @@ details {
 <p>$ echo 'echo &quot;Hola Mundo&quot;' &gt; hello.nim</p>
 <p>$ nim c --cpu:amd64 --os:windows --gcc.exe:x86_64-w64-mingw32-gcc --gcc.linkerexe:x86_64-w64-mingw32-gcc hello.nim</p>
 <p>$ wine hello.exe Hola Mundo</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./crosscompile/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Distinct"><summary>Distinct</summary>
         <p>Los tipos Distinct son objetos que te proveen una seguridad extra,</p>
@@ -101,71 +289,71 @@ details {
 <p>En el ejemplo creamos Dolares, podemos asignarle 25 Dolares, pero no podemos asignarle 25 a secas,</p>
 <p>por que es un int primitivo comun, podrian ser 25 Ticket Descuento de mercado Dia.</p>
 <p>nim c -r dolares.nim</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./distinct/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="One liners"><summary>One liners</summary>
         <p>One-Liners locos para detonarte la cabeza ;P</p>
 <p>Esto es un extra, nada que ver con la presentacion.</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./one_liners/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Macros"><summary>Macros</summary>
-        nim c -r ejemplo_macro.nim <br><br> <b>Path:</b>
+        nim c -r ejemplo_macro.nim <br><br> <b>Folder:</b>
         <input type="text" value="./macros/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Hola mundo"><summary>Hola mundo</summary>
         <p><a class="reference external" href="https://www.reddit.com/r/nim/comments/8fi5ce/the_current_top_post_on_rprogrammerhumor/dy3rg26">https://www.reddit.com/r/nim/comments/8fi5ce/the_current_top_post_on_rprogrammerhumor/dy3rg26</a>/</p>
 <p>nim c -r hello.nim</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./hola_mundo/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Plotly"><summary>Plotly</summary>
-         <br><br> <b>Path:</b>
+         <br><br> <b>Folder:</b>
         <input type="text" value="./plotly/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Bit op"><summary>Bit op</summary>
-        nim c -r bit_operators.nim <br><br> <b>Path:</b>
+        nim c -r bit_operators.nim <br><br> <b>Folder:</b>
         <input type="text" value="./bit_op/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Varargs"><summary>Varargs</summary>
         <p>VarArgs basicamente te permiten pasarle una cantidad ilimitada de multiples argumentos a tu funcion.</p>
 <p>Tiene alguna magia extra de coerce tambien, ver el ejemplo.</p>
 <p>nim c -r vara.nim</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./varargs/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Web audio"><summary>Web audio</summary>
-         <br><br> <b>Path:</b>
+         <br><br> <b>Folder:</b>
         <input type="text" value="./web_audio/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Sierpinski fractal"><summary>Sierpinski fractal</summary>
-        nim c -r fractal.nim <br><br> <b>Path:</b>
+        nim c -r fractal.nim <br><br> <b>Folder:</b>
         <input type="text" value="./sierpinski_fractal/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Silent compile"><summary>Silent compile</summary>
         <p>Esto es 100% Opcional.</p>
 <p>Desactivar Warnings, menos Verbose, mas silenciosa la Compilacion.</p>
 <p>La ruta del <tt class="docutils literal"><span class="pre">*.CFG</span></tt> es (Crearlo si no existe):</p>
 <p><tt class="docutils literal"><span class="pre">~/.config/nim.cfg</span></tt></p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./silent_compile/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Control c"><summary>Control c</summary>
         <p>nim c -r catch_ctrl_c.nim</p>
 <p>Luego esperar un par de segundos y presionar CTRL + C del Teclado.</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./control_c/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Concepts"><summary>Concepts</summary>
         <p>nim c -r mover_concept.nim</p>
 <p>nim c -r baila_concept.nim</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./concepts/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Generics"><summary>Generics</summary>
         <p>Generics puede crear funciones que funcionan con <em>Multiples Tipos</em> distintos.</p>
 <p>En el ejemplo una funcion min() que funciona para int y string. [T] se refiere a Tipo (Type).</p>
 <p>nim c -r generic_proc.nim</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./generics/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Do"><summary>Do</summary>
         2 Posibles opciones diferentes para hacer Closures:<ul class="simple"><li>Anonymous functions, AKA Lambdas.</li>
 <li>Do notation</li>
 </ul>
 <p>nim c -r do_it.nim</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./do/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Locks"><summary>Locks</summary>
-        nim c --threads:on -r locking.nim <br><br> <b>Path:</b>
+        nim c --threads:on -r locking.nim <br><br> <b>Folder:</b>
         <input type="text" value="./locks/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Benchmark eratosthenes"><summary>Benchmark eratosthenes</summary>
         <p>Humilde y diminuto Benchmark,</p>
@@ -173,7 +361,7 @@ details {
 <p>nim c -d:release --app:console --opt:speed eratosthenes.nim</p>
 <p>time ./eratosthenes</p>
 <p>time python eratosthenes.py</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./benchmark_eratosthenes/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Iterators"><summary>Iterators</summary>
         <p>Iteradores (Iterators), tambien llamado Iteradores-enlinea (Inline-Iterators).</p>
@@ -183,7 +371,7 @@ details {
 <p>En el ejemplo iterator.nim, un Iterator toma un string invierte el orden de las letras.</p>
 <p>nim c -r iterator.nim</p>
 <p>nim c -r iterator_generic.nim</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./iterators/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Crosscompile custom"><summary>Crosscompile custom</summary>
         Esto es 100% Opcional.<dl class="docutils"><dt>Crosscompile usando:</dt>
@@ -198,7 +386,7 @@ details {
 <hr />
 <p>La ruta del <tt class="docutils literal"><span class="pre">*.CFG</span></tt> es (Crearlo si no existe):</p>
 <p><tt class="docutils literal"><span class="pre">~/.config/nim.cfg</span></tt></p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./crosscompile_custom/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Benchmark longest path"><summary>Benchmark longest path</summary>
         <p>Benchmark de &quot;longest path problem&quot;, 8981 es el Resultado.</p>
@@ -206,19 +394,19 @@ details {
 <p>python longest_path_problem.py</p>
 <p>nim c -d:release --app:console --opt:speed longest_path_problem.nim</p>
 <p>./longest_path_problem</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./benchmark_longest_path/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Nimcache custom"><summary>Nimcache custom</summary>
         <p>Esto es 100% Opcional.</p>
 <p>&quot;nimcache&quot; en la carpeta temp del sistema.</p>
 <p>La ruta del <tt class="docutils literal"><span class="pre">*.CFG</span></tt> es (Crearlo si no existe):</p>
 <p><tt class="docutils literal"><span class="pre">~/.config/nim.cfg</span></tt></p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./nimcache_custom/" readonly/>
         <b>Level:</b><i>Hard</i> </details><br><details title="Colores fuentes"><summary>Colores fuentes</summary>
         <p><a class="reference external" href="https://github.com/juancarlospaco/nim-random-font-color#nim-random-font-color">https://github.com/juancarlospaco/nim-random-font-color#nim-random-font-color</a></p>
 <p>nimble install random_font_color</p>
 <p>nim c -r ladri_design.nim</p>
- <br><br> <b>Path:</b>
+ <br><br> <b>Folder:</b>
         <input type="text" value="./colores_fuentes/" readonly/>
-        <b>Level:</b><i>Hard</i> </details>
+        <b>Level:</b><i>Hard</i> </details><br><br><small><i>Made with Nim and crazy ideas by Juan Carlos.</i></small>
