@@ -16,7 +16,7 @@ proc main(): string =
         html_content = rstToHtml(rst_content, {}, newStringTable(modeStyleInsensitive))
         titl = it.replace("/README.rst").splitPath().tail.replace("_", " ").capitalizeAscii
         result &= fmt"""<br><details title="{titl}"><summary>{titl}</summary>
-        {html_content} <br><br> <b>Path:</b>
+        {html_content} <br><br> <b>Folder:</b>
         <input type="text" value="./{it.replace("/README.rst").splitPath().tail}/" readonly/>
         <b>Level:</b><i>{lvl}</i> </details>"""
       else:
