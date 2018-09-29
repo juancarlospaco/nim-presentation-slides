@@ -10,3 +10,9 @@ por que es un int primitivo comun, podrian ser 25 Ticket Descuento de mercado Di
 
 
 nim c -r dolares.nim
+
+
+
+Use of Distinct on the language itself as an example:
+
+https://nim-lang.org/docs/manual.html#taint-mode
