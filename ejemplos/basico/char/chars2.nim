@@ -1,4 +1,4 @@
-proc is_vowel(c: char): bool =
+func is_vowel(c: char): bool =
   case c
   of 'a', 'e', 'i', 'o', 'u',
      'A', 'E', 'I', 'O', 'U':
@@ -7,7 +7,7 @@ proc is_vowel(c: char): bool =
      'B' .. 'D', 'F' .. 'H', 'J' .. 'N', 'P' .. 'T', 'V' .. 'Z':
     result = false
   else:
-    echo '?'
+    discard
 
 echo is_vowel('A')
 echo is_vowel('c')

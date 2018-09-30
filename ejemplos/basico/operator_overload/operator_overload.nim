@@ -1,6 +1,6 @@
 import strutils
 
-proc `💩`(a: string): string =
+func `💩`(a: string): string =
   a.replace(" ", "💩")
 
 echo 💩(" Political Promises ")

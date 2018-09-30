@@ -1,6 +1,6 @@
 # Sierpinski Carpet fractal.
 
-proc `^`*(base, exp: int): int =
+func `^`*(base, exp: int): int =
   var (base, exp) = (base, exp)
   result = 1
 
@@ -11,7 +11,7 @@ proc `^`*(base, exp: int): int =
     base *= base
 
 
-proc in_carpet(x, y: int): bool =
+func in_carpet(x, y: int): bool =
   var x = x
   var y = y
 

@@ -1,5 +1,5 @@
 
-proc min[T](x, y: T): auto =
+func min[T](x, y: T): auto =
   if x < y: x else: y
 
                         #                           min[ T ](x, y)

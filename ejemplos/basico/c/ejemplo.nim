@@ -3,6 +3,6 @@
 
 {.compile: "suma.c".}
 
-proc suma2Enteros(a, b: cint): cint {.importc.}
+func suma2Enteros(a, b: cint): cint {.importc.}
 
 echo suma2Enteros(1, 2)
