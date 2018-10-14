@@ -55,7 +55,7 @@ Description:  Arch Linux
 
 ![inim](inim.gif)
 
-- `nimble install inim`
+- `nimble install inim` or `nim secret`.
 
 -----
 
@@ -522,27 +522,14 @@ templatecita("primer argumento", "segundo argumento"):
 ```nim
 import macros
 
-macro repetir_echo(): untyped =
-  result = newNimNode(nnkStmtList)          # Genera un result vacio.
+macro generate_hello(): typed =
+  parseStmt """proc hello() = echo "hi" """
 
-  var mi_bucle_for = newNimNode(nnkForStmt) # Genera un bucle for vacio.
-  mi_bucle_for.add(ident("indice"))         # Usa variable indice en el bucle.
+generate_hello()  # Generate a proc via Macros.
+hello()
 
-  var rango_para_iterar = newNimNode(nnkInfix).add(
-    ident("..")).add(newIntLitNode(0), newIntLitNode(9))  # Genera range 0..9.
-
-  var mi_echo = newCall(ident("echo"), newIntLitNode(42)) # Genera echo 42.
-
-  mi_bucle_for.add(rango_para_iterar) # Mete range para iterar en bucle for.
-  mi_bucle_for.add(mi_echo)           # Cuerpo del bucle for.
-
-  result.add(mi_bucle_for)            # Mete el bucle for en el result.
-
-
-repetir_echo()   # Repetir 42 unas 10 veces.
-
-expandMacros:    # Generar y ver el codigo generado por el Macro.
-  repetir_echo() # for indice in 0 .. 9: echo(42)
+expandMacros:      # Generar y ver el codigo generado por el Macro.
+  generate_hello()
 ```
 
 *Codigo que hackea codigo a nivel de AST en ejecucion !*
