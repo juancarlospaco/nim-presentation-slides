@@ -572,6 +572,18 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 
 -----
 
+##### Garbage Collectors
+
+- `markAndSweep`: El mas Rapido, usa mas RAM.
+- `Boehm`: El mas lento, usa mas RAM.
+- `Go`: Clon de Go Lang.
+- `Regions`: Lento, copia todo a otro lado.
+- `RefC`: Cuenta referencias, Default, el que usa Python.
+- `none`: Sin GC.
+- `V2`: Experimental.
+
+-----
+
 ##### Nim Frontend
 
 - Nim compila a JavaScript.
