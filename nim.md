@@ -574,11 +574,11 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 
 ##### Garbage Collectors
 
+- `RefC`: Cuenta referencias, Default, deferred, el que usa Python.
 - `markAndSweep`: El mas Rapido, usa mas RAM.
-- `Boehm`: El mas lento, usa mas RAM.
+- `Boehm`: El mas lento, usa menos RAM.
 - `Go`: Clon de Go Lang.
-- `Regions`: Lento, copia todo a otro lado.
-- `RefC`: Cuenta referencias, Default, el que usa Python.
+- `Regions`: Sin GC.
 - `none`: Sin GC.
 - `V2`: Experimental.
 
