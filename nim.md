@@ -578,7 +578,7 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 - `markAndSweep`: El mas Rapido, usa mas RAM.
 - `Boehm`: El mas lento, usa menos RAM.
 - `Go`: Clon de Go Lang.
-- `Regions`: Sin GC.
+- `Regions`: Stack regions, casi sin GC.
 - `none`: Sin GC.
 - `V2`: Experimental.
 
