@@ -1,0 +1,6 @@
+GC_fullCollect()  # Not Recommended (Slow)
+GC_disable()
+GC_enable()
+GC_enableMarkAndSweep()
+GC_disableMarkAndSweep()
+echo GC_getStatistics()
