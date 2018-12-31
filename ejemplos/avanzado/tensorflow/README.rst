@@ -2,9 +2,16 @@
 Intro to Tensors
 ================
 
-- Whats a Scalar?.
-- Whats a Vector?.
-- Whats a Matrix?.
-- Whats a Tensor?.
+- Whats Scalar?.
+- Whats Vector?.
+- Whats Matrix?.
+- Whats Tensor?.
 
 .. image:: tensor0.jpg
+
+-----
+
+- Whats Rank?.
+- Whats Dimension?.
+
+.. image:: tensor1.jpg
