@@ -64,7 +64,7 @@ Tensor:
 Slicing
 =======
 
-- Read, write, play with the Tensor.
+- Read, write, play with the Tensor. Run the Code!.
 
 .. image:: tensor2.jpg
 
