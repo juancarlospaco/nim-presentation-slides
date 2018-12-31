@@ -25,11 +25,15 @@ Code
 
 Scalar:
 
-``let myscalar = 42``
+.. code-block:: nim
+
+  let myscalar = 42
 
 Vector:
 
-``let myvector = [1, 2, 3]``
+.. code-block:: nim
+
+  let myvector = [1, 2, 3]
 
 Matrix:
 
