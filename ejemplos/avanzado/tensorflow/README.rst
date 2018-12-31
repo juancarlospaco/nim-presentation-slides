@@ -6,4 +6,4 @@ Tensors
 - Whats a Matrix?.
 - Whats a Tensor?.
 
-.. image: tensor0.jpg
+.. image:: tensor0.jpg
