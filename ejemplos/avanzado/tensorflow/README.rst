@@ -33,8 +33,6 @@ Vector:
 
 Matrix:
 
-``let mymatrix = [ [1, 2, 3], [4, 5, 6] ]``
-
 .. code-block:: nim
 
   let mymatrix = [
