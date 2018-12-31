@@ -71,4 +71,11 @@ Slicing
 .. code-block:: nim
 
   import arraymancer
-  let mytensor = [[1, 2, 3, 4, 5]].toTensor
+
+  var mytensor = [
+      [1, 2, 3, 4, 5] # 0
+      #0  1  2  3  4
+    ].toTensor
+
+  echo mytensor[0, 2]  # Read
+  mytensor[0, 2] = 42  # Write
