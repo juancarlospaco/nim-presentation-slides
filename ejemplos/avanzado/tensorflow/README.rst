@@ -26,3 +26,11 @@ Code
 Scalar:
 
 ``let myscalar = 42``
+
+Vector:
+
+``let myvector = [1, 2, 3]``
+
+Matrix:
+
+``let mymatrix = [ [1, 2, 3], [1, 2, 3] ] ``
