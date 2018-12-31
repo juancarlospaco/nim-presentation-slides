@@ -25,6 +25,4 @@ Code
 
 Scalar:
 
-```nim
-let myscalar = 42
-```
+``let myscalar = 42``
