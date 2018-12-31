@@ -97,3 +97,21 @@ Slicing
     ].toTensor
 
   echo mytensor[_, 2]
+
+
+.. image:: tensor4.jpg
+
+.. code-block:: nim
+
+  import arraymancer
+
+  var mytensor = [
+      [1,   2,  3,  4,  5],  # 0
+      [6,   7,  8,  9, 10],  # 1
+      [11, 12, 13, 14, 15],  # 2
+      [16, 17, 18, 19, 20],  # 3
+      [21, 22, 23, 24, 25],  # 4
+      # 0   1   2   3   4
+    ].toTensor
+
+  echo mytensor[3, _]
