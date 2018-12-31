@@ -58,3 +58,17 @@ Tensor:
                      [10, 11, 12],
                    ],
                  ]
+
+-----
+
+Slicing
+=======
+
+- Read, write, play with the Tensor.
+
+.. image:: tensor2.jpg
+
+.. code-block:: nim
+
+  import arraymancer
+  let mytensor = [[1, 2, 3, 4, 5]].toTensor
