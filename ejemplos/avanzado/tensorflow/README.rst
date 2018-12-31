@@ -80,6 +80,7 @@ Slicing
   echo mytensor[0, 2]  # Read
   mytensor[0, 2] = 42  # Write
 
+---
 
 .. image:: tensor3.jpg
 
@@ -98,6 +99,7 @@ Slicing
 
   echo mytensor[_, 2]
 
+---
 
 .. image:: tensor4.jpg
 
@@ -116,7 +118,7 @@ Slicing
 
   echo mytensor[3, _]
 
-
+---
 
 .. image:: tensor5.jpg
 
@@ -135,7 +137,7 @@ Slicing
 
   echo mytensor[2, 2]
 
-
+---
 
 .. image:: tensor6.jpg
 
