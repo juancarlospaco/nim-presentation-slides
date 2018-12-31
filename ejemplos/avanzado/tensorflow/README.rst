@@ -23,7 +23,7 @@ Code
 
 - Whats Scalar, Vector, Matrix, Tensor on Code?.
 
-Scalar:
+Scalar (can be `int`, `float`, `bool`, etc):
 
 .. code-block:: nim
 
