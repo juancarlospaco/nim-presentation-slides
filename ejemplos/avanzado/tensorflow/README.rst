@@ -15,3 +15,16 @@ Intro to Tensors
 - Whats Dimension?.
 
 .. image:: tensor1.jpg
+
+-----
+
+Code
+====
+
+- Whats Scalar, Vector, Matrix, Tensor on Code?.
+
+Scalar:
+
+```nim
+let myscalar = 42
+```
