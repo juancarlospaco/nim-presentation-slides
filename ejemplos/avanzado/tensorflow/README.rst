@@ -287,8 +287,8 @@ Slicing
 
 ----
 
-Learn Code by Coding
-====================
+Keep learning, keep Coding
+==========================
 
 - Check the files on this folder & hack the code. You got the basics now create your own Tensors...
 
