@@ -59,6 +59,8 @@ Tensor:
                    ],
                  ]
 
+- ``.toTensor`` from ``arraymancer`` converts data to ``Tensor`` Type.
+
 -----
 
 Slicing
