@@ -290,4 +290,6 @@ Slicing
 Learn Code by Coding
 ====================
 
-- Check the files on this folder & hack the code. Create your own Tensors.
+- Check the files on this folder & hack the code. Create your own Tensors. You got the basics now needs practice...
+
+.. image:: kittens_coding.jpg
