@@ -2,7 +2,7 @@
 Intro to Tensors
 ================
 
-> *All the code on this Intro can run by itself!.*
+*All the code on this Intro can run by itself!.*
 
 - Whats Scalar?.
 - Whats Vector?.
