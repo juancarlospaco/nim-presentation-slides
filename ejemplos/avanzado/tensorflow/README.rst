@@ -284,3 +284,10 @@ Slicing
     ].toTensor
 
   echo mytensor[2, 0, 2]
+
+----
+
+Learn Code by Coding
+====================
+
+- Check the files on this folder & hack the code. Create your own Tensors.
