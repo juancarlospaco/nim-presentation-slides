@@ -4,17 +4,15 @@ type
   Clientito = HttpClient
   AsyncClientito = AsyncHttpClient
 
-proc multisync_example(this: Clientito | AsyncClientito): Future[string] {.multisync.} =
-  let
-    url = "http://httpbin.org/get"
-    client =
-      when this is AsyncClientito: await newAsyncHttpClient().get(url)
-      else: newHttpClient().get(url)
-  result = await client.body
+proc multisync_function(this: Clientito | AsyncClientito): Future[string] {.multisync.} =
+  result =
+    when this is AsyncClientito: await newAsyncHttpClient().getContent("http://httpbin.org/get")
+    else: newHttpClient().getContent("http://httpbin.org/get")
 
 
-proc async_testin {.async.} = echo await AsyncClientito().multisync_example()
+proc async_example() {.async.} =
+  echo await AsyncClientito().multisync_function()
 
-wait_for async_testin()              # Async
+wait_for async_example()              # Async
 
-echo Clientito().multisync_example() # Sync
+echo Clientito().multisync_function() # Sync
