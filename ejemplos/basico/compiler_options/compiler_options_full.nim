@@ -1,5 +1,11 @@
 
 
+when nimvm:
+  echo "Running in Compile-Time"
+else:
+  echo "Running in Run-Time"
+
+
 # All Backend Targets.
 
 
