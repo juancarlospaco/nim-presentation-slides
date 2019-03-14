@@ -1,8 +1,10 @@
-import jester, re, htmlgen, net
+import jester, re, htmlgen, net, json
 
 
 settings:
   port = Port(5_000)                # Set Settings inside this block.
+  bindAddr = "127.0.0.1"
+  staticDir = "public"
 
 
 routes:
@@ -63,7 +65,16 @@ routes:
     echo request.ip
     echo request.pathInfo
     echo $request.cookies
+    echo result
     resp "Check Terminal!"
+
+
+  get "/json":                      # /json
+      resp %*{"JSON": true, "key": "value"}
+
+
+  get "/empty":                     # /empty
+    resp ""
 
 
   get "/raise":                     # /raise
@@ -71,4 +82,23 @@ routes:
 
 
   error Http404:                    # Any non-existent route.
-    resp Http404, "My Custom HTTP 404"
+    resp Http404, "<h1> My Custom HTTP 404"
+
+
+  patch "/patch":                   # /patch
+    var body = ""
+    body.add "PATCH endpoint: "
+    body.add($request.body)
+    resp Http200, body
+
+
+  post "/post":                     # /post
+    resp "POST endpoint"
+
+
+  # get "/attachment":
+  #   attachment "public/someFileHere.zip"
+
+
+  # get "/sendFile":
+  #   sendFile("public/someFileHere.zip")
