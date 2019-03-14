@@ -51,7 +51,7 @@ routes:
   get "/hello/@name?":              # GET /hello/juan
     if @"name" == "":               # GET /hello/
       resp "No name received"
-    else:
+    else: # @"key" can be used for SQL,etc
       resp "Hello " & @"name"
 
 
@@ -150,4 +150,5 @@ routes:
 # Check Spectre for CSS framework:          https://picturepan2.github.io/spectre/experimentals.html
 # Check Karax for Frontend-only framework:  https://github.com/pragmagic/karax
 # Check NimX  for WebGL Frontend framework: http://yglukhov.github.io/nimx/livedemo/main.html
+# Server-Side Rendered Frontend Templating: https://nim-lang.org/docs/filters.html
 # Check NimWC for Complete Web Framework:   https://nimwc.org/login
