@@ -1,6 +1,6 @@
-import jester, re, htmlgen, net, json, xmltree, strtabs
+import jester, re, htmlgen, net, json, xmltree, strtabs, ospaths
 
-const demoIndex = """<h1> Jester Demo 👑 </h1>
+const demoIndex = """<h1> &hearts; Jester Demo 👑 </h1> <hr>
 <ul> <!-- This HTML string is for Demo purpoes only, not required -->
   <li> <a href="/">/</a> </li>
   <li> <a href="/html">/html</a> </li>
@@ -8,23 +8,25 @@ const demoIndex = """<h1> Jester Demo 👑 </h1>
   <li> <a href="/hi/pepe">/hi/pepe</a> </li>
   <li> <a href="/hello/pepe">/hello/pepe</a> </li>
   <li> <a href="/hello/">/hello/</a> </li>
+  <li> <a href="/env">/env</a> </li>
   <li> <a href="/conditional/true">/conditional/true</a> </li>
   <li> <a href="/conditional/false">/conditional/false</a> </li>
   <li> <a href="/setcookie">/setcookie</a> </li>
   <li> <a href="/printrequest">/printrequest</a> </li>
   <li> <a href="/json">/json</a> </li>
   <li> <a href="/jsonpretty">/jsonpretty</a> </li>
+  <li> <a href="/jsonugly">/jsonugly</a> </li>
   <li> <a href="/xml">/xml</a> </li>
   <li> <a href="/empty">/empty</a> </li>
   <li> <a href="/raise">/raise</a> </li>
   <li> <a href="/404">/404</a> </li>
-  <li> <form method="POST" action="/post"><input type="submit"><input type="hidden" name="key" value="value"></form> </li>
+  <li> <form method="POST" action="/post"><input type="submit" value="POST"><input type="hidden" name="key" value="value"></form> </li>
 </ul> """
 
 
 settings:
-  port = Port(5_000)                # Set Settings inside this block.
-  bindAddr = "127.0.0.1"
+  port      = Port(5_000)           # Set Settings inside this block.
+  bindAddr  = "127.0.0.1"
   staticDir = "public"
 
 
@@ -34,7 +36,7 @@ routes:
 
 
   get "/html":                      # /html
-    resp h1"Hello Web" & marquee"Nim"
+    resp h1"Hello Web" & marquee"This is HTML"
 
 
   get "/redirectme":                # /redirectme
@@ -50,6 +52,10 @@ routes:
       resp "No name received"
     else:
       resp "Hello " & @"name"
+
+
+  get "/env":                # /env
+    resp getenv("USER")
 
 
   get re"^\/regex\/(\d{2})$":       # /regex/42
@@ -68,6 +74,7 @@ routes:
   get "/setcookie":                 # /setcookie
     setCookie("key", "value", daysForward(9))
     resp $request.cookies
+
 
   get "/printrequest":              # /printrequest
     echo repr(request.settings)
@@ -91,11 +98,17 @@ routes:
 
 
   get "/json":                      # /json
-      resp %*{"JSON": true, "key": "value"}
+      resp %*{ "JSON": true, "key": "value" }
 
 
   get "/jsonpretty":                # /jsonpretty
     resp pretty(%*{"JSON": true, "key": "value"})
+
+
+  get "/jsonugly":                  # /jsonpretty
+    var myJson: string
+    myJson.toUgly(%*{"JSON": true, "key": "value"})
+    resp myJson
 
 
   get "/xml":                       # /xml
