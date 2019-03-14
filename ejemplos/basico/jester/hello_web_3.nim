@@ -54,7 +54,7 @@ routes:
       resp "Hello " & @"name"
 
 
-  get "/env":                # /env
+  get "/env":                       # /env
     resp getenv("USER")
 
 
@@ -105,7 +105,7 @@ routes:
     resp pretty(%*{"JSON": true, "key": "value"})
 
 
-  get "/jsonugly":                  # /jsonpretty
+  get "/jsonugly":                  # /jsonugly
     var myJson: string
     myJson.toUgly(%*{"JSON": true, "key": "value"})
     resp myJson
@@ -124,7 +124,7 @@ routes:
     raise newException(Exception, "My Custom Exception Message")
 
 
-  error Http404:                    # Any non-existent route.
+  error Http404:                    # Any Invalid route (Non-Existent).
     resp Http404, "<h1> My Custom HTTP 404"
 
 
