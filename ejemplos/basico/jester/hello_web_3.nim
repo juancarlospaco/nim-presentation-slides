@@ -150,5 +150,6 @@ routes:
 # Check Spectre for CSS framework:          https://picturepan2.github.io/spectre/experimentals.html
 # Check Karax for Frontend-only framework:  https://github.com/pragmagic/karax
 # Check NimX  for WebGL Frontend framework: http://yglukhov.github.io/nimx/livedemo/main.html
+# Nim can do WebAssembly for Frontend too:  https://github.com/2vg/nim-wasm-example
 # Server-Side Rendered Frontend Templating: https://nim-lang.org/docs/filters.html
 # Check NimWC for Complete Web Framework:   https://nimwc.org/login
