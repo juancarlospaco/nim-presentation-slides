@@ -10,6 +10,7 @@ const demoIndex = """<h1> &hearts; Jester Demo 👑 </h1> <hr>
   <li> <a href="/hello/pepe">/hello/pepe</a> </li>
   <li> <a href="/hello/">/hello/</a> </li>
   <li> <a href="/env">/env</a> </li>
+  <li> <a href="/callfunction">/callfunction</a> </li>
   <li> <a href="/conditional/true">/conditional/true</a> </li>
   <li> <a href="/conditional/false">/conditional/false</a> </li>
   <li> <a href="/setcookie">/setcookie</a> </li>
@@ -23,6 +24,9 @@ const demoIndex = """<h1> &hearts; Jester Demo 👑 </h1> <hr>
   <li> <a href="/404">/404</a> </li>
   <li> <form method="POST" action="/post"><input type="submit" value="POST"><input type="hidden" name="key" value="value"></form> </li>
 </ul> """
+
+func exampleFunction(): string =    # This is a function.
+  return "Example Function"
 
 
 settings:
@@ -57,6 +61,10 @@ routes:
 
   get "/env":                       # GET /env
     resp getenv("USER")
+
+
+  get "/callfunction":              # GET /callfunction
+    resp exampleFunction()
 
 
   get re"^\/regex\/(\d{2})$":       # GET /regex/42
