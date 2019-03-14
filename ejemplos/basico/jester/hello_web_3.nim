@@ -1,4 +1,5 @@
-import jester, re, htmlgen, net, json, xmltree, strtabs, ospaths
+import re, htmlgen, net, json, xmltree, strtabs, ospaths  # Nim Standard Library
+import jester                                             # nimble install jester
 
 const demoIndex = """<h1> &hearts; Jester Demo 👑 </h1> <hr>
 <ul> <!-- This HTML string is for Demo purpoes only, not required -->
@@ -26,57 +27,57 @@ const demoIndex = """<h1> &hearts; Jester Demo 👑 </h1> <hr>
 
 settings:
   port      = Port(5_000)           # Set Settings inside this block.
-  bindAddr  = "127.0.0.1"
+  bindAddr  = "127.0.0.1"           # You can omit this block too.
   staticDir = "public"
 
 
 routes:
-  get "/":                          # /
+  get "/":                          # GET /
     resp demoIndex
 
 
-  get "/html":                      # /html
+  get "/html":                      # GET /html
     resp h1"Hello Web" & marquee"This is HTML"
 
 
-  get "/redirectme":                # /redirectme
+  get "/redirectme":                # GET /redirectme
     redirect "/"
 
 
-  get "/hi/@name":                  # /hi/juan
+  get "/hi/@name":                  # GET /hi/juan
     resp "Hello " & @"name"
 
 
-  get "/hello/@name?":              # /hello/juan AND /hello/
-    if @"name" == "":
+  get "/hello/@name?":              # GET /hello/juan
+    if @"name" == "":               # GET /hello/
       resp "No name received"
     else:
       resp "Hello " & @"name"
 
 
-  get "/env":                       # /env
+  get "/env":                       # GET /env
     resp getenv("USER")
 
 
-  get re"^\/regex\/(\d{2})$":       # /regex/42
+  get re"^\/regex\/(\d{2})$":       # GET /regex/42
     resp $request.matches
 
 
-  get "/conditional/@conditional":  # /conditional/true
+  get "/conditional/@conditional":  # GET /conditional/true
     cond @"conditional" != "true"
     resp "@conditional is (Route 1): " & @"conditional"
 
 
-  get "/conditional/@conditional":  # /conditional/false
+  get "/conditional/@conditional":  # GET /conditional/false
     resp "@conditional is (Route 2): " & @"conditional"
 
 
-  get "/setcookie":                 # /setcookie
+  get "/setcookie":                 # GET /setcookie
     setCookie("key", "value", daysForward(9))
     resp $request.cookies
 
 
-  get "/printrequest":              # /printrequest
+  get "/printrequest":              # GET /printrequest
     echo repr(request.settings)
     echo request.params
     echo request.matches
@@ -97,30 +98,30 @@ routes:
     resp "Check Terminal!"
 
 
-  get "/json":                      # /json
+  get "/json":                      # GET /json
       resp %*{ "JSON": true, "key": "value" }
 
 
-  get "/jsonpretty":                # /jsonpretty
+  get "/jsonpretty":                # GET /jsonpretty
     resp pretty(%*{"JSON": true, "key": "value"})
 
 
-  get "/jsonugly":                  # /jsonugly
+  get "/jsonugly":                  # GET /jsonugly
     var myJson: string
     myJson.toUgly(%*{"JSON": true, "key": "value"})
     resp myJson
 
 
-  get "/xml":                       # /xml
+  get "/xml":                       # GET /xml
     let myXML = <>xml(title="SVG", alt="Some XML Here")
     resp $myXML
 
 
-  get "/empty":                     # /empty
+  get "/empty":                     # GET /empty
     resp ""
 
 
-  get "/raise":                     # /raise
+  get "/raise":                     # GET /raise
     raise newException(Exception, "My Custom Exception Message")
 
 
@@ -128,16 +129,24 @@ routes:
     resp Http404, "<h1> My Custom HTTP 404"
 
 
-  patch "/patch":                   # /patch
+  patch "/patch":                   # PATCH /patch
     var body = ""
     body.add "PATCH endpoint: "
     body.add($request.body)
     resp Http200, body
 
 
-  post "/post":                     # /post
+  post "/post":                     # POST /post
     resp @"key"
 
 
   # get "/sendFile":
   #   sendFile("public/someFileHere.zip")
+
+
+
+
+# Check Bulma for CSS framework:           https://bulma.io
+# Check Spectre for CSS framework:         https://picturepan2.github.io/spectre/experimentals.html
+# Check Karax for Frontend-only framework: https://github.com/pragmagic/karax
+# Check NimWC for Complete Web Framework:  https://nimwc.org/login
