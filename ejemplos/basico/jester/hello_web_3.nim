@@ -1,4 +1,4 @@
-import jester, re, htmlgen, net, json
+import jester, re, htmlgen, net, json, xmltree, strtabs
 
 
 settings:
@@ -73,6 +73,11 @@ routes:
       resp %*{"JSON": true, "key": "value"}
 
 
+  get "/xml":                       # /xml
+    let myXML = <>svg(title="SVG", newText("Some XML Here"))
+    resp $myXML
+
+
   get "/empty":                     # /empty
     resp ""
 
@@ -94,10 +99,6 @@ routes:
 
   post "/post":                     # /post
     resp "POST endpoint"
-
-
-  # get "/attachment":
-  #   attachment "public/someFileHere.zip"
 
 
   # get "/sendFile":
