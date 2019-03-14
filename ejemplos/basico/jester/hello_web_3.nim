@@ -161,3 +161,4 @@ routes:
 # Nim can do WebAssembly for Frontend too:  https://github.com/2vg/nim-wasm-example
 # Server-Side Rendered Frontend Templating: https://nim-lang.org/docs/filters.html
 # Check NimWC for Complete Web Framework:   https://nimwc.org/login
+# Compile + Run:                            nim c -r --threads:on hello_web_3.nim
