@@ -1,5 +1,26 @@
 import jester, re, htmlgen, net, json, xmltree, strtabs
 
+const demoIndex = """<h1> Jester Demo 👑 </h1>
+<ul> <!-- This HTML string is for Demo purpoes only, not required -->
+  <li> <a href="/">/</a> </li>
+  <li> <a href="/html">/html</a> </li>
+  <li> <a href="/redirectme">/redirectme</a> </li>
+  <li> <a href="/hi/pepe">/hi/pepe</a> </li>
+  <li> <a href="/hello/pepe">/hello/pepe</a> </li>
+  <li> <a href="/hello/">/hello/</a> </li>
+  <li> <a href="/conditional/true">/conditional/true</a> </li>
+  <li> <a href="/conditional/false">/conditional/false</a> </li>
+  <li> <a href="/setcookie">/setcookie</a> </li>
+  <li> <a href="/printrequest">/printrequest</a> </li>
+  <li> <a href="/json">/json</a> </li>
+  <li> <a href="/jsonpretty">/jsonpretty</a> </li>
+  <li> <a href="/xml">/xml</a> </li>
+  <li> <a href="/empty">/empty</a> </li>
+  <li> <a href="/raise">/raise</a> </li>
+  <li> <a href="/404">/404</a> </li>
+  <li> <form method="POST" action="/post"><input type="submit"><input type="hidden" name="key" value="value"></form> </li>
+</ul> """
+
 
 settings:
   port = Port(5_000)                # Set Settings inside this block.
@@ -9,11 +30,11 @@ settings:
 
 routes:
   get "/":                          # /
-    resp "Hello Web"
+    resp demoIndex
 
 
   get "/html":                      # /html
-    resp h1"Hello HTML" & marquee"Nim"
+    resp h1"Hello Web" & marquee"Nim"
 
 
   get "/redirectme":                # /redirectme
@@ -73,8 +94,12 @@ routes:
       resp %*{"JSON": true, "key": "value"}
 
 
+  get "/jsonpretty":                # /jsonpretty
+    resp pretty(%*{"JSON": true, "key": "value"})
+
+
   get "/xml":                       # /xml
-    let myXML = <>svg(title="SVG", newText("Some XML Here"))
+    let myXML = <>xml(title="SVG", alt="Some XML Here")
     resp $myXML
 
 
@@ -98,7 +123,7 @@ routes:
 
 
   post "/post":                     # /post
-    resp "POST endpoint"
+    resp @"key"
 
 
   # get "/sendFile":
