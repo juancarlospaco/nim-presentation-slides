@@ -267,7 +267,7 @@ Nim         | Python  | Ejemplo Nim    | Ejemplo Python  | Comentarios          
  `tuple`    | `tuple` | `(1, 2, 3)`    | `(1, 2, 3)`     | tuple de Nim es como NamedTuple de Py     |
  `seq`      | `list`  | `@[1, 2, 3]`   | `[1, 2, 3]`     | Mismo Tipo en todos los items en Nim      |
  `set`      | `set`   | `{1, 2, 3}`    | `{1, 2, 3}`     | int, char, bool en Nim                    |
- `enum`     | `enum`  | ?              | ?               | En Python no los usa nadie                |
+ `enum`     | `enum`  | `type enum`    | ?               | En Python no los usa nadie                |
  `array`    | -       | `[1, 2, 3]`    | -               | Tamanio fijo, mismo tipo en los items     |
  `subrange` | -       | `range[0..2]`  | -               | Solo acepta int de 0 a 2,puede usar float |
  `concept`  | -       | `type concept` | -               | Tipos definidos por usuario,compile time  |
@@ -523,7 +523,7 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 
 ##### Garbage Collectors
 
-- `RefC`: Cuenta referencias, Default, deferred, el que usa Python.
+- `RefC`: Cuenta referencias, Default, deferred.
 - `markAndSweep`: El mas Rapido, usa mas RAM.
 - `Boehm`: El mas lento, usa menos RAM.
 - `Go`: Clon de Go Lang.
