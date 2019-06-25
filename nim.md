@@ -13,10 +13,11 @@
 * Compilado (1 archivo binario ejecutable).
 * Tipado estatico fuerte con Inferencia.
 * Compila a C / C++ / JavaScript (DOM API).
-* Linux, Windows, Mac, Web, Raspi, etc.
+* Linux, Windows, Mac, Web, Raspi, ARM, etc
 * Facil hacer modulos de Python.
 * Facil usar librerias en C/C++.
 * Administrador de Paquetes y herramientas.
+* Documentacion online completa con ejemplos
 
 -----
 
@@ -34,7 +35,7 @@ Hola Mundo
 $ nim objc -r hello.nim      # ObjectiveC
 Hola Mundo
 
-$ nim c --cpu:amd64 --os:windows hello.nim
+$ nim c --os:windows hello.nim
 $ wine hello.exe             # Windows
 Hola Mundo
 
@@ -49,6 +50,34 @@ $ nim js hello.nim           # Web (Frontend)
 ```
 
 [<sub>Codigo de todos los slides esta en el Repo</sub>](ejemplos/hello.nim)
+
+-----
+
+##### Syntaxis
+
+- Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.
+- Comentarios son Documentacion (RST/Markdown) empiezan con `##`.
+- Tracebacks a color simil Python con linea, posicion y tipo de error.
+- Templates, reemplazan su invocacion con su contenido en compilacion.
+- Macros, bloques que agregan funcionalidad en tiempo de ejecucion.
+- Overload en funciones, dependiendo el tipo de argumento.
+- Exportar objetos con `*`, `cosa` es privado, `cosa*` es publico.
+- `import modulo` importa todo lo que tenga `*` en `modulo.nim`.
+- [Algunos modulos de Python fueron clonados en Nim.](https://nimble.directory/search?query=python)
+- Nim esta escrito en Nim, facil de hackear.
+
+-----
+
+##### Herramientas
+
+- Linters `nim check`, `nimble check` y `nim pretty`.
+- Generador de Documentacion `nim doc`, `nim rst2html`, `nim rst2tex`
+- Template de nuevo projecto `nimble init`.
+- Task Runner `nimble tasks` *(tipo Grunt/Gulp)*.
+- Paquetes y docs hosteados https://nimble.directory
+- Publicar paquete `nimble publish` *(PR en GitHub)*.
+- NimInst autogenerador de instaladores (InnoSetup, Bash).
+- Toda herramienta de C/C++ sirve (gdb, etc).
 
 -----
 
@@ -154,34 +183,6 @@ Compilar:
 
 -----
 
-##### Syntaxis
-
-- Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.
-- Comentarios son Documentacion (RST/Markdown) empiezan con `##`.
-- Tracebacks a color simil Python con linea, posicion y tipo de error.
-- Templates, reemplazan su invocacion con su contenido en compilacion.
-- Macros, bloques que agregan funcionalidad en tiempo de ejecucion.
-- Overload en funciones, dependiendo el tipo de argumento.
-- Exportar objetos con `*`, `cosa` es privado, `cosa*` es publico.
-- `import modulo` importa todo lo que tenga `*` en `modulo.nim`.
-- [Algunos modulos de Python fueron clonados en Nim.](https://nimble.directory/search?query=python)
-- Nim esta escrito en Nim, facil de hackear.
-
------
-
-##### Herramientas
-
-- Linters `nim check`, `nimble check` y `nim pretty`.
-- Generador de Documentacion `nim doc`, `nim rst2html`, `nim rst2tex`
-- Template de nuevo projecto `nimble init`.
-- Task Runner `nimble tasks` *(tipo Grunt/Gulp)*.
-- Paquetes y docs hosteados https://nimble.directory
-- Publicar paquete `nimble publish` *(PR en GitHub)*.
-- NimInst autogenerador de instaladores (InnoSetup, Bash).
-- Toda herramienta de C/C++ sirve (gdb, etc).
-
------
-
 ##### PyLib
 
 - Copia *(aun mas)* la syntaxis de Python en Nim.
@@ -244,6 +245,7 @@ Error: 'baz' cannot be assigned to
 - `staticRead("foo.json")` Lee archivo entero y devuelve string.
 - `staticExec("1 + 1")` Ejecuta argumentos y devuelve el retorno.
 - `static: echo("compile time")` Ejecuta Bloques de codigo.
+- FFI, Regex, JSON, en tiempo de compilacion.
 
 *Lo que se ejecuta en tiempo de compilacion no tiene costo en tiempo de ejecucion.*
 
@@ -251,20 +253,21 @@ Error: 'baz' cannot be assigned to
 
 ##### Tipos Basicos
 
-Nim         | Python  | Ejemplo Nim   | Ejemplo Python  | Comentarios                               |
-------------|:--------|:-------------:|:---------------:|------------------------------------------:|
- `string`   | `str`   | `"foo"`       | `"foo"`         | Unicode, UTF8, Emoji, etc                 |
- `string`   | `str`   | `"""bar"""`   | `"""bar"""`     | String Multi-linea                        |
- `char`     | -       | `'a'`         | -               | 1 char, Optimizado internamente a int     |
- `int`      | `int`   | `42`          | `42`            | int8, int16, int32, int64, int            |
- `float`    | `float` | `2.0`         | `2.0`           | float32, float64, float                   |
- `bool`     | `bool`  | `true, false` | `True, False`   | true, false en Nim                        |
- `tuple`    | `tuple` | `(1, 2, 3)`   | `(1, 2, 3)`     | tuple de Nim es como NamedTuple de Py     |
- `seq`      | `list`  | `@[1, 2, 3]`  | `[1, 2, 3]`     | Mismo Tipo en todos los items en Nim      |
- `set`      | `set`   | `{1, 2, 3}`   | `{1, 2, 3}`     | int, char, bool en Nim                    |
- `enum`     | `enum`  | ?             | ?               | En Python no los usa nadie                |
- `array`    | -       | `[1, 2, 3]`   | -               | Tamanio fijo, mismo tipo en los items     |
- `subrange` | -       | `range[0..2]` | -               | Solo acepta int de 0 a 2,puede usar float |
+Nim         | Python  | Ejemplo Nim    | Ejemplo Python  | Comentarios                               |
+------------|:--------|:--------------:|:---------------:|------------------------------------------:|
+ `string`   | `str`   | `"foo"`        | `"foo"`         | Unicode, UTF8, Emoji, etc                 |
+ `string`   | `str`   | `"""bar"""`    | `"""bar"""`     | String Multi-linea                        |
+ `char`     | -       | `'a'`          | -               | 1 char, Optimizado internamente a int     |
+ `int`      | `int`   | `42`           | `42`            | int8, int16, int32, int64, int            |
+ `float`    | `float` | `2.0`          | `2.0`           | float32, float64, float                   |
+ `bool`     | `bool`  | `true, false`  | `True, False`   | true, false en Nim                        |
+ `tuple`    | `tuple` | `(1, 2, 3)`    | `(1, 2, 3)`     | tuple de Nim es como NamedTuple de Py     |
+ `seq`      | `list`  | `@[1, 2, 3]`   | `[1, 2, 3]`     | Mismo Tipo en todos los items en Nim      |
+ `set`      | `set`   | `{1, 2, 3}`    | `{1, 2, 3}`     | int, char, bool en Nim                    |
+ `enum`     | `enum`  | ?              | ?               | En Python no los usa nadie                |
+ `array`    | -       | `[1, 2, 3]`    | -               | Tamanio fijo, mismo tipo en los items     |
+ `subrange` | -       | `range[0..2]`  | -               | Solo acepta int de 0 a 2,puede usar float |
+ `concept`  | -       | `type concept` | -               | Tipos definidos por usuario,compile time  |
 
 *Tipos de Nim estan optimizados para performance.*
 
