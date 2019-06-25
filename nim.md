@@ -323,6 +323,10 @@ Ejemplo, mismo RayTracer implementado en varios lenguajes:
 
 ##### Peso
 
+- Nim fue pensado para ser liviano (Raspi, Router, IoT, etc).
+- Nim no incrusta Runtime, VM, Interprete, etc.
+- [HolaMundo Go 2Mb, HolaMundo Nim 20Kb.](http://linkode.org/#narWOQnU9i2UDswu9NDYo1)
+
 ```bash
 $ echo 'echo "Hola Mundo"' > hello.nim
 $ nim c -d:release --app:console --opt:size hello.nim
@@ -331,17 +335,13 @@ $ du -h hello
 15K     hello
 ```
 
-- Nim fue pensado para ser liviano (Raspi, Router, IoT, etc).
-- Nim no incrusta Runtime, VM, Interprete, etc.
-- [HolaMundo Go 2Mb, HolaMundo Nim 20Kb.](http://linkode.org/#narWOQnU9i2UDswu9NDYo1)
-
 ![cat](node-modules.jpg)
 
 -----
 
 ##### NimScript
 
-- Nim en modo Lenguaje interpretado
+- Nim en modo interpretado.
 - Muchos modulos libreria standard disponibles
 - Puede usarse como configuracion avanzada.
 - Puede usarse como build (build tool).
@@ -360,8 +360,7 @@ echo "Hola mundo"
 
 ##### Unittests
 
-- Tests Runner amigable.
-- `nim c -r test.nim`.
+- Tests Runner amigable, `nim c -r test.nim`.
 
 ```nim
 suite "Nombre del test":
@@ -399,9 +398,9 @@ suite "Nombre del test":
 
 *Formato salida:*
 - HTML5 (TOC, Search, links, index, etc).
-- ReStructuredText.
-- JSON.
 - LaTeX.
+- ODT (LibreOffice).
+- JSON.
 
 *Uso:*
 - Comentarios con `##` ReStructuredText/Markdown.
