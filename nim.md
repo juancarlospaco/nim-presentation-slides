@@ -392,15 +392,17 @@ suite "Nombre del test":
 
 *Formato entrada:*
 - Codigo fuente texto plano Nim `*.nim`
+- ReStructuredText/Markdown.
 
 *Formato salida:*
 - HTML5 (TOC, Search, links, index, etc).
-- reStructuredText.
+- ReStructuredText.
 - JSON.
 - LaTeX.
 
 *Uso:*
-- Comentarios con `##` parsea a RST o texto.
+- Comentarios con `##` ReStructuredText/Markdown.
+- No hay que instalar nada extra para usarlo.
 
 -----
 
@@ -423,32 +425,6 @@ Hola Mundo
 Las libs de crosscompile se instalan instalando `mingw-w64-gcc` (Arch).
 
 *Dependera un poco que tan amigable es tu Distro con las Libs de crosscompile.*
-
------
-
-##### Funciones
-
-**proc:**
-
-Funcion basica, generica,
-puede modificar variables y cosas globales (side effects),
-se resuelve estaticamente en tiempo de Compilacion (Static Dispatch).
-
-**func:**
-
-Funcion pura, es como una funcion matematica,
-no modifica variables y cosas globales (no side effects, muy segura),
-se resuelve estaticamente en tiempo de Compilacion (Static Dispatch).
-
-**method:**
-
-Metodo, para usar herencia (OOP),
-solo cuando pertenece a un objeto definido con `ref object of RootObj` y
-hay otros objetos que heredan de este objeto,
-puede modificar variables y cosas globales (con *side effects*),
-se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).
-
-*Si se te complica podes usar `proc` para casi todo.*
 
 -----
 
@@ -509,11 +485,11 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 ##### Template Engine
 
 - Template Engine integrado (ala Jinja).
-- Archivos `*.tmpl`, shebang y syntaxis Nim.
+- Archivos `*.nimf`, shebang y syntaxis Nim.
 - Lineas con `#` es codigo Nim, sino literal verbatim.
 
 ```nim
-#? stdtmpl(subsChar = '$', metaChar = '#')
+#? stdtmpl | standard
 #proc generateXML(name, age: string): string =
 #  result = ""
 <xml>
@@ -550,7 +526,7 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 - `Go`: Clon de Go Lang.
 - `Regions`: Stack regions, casi sin GC.
 - `none`: Sin GC.
-- `V2`: Experimental.
+- `--newruntime`: Experimental, estilo Rust (no BorrowChecker).
 
 -----
 
@@ -563,6 +539,7 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 - Nim Frontend va muy rapido tambien.
 - Hay paquetes con Libs Frontend en Nimble.
 - Podes compilar Nim a JavaScript y usarlo en HTML Estatico.
+- Se puede compilar a WebAssembly.
 
 Ejemplos:
 - Frontend SPA (React-like) https://github.com/pragmagic/karax
