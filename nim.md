@@ -15,7 +15,7 @@
 * Compila a C / C++ / JavaScript (DOM API).
 * Linux, Windows, Mac, Web, Raspi, ARM, etc
 * Facil hacer modulos de Python.
-* Facil usar librerias en C/C++.
+* Facil usar librerias en C/C++/JavaScript.
 * Administrador de Paquetes y herramientas.
 * Documentacion online completa con ejemplos
 
@@ -70,13 +70,16 @@ $ nim js hello.nim           # Web (Frontend)
 
 ##### Herramientas
 
-- Linters `nim check`, `nimble check` y `nim pretty`.
-- Generador de Documentacion `nim doc`, `nim rst2html`, `nim rst2tex`
+- Linters `nim check`, `nimble check`.
+- Documentacion `nim doc`, `nim rst2html`, `nim rst2tex`
 - Template de nuevo projecto `nimble init`.
 - Task Runner `nimble tasks` *(tipo Grunt/Gulp)*.
 - Paquetes y docs hosteados https://nimble.directory
 - Publicar paquete `nimble publish` *(PR en GitHub)*.
 - NimInst autogenerador de instaladores (InnoSetup, Bash).
+- NimScript para reemplazar Bash.
+- `nimpretty` formateador de codigo (ala GoFmt, AutoPep8)
+- `c2nim` para portar codigo C a Nim.
 - Toda herramienta de C/C++ sirve (gdb, etc).
 
 -----
