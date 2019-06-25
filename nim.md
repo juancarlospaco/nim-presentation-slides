@@ -214,7 +214,7 @@ Compilar:
 
 -----
 
-##### Inmutable en Nim
+##### Inmutable
 
 - `var` Mutable, como en Python.
 - `let` Inmutable, solo lectura.
@@ -241,8 +241,8 @@ Error: 'baz' cannot be assigned to
 
 - `const constante = "compile time"` Constante de compilacion.
 - `include("incluir.nim")` Copia el archivo entero en el lugar.
-- `static_read("foo.json")` Lee archivo entero y devuelve string.
-- `static_exec("1 + 1")` Ejecuta argumentos y devuelve el retorno.
+- `staticRead("foo.json")` Lee archivo entero y devuelve string.
+- `staticExec("1 + 1")` Ejecuta argumentos y devuelve el retorno.
 - `static: echo("compile time")` Ejecuta Bloques de codigo.
 
 *Lo que se ejecuta en tiempo de compilacion no tiene costo en tiempo de ejecucion.*
@@ -270,19 +270,17 @@ Nim         | Python  | Ejemplo Nim   | Ejemplo Python  | Comentarios           
 
 -----
 
-##### Detalles
+##### De Python a Nim
 
-- Python `def` es Nim `proc`.
-- Python `lambda` es Nim `proc` (sin nombre).
-- Python `f"{foo},{1+1}"` es Nim `fmt"{foo},{1+1}"`.
-- Python `dict` es Nim `table` o `OrderedTable`.
-- Python `NamedTuple` es Nim `tuple`.
-- Python `set` es Nim `HashSet` o `OrderedSet`.
-- Python Operador Ternario es Nim `if..else` inline.
-- Python Comprension de Lista en modulo `sugar`.
-- Nim string es `""`, no `''` (es `char`).
-- Go `defer` es Nim `defer`.
-- Go `channels` es Nim `channels`.
+- `def` ➡️ `proc`
+- `lambda` ➡️ `proc`
+- `f"{foo},{1+1}"` ➡️ `fmt"{foo},{1+1}"`
+- `dict` ➡️ `table`
+- `NamedTuple` ➡️ `tuple`
+- `set` ➡️ `HashSet`
+- `b if a else c` ➡️ `if a: b else: c` inline
+- Go `defer` ➡️ Nim `defer`.
+- Go `channels` ➡️ Nim `channels`.
 - JavaScript Arrows Functions en modulo `sugar`.
 
 -----
@@ -294,39 +292,14 @@ Nim         | Python  | Ejemplo Nim   | Ejemplo Python  | Comentarios           
 ```nim
 >>> let foo = [1, 2, 3]
 
->>> foo.len
-3
-
 >>> foo.len()
 3
 
 >>> len(foo)
 3
 
->>> $foo.len      # Magia convierte a string.
-"3"
-
->>> foo.len.int8  # Dot chain.
-3 : int8
-```
-
------
-
-##### Nim Case Insensitive
-
-![Nim is Cool](nim-cool.jpg)
-
-- camelCase y snake_case podes usarlo como te guste.
-- Todas las formas son validas y equivalentes.
-
-```nim
->>> let camelCase = 42  # Es lo mismo que camel_case.
->>> camel_case
-42
-
->>> let snake_case = 1  # Es lo mismo que snakeCase.
->>> snakeCase
-1
+>>> foo.len.float  # Dot chain.
+3.0
 ```
 
 -----
@@ -334,7 +307,8 @@ Nim         | Python  | Ejemplo Nim   | Ejemplo Python  | Comentarios           
 ##### Velocidad
 
 - Nim fue pensado para ir muy rapido.
-- Benchmarks: Falta Nim o esta a la par con C.
+- Usa poca RAM y funciona rapido en PC viejas.
+- No necesita "preparar un ambiente" en la PC.
 
 Ejemplo, mismo RayTracer implementado en varios lenguajes:
 
@@ -350,7 +324,6 @@ Ejemplo, mismo RayTracer implementado en varios lenguajes:
 $ echo 'echo "Hola Mundo"' > hello.nim
 $ nim c -d:release --app:console --opt:size hello.nim
 $ strip --strip-all hello
-$ upx --best --ultra-brute hello
 $ du -h hello
 15K     hello
 ```
@@ -365,8 +338,8 @@ $ du -h hello
 
 ##### NimScript
 
-- Lenguaje interpretado *(Nim limitado, no std lib)*.
-- Modulos disponibles: strutils, ospaths, math, distros.
+- Nim en modo Lenguaje interpretado
+- Muchos modulos libreria standard disponibles
 - Puede usarse como configuracion avanzada.
 - Puede usarse como build (build tool).
 - Puede usarse con Nimble.
@@ -377,7 +350,6 @@ $ du -h hello
 **Hola Mundo NimScript:**
 
 ```nim
-#!/usr/bin/env nim
 echo "Hola mundo"
 ```
 
