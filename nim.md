@@ -10,41 +10,42 @@
 ![use nim cat](nim-bad-cat.jpg)
 
 * Python Syntax y rendimiento de C.
-* Compilado (Binario ejecutable).
+* Compilado (1 archivo binario ejecutable).
 * Tipado estatico fuerte con Inferencia.
-* Compila a C / C++.
-* Compila a JavaScript (DOM API).
-* Linux, Windows, Mac, Web, etc.
+* Compila a C / C++ / JavaScript (DOM API).
+* Linux, Windows, Mac, Web, Raspi, etc.
 * Facil hacer modulos de Python.
-* Facil usar librerias en C.
+* Facil usar librerias en C/C++.
+* Administrador de Paquetes y herramientas.
 
 -----
 
 ### Hola Mundo!
 
 ```bash
-$ mkdir /tmp/prueba ; cd /tmp/prueba/
-
 $ echo 'echo "Hola Mundo"' > hello.nim
 
-$ nim c -r hello.nim          # C
+$ nim c -r hello.nim         # C
 Hola Mundo
 
-$ nim cpp -r hello.nim        # C++
+$ nim cpp -r hello.nim       # C++
+Hola Mundo
+
+$ nim objc -r hello.nim      # ObjectiveC
 Hola Mundo
 
 $ nim c --cpu:amd64 --os:windows hello.nim
-$ wine hello.exe              # Windows
+$ wine hello.exe             # Windows
 Hola Mundo
 
-$ nim js -d:nodejs hello.nim  # NodeJS
+$ nim js -d:nodejs hello.nim # NodeJS
 $ nodejs hello.js
 Hola Mundo
 
-$ nim js hello.nim            # Web (Frontend)
+$ nim e hello.nim            # NimScript
+Hola Mundo
 
-$ lsb_release -d
-Description:  Arch Linux
+$ nim js hello.nim           # Web (Frontend)
 ```
 
 [<sub>Codigo de todos los slides esta en el Repo</sub>](ejemplos/hello.nim)
@@ -55,11 +56,11 @@ Description:  Arch Linux
 
 ![inim](inim.gif)
 
-- `nimble install inim` or `nim secret`.
+- `nimble install inim` o `nim secret`.
 
 -----
 
-### Enchufar C
+### Conectar con C
 
 C:
 
@@ -84,7 +85,7 @@ $ nim c -r ejemplo.nim
 
 -----
 
-##### Enchufar Web
+##### Conectectar con la Web
 
 <sub>JavaScript &dzigrarr; Nim</sub>
 
@@ -125,7 +126,7 @@ $ xdg-open index2.html  # Abre el Navegador Web.
 
 -----
 
-##### Enchufar Python
+##### Conectar con Python
 
 Nim:
 
@@ -134,7 +135,7 @@ import nimpy
 proc funcioncita*(nombre: string): string {.exportpy.} = "Hola " & nombre
 ```
 
-Python:
+Python (2 o 3):
 
 ```nim
 import nim2python
@@ -149,38 +150,35 @@ Compilar:
 
 `nim c --app:lib --out:modulo.so codigo.nim`
 
-<sub>Nim compila 1 *.so luego no requiere Nim para funcionar.</sub>
+<sub>Nim compila luego no requiere Nim para funcionar. Se puede subir a PyPI</sub>
 
 -----
 
 ##### Syntaxis
 
 - Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.
-- Comentarios empiezan con `#`, DocStrings con `##`.
-- Tracebacks a color simil Python con linea y tipado del error.
-- Magias syntax sugar, tipo Python Jupiter Notebook.
+- Comentarios son Documentacion (RST/Markdown) empiezan con `##`.
+- Tracebacks a color simil Python con linea, posicion y tipo de error.
 - Templates, reemplazan su invocacion con su contenido en compilacion.
 - Macros, bloques que agregan funcionalidad en tiempo de ejecucion.
 - Overload en funciones, dependiendo el tipo de argumento.
-- Exportar objetos con `*`, `cosa` es privado, `cosa*` es exportado.
+- Exportar objetos con `*`, `cosa` es privado, `cosa*` es publico.
 - `import modulo` importa todo lo que tenga `*` en `modulo.nim`.
 - [Algunos modulos de Python fueron clonados en Nim.](https://nimble.directory/search?query=python)
+- Nim esta escrito en Nim, facil de hackear.
 
 -----
 
 ##### Herramientas
 
 - Linters `nim check`, `nimble check` y `nim pretty`.
-- Generador de Documentacion integrado `nim doc`.
-- Paquetes y docs hosteados https://nimble.directory
-- Nim esta escrito en Nim, facil de hackear.
+- Generador de Documentacion `nim doc`, `nim rst2html`, `nim rst2tex`
 - Template de nuevo projecto `nimble init`.
 - Task Runner `nimble tasks` *(tipo Grunt/Gulp)*.
+- Paquetes y docs hosteados https://nimble.directory
 - Publicar paquete `nimble publish` *(PR en GitHub)*.
-- NimSuggest autogenerador de autocompletado para IDE.
 - NimInst autogenerador de instaladores (InnoSetup, Bash).
-- NimGrep Grep optimizado para Nim (CamelCase vs snake_case).
-- Garbage Collector GC personalizable o desactivado.
+- Toda herramienta de C/C++ sirve (gdb, etc).
 
 -----
 
