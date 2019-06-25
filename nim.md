@@ -358,7 +358,7 @@ echo "Hola mundo"
 ##### Unittests
 
 - Tests Runner amigable.
-- `nim c -r test "Nombre del test"`.
+- `nim c -r test.nim`.
 
 ```nim
 suite "Nombre del test":
