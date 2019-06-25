@@ -393,7 +393,7 @@ suite "Nombre del test":
 ##### Generador de Documentacion
 
 *Formato entrada:*
-- Codigo fuente texto plano Nim `*.nim`
+- Codigo fuente Nim `*.nim`
 - ReStructuredText/Markdown.
 
 *Formato salida:*
@@ -486,14 +486,13 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 
 ##### Template Engine
 
-- Template Engine integrado (ala Jinja).
+- Template Engine integrado (ala Jinja, Jekyll, etc).
 - Archivos `*.nimf`, shebang y syntaxis Nim.
 - Lineas con `#` es codigo Nim, sino literal verbatim.
 
 ```nim
 #? stdtmpl | standard
 #proc generateXML(name, age: string): string =
-#  result = ""
 <xml>
   <name>$name</name>
   <age>$age</age>
@@ -503,7 +502,6 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 ```nim
 #? stdtmpl | standard
 #proc generateHTML(title, content: string, tabs: openArray[string]): string =
-#  result = ""
 <head><title> $title </title></head>
 <body>
     <ul>
