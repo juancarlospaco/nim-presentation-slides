@@ -529,6 +529,39 @@ Ejemplos:
 
 -----
 
+# Ejemplos
+
+#### Levenshtein Distance
+
+```nim
+echo editDistance("Gato", "Pato")
+```
+
+#### Diff
+
+```
+# 2 txt ("The Call of Cthulhu", Lovecraft)
+let txt0 = """I have looked upon all the universe has to hold of horror,
+even skies of spring and flowers of summer must ever be poison to me."""
+let txt1 = """I have looked upon all your code has to hold of bugs,
+even skies of spring and flowers of summer must ever be poison to me."""
+
+echo diffText(txt0, txt1)
+```
+
+#### Syntax Highliting
+
+```nim
+let code = """for x in $int.high: echo x.ord mod 2 == 0"""
+var toknizr: GeneralTokenizer
+initGeneralTokenizer(toknizr, code)
+while toknizr.kind != gtEof:
+  getNextToken(toknizr, langNim)
+  echo toknizr.kind
+```
+
+-----
+
 *Paquetes interesantes Terminal:*
 - Colores https://github.com/molnarmark/colorize
 - Spinners https://github.com/molnarmark/spinny
