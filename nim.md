@@ -344,14 +344,14 @@ $ du -h hello
 
 ##### NimScript
 
-- Nim en modo interpretado.
-- Muchos modulos libreria standard disponibles
-- Puede usarse como configuracion avanzada.
-- Puede usarse como build (build tool).
+- Scripting MultiPlataforma, Nim en modo interpretado.
+- Muchos modulos libreria standard disponibles.
+- Configuracion, build (build tool).
 - Puede usarse con Nimble.
 - Puede usarse como multi-proposito (standalone).
 - Extension de archivo `*.nims`.
 - No se compila, usa `nim e archivo.nims`.
+- Administrador de paquetes, test, docs, asserts.
 
 **Hola Mundo NimScript:**
 
