@@ -85,11 +85,172 @@ $ nim js hello.nim           # Web (Frontend)
 
 -----
 
+##### Generador de Documentacion
+
+*Formato entrada:*
+- Codigo fuente Nim `*.nim`
+- ReStructuredText/Markdown.
+
+*Formato salida:*
+- HTML5 (TOC, Search, links, index, etc).
+- LaTeX.
+- ODT (LibreOffice).
+- JSON.
+
+*Uso:*
+- Comentarios con `##` ReStructuredText/Markdown.
+- No hay que instalar nada extra para usarlo.
+
+-----
+
 ### Interprete Interactivo
 
 ![inim](inim.gif)
 
 - `nimble install inim` o `nim secret`.
+
+-----
+
+##### Inmutable
+
+- `var` Mutable, como en Python.
+- `let` Inmutable, solo lectura.
+- `const` Inmutable, tiempo de Compilacion.
+
+```nim
+>>> var foo = "Esta variable puede cambiar"
+>>> foo = "Otra cosa"
+>>>
+>>> let bar = "Esta variable No se puede cambiar"
+>>> bar = "Da Error"
+Error: 'bar' cannot be assigned to
+>>>
+>>> const baz = "Constante de Compilacion"
+>>> baz = "Da Error"
+Error: 'baz' cannot be assigned to
+```
+
+*Si se te complica, podes usar `var` en todos lados.*
+
+-----
+
+##### Ejecutar en Tiempo de Compilacion
+
+- `const constante = "compile time"` Constante de compilacion.
+- `include("incluir.nim")` Copia el archivo entero en el lugar.
+- `staticRead("foo.json")` Lee archivo entero y devuelve string.
+- `staticExec("1 + 1")` Ejecuta argumentos y devuelve el retorno.
+- `static: echo("compile time")` Ejecuta Bloques de codigo.
+- FFI, Regex, JSON, en tiempo de compilacion.
+
+*Lo que se ejecuta en tiempo de compilacion no tiene costo en tiempo de ejecucion.*
+
+-----
+
+##### De Python a Nim
+
+- `def` ➡️ `proc`
+- `lambda` ➡️ `proc`
+- `f"{foo},{1+1}"` ➡️ `fmt"{foo},{1+1}"`
+- `dict` ➡️ `table`
+- `NamedTuple` ➡️ `tuple`
+- `set` ➡️ `HashSet`
+- `b if a else c` ➡️ `if a: b else: c` inline
+- Go `defer` ➡️ Nim `defer`.
+- Go `channels` ➡️ Nim `channels`.
+- JavaScript Arrows Functions en modulo `sugar`.
+
+-----
+
+##### Nim Unified Functions Call Syntax
+
+- Todas las formas son validas y equivalentes.
+
+```nim
+>>> let foo = [1, 2, 3]
+
+>>> foo.len()
+3
+
+>>> len(foo)
+3
+
+>>> foo.len.float  # Dot chain.
+3.0
+```
+
+-----
+
+##### Tipos Basicos
+
+Nim         | Python  | Ejemplo Nim    | Ejemplo Python  | Comentarios                               |
+------------|:--------|:--------------:|:---------------:|------------------------------------------:|
+ `string`   | `str`   | `"foo"`        | `"foo"`         | Unicode, UTF8, Emoji, etc                 |
+ `string`   | `str`   | `"""bar"""`    | `"""bar"""`     | String Multi-linea                        |
+ `char`     | -       | `'a'`          | -               | 1 char, Optimizado internamente a int     |
+ `int`      | `int`   | `42`           | `42`            | int8, int16, int32, int64, int            |
+ `float`    | `float` | `2.0`          | `2.0`           | float32, float64, float                   |
+ `bool`     | `bool`  | `true, false`  | `True, False`   | true, false en Nim                        |
+ `tuple`    | `tuple` | `(1, 2, 3)`    | `(1, 2, 3)`     | tuple de Nim es como NamedTuple de Py     |
+ `seq`      | `list`  | `@[1, 2, 3]`   | `[1, 2, 3]`     | Mismo Tipo en todos los items en Nim      |
+ `set`      | `set`   | `{1, 2, 3}`    | `{1, 2, 3}`     | int, char, bool en Nim                    |
+ `enum`     | `enum`  | `type enum`    | ?               | En Python no los usa nadie                |
+ `array`    | -       | `[1, 2, 3]`    | -               | Tamanio fijo, mismo tipo en los items     |
+ `subrange` | -       | `range[0..2]`  | -               | Solo acepta int de 0 a 2,puede usar float |
+ `concept`  | -       | `type concept` | -               | Tipos definidos por usuario,compile time  |
+
+*Tipos de Nim estan optimizados para performance.*
+
+-----
+
+##### Velocidad
+
+- Nim fue pensado para ir muy rapido.
+- Usa poca RAM y funciona rapido en PC viejas.
+- No necesita "preparar un ambiente" en la PC.
+
+Ejemplo, mismo RayTracer implementado en varios lenguajes:
+
+![raytracer](raytracer.jpg)
+
+[<sub>Source</sub>](http://blog.johnnovak.net/2017/04/22/nim-performance-tuning-for-the-uninitiated/#does-it-all-matter)
+
+-----
+
+##### Peso
+
+- Nim fue pensado para ser liviano (Raspi, Router, IoT, etc).
+- Nim no incrusta Runtime, VM, Interprete, etc.
+- [HolaMundo Go 2Mb, HolaMundo Nim 20Kb.](http://linkode.org/#narWOQnU9i2UDswu9NDYo1)
+
+```bash
+$ echo 'echo "Hola Mundo"' > hello.nim
+$ nim c -d:release --app:console --opt:size hello.nim
+$ strip --strip-all hello
+$ du -h hello
+15K     hello
+```
+
+![cat](node-modules.jpg)
+
+-----
+
+##### NimScript
+
+- Scripting MultiPlataforma, Nim en modo interpretado.
+- Muchos modulos libreria standard disponibles.
+- Configuracion, build (build tool).
+- Puede usarse con Nimble.
+- Puede usarse como multi-proposito (standalone).
+- Extension de archivo `*.nims`.
+- No se compila, usa `nim e archivo.nims`.
+- Administrador de paquetes, test, docs, asserts.
+
+**Hola Mundo NimScript:**
+
+```nim
+echo "Hola mundo"
+```
 
 -----
 
@@ -219,149 +380,6 @@ Compilar:
 
 -----
 
-##### Inmutable
-
-- `var` Mutable, como en Python.
-- `let` Inmutable, solo lectura.
-- `const` Inmutable, tiempo de Compilacion.
-
-```nim
->>> var foo = "Esta variable puede cambiar"
->>> foo = "Otra cosa"
->>>
->>> let bar = "Esta variable No se puede cambiar"
->>> bar = "Da Error"
-Error: 'bar' cannot be assigned to
->>>
->>> const baz = "Constante de Compilacion"
->>> baz = "Da Error"
-Error: 'baz' cannot be assigned to
-```
-
-*Si se te complica, podes usar `var` en todos lados.*
-
------
-
-##### Ejecutar en Tiempo de Compilacion
-
-- `const constante = "compile time"` Constante de compilacion.
-- `include("incluir.nim")` Copia el archivo entero en el lugar.
-- `staticRead("foo.json")` Lee archivo entero y devuelve string.
-- `staticExec("1 + 1")` Ejecuta argumentos y devuelve el retorno.
-- `static: echo("compile time")` Ejecuta Bloques de codigo.
-- FFI, Regex, JSON, en tiempo de compilacion.
-
-*Lo que se ejecuta en tiempo de compilacion no tiene costo en tiempo de ejecucion.*
-
------
-
-##### Tipos Basicos
-
-Nim         | Python  | Ejemplo Nim    | Ejemplo Python  | Comentarios                               |
-------------|:--------|:--------------:|:---------------:|------------------------------------------:|
- `string`   | `str`   | `"foo"`        | `"foo"`         | Unicode, UTF8, Emoji, etc                 |
- `string`   | `str`   | `"""bar"""`    | `"""bar"""`     | String Multi-linea                        |
- `char`     | -       | `'a'`          | -               | 1 char, Optimizado internamente a int     |
- `int`      | `int`   | `42`           | `42`            | int8, int16, int32, int64, int            |
- `float`    | `float` | `2.0`          | `2.0`           | float32, float64, float                   |
- `bool`     | `bool`  | `true, false`  | `True, False`   | true, false en Nim                        |
- `tuple`    | `tuple` | `(1, 2, 3)`    | `(1, 2, 3)`     | tuple de Nim es como NamedTuple de Py     |
- `seq`      | `list`  | `@[1, 2, 3]`   | `[1, 2, 3]`     | Mismo Tipo en todos los items en Nim      |
- `set`      | `set`   | `{1, 2, 3}`    | `{1, 2, 3}`     | int, char, bool en Nim                    |
- `enum`     | `enum`  | `type enum`    | ?               | En Python no los usa nadie                |
- `array`    | -       | `[1, 2, 3]`    | -               | Tamanio fijo, mismo tipo en los items     |
- `subrange` | -       | `range[0..2]`  | -               | Solo acepta int de 0 a 2,puede usar float |
- `concept`  | -       | `type concept` | -               | Tipos definidos por usuario,compile time  |
-
-*Tipos de Nim estan optimizados para performance.*
-
------
-
-##### De Python a Nim
-
-- `def` ➡️ `proc`
-- `lambda` ➡️ `proc`
-- `f"{foo},{1+1}"` ➡️ `fmt"{foo},{1+1}"`
-- `dict` ➡️ `table`
-- `NamedTuple` ➡️ `tuple`
-- `set` ➡️ `HashSet`
-- `b if a else c` ➡️ `if a: b else: c` inline
-- Go `defer` ➡️ Nim `defer`.
-- Go `channels` ➡️ Nim `channels`.
-- JavaScript Arrows Functions en modulo `sugar`.
-
------
-
-##### Nim Unified Functions Call Syntax
-
-- Todas las formas son validas y equivalentes.
-
-```nim
->>> let foo = [1, 2, 3]
-
->>> foo.len()
-3
-
->>> len(foo)
-3
-
->>> foo.len.float  # Dot chain.
-3.0
-```
-
------
-
-##### Velocidad
-
-- Nim fue pensado para ir muy rapido.
-- Usa poca RAM y funciona rapido en PC viejas.
-- No necesita "preparar un ambiente" en la PC.
-
-Ejemplo, mismo RayTracer implementado en varios lenguajes:
-
-![raytracer](raytracer.jpg)
-
-[<sub>Source</sub>](http://blog.johnnovak.net/2017/04/22/nim-performance-tuning-for-the-uninitiated/#does-it-all-matter)
-
------
-
-##### Peso
-
-- Nim fue pensado para ser liviano (Raspi, Router, IoT, etc).
-- Nim no incrusta Runtime, VM, Interprete, etc.
-- [HolaMundo Go 2Mb, HolaMundo Nim 20Kb.](http://linkode.org/#narWOQnU9i2UDswu9NDYo1)
-
-```bash
-$ echo 'echo "Hola Mundo"' > hello.nim
-$ nim c -d:release --app:console --opt:size hello.nim
-$ strip --strip-all hello
-$ du -h hello
-15K     hello
-```
-
-![cat](node-modules.jpg)
-
------
-
-##### NimScript
-
-- Scripting MultiPlataforma, Nim en modo interpretado.
-- Muchos modulos libreria standard disponibles.
-- Configuracion, build (build tool).
-- Puede usarse con Nimble.
-- Puede usarse como multi-proposito (standalone).
-- Extension de archivo `*.nims`.
-- No se compila, usa `nim e archivo.nims`.
-- Administrador de paquetes, test, docs, asserts.
-
-**Hola Mundo NimScript:**
-
-```nim
-echo "Hola mundo"
-```
-
------
-
 ##### Unittests
 
 - Tests Runner amigable, `nim c -r test.nim`.
@@ -391,24 +409,6 @@ suite "Nombre del test":
   echo "Teardown: Esto se ejecuta 1 vez DESPUES de TODOS los Tests."
 
 ```
-
------
-
-##### Generador de Documentacion
-
-*Formato entrada:*
-- Codigo fuente Nim `*.nim`
-- ReStructuredText/Markdown.
-
-*Formato salida:*
-- HTML5 (TOC, Search, links, index, etc).
-- LaTeX.
-- ODT (LibreOffice).
-- JSON.
-
-*Uso:*
-- Comentarios con `##` ReStructuredText/Markdown.
-- No hay que instalar nada extra para usarlo.
 
 -----
 
@@ -512,23 +512,6 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 
 -----
 
-##### Nim Frontend
-
-- Nim compila a JavaScript.
-- Nim tiene API del DOM.
-- JavaScript es "First Class Citizen".
-- Nim wrappea Libs JS facilmente.
-- Nim Frontend va muy rapido tambien.
-- Hay paquetes con Libs Frontend en Nimble.
-- Podes compilar Nim a JavaScript y usarlo en HTML Estatico.
-- Se puede compilar a WebAssembly.
-
-Ejemplos:
-- Frontend SPA (React-like) https://github.com/pragmagic/karax
-- Foro Nim esta hecho en Nim https://forum.nim-lang.org
-
------
-
 # Ejemplos
 
 #### Levenshtein Distance
@@ -561,6 +544,23 @@ while toknizr.kind != gtEof:
 ```
 
 - Todo esto es Libreria Standard.
+
+-----
+
+##### Nim Frontend
+
+- Nim compila a JavaScript.
+- Nim tiene API del DOM.
+- JavaScript es "First Class Citizen".
+- Nim wrappea Libs JS facilmente.
+- Nim Frontend va muy rapido tambien.
+- Hay paquetes con Libs Frontend en Nimble.
+- Podes compilar Nim a JavaScript y usarlo en HTML Estatico.
+- Se puede compilar a WebAssembly.
+
+Ejemplos:
+- Frontend SPA (React-like) https://github.com/pragmagic/karax
+- Foro Nim esta hecho en Nim https://forum.nim-lang.org
 
 -----
 
