@@ -23,7 +23,7 @@
 <div id=impress data-transition-duration=1000 >
 
     <!-- Begins presentation slide number: 0 -->
-    <div id=0 class="step saturate" data-rel-x="2118" data-rel-y="7439" data-rotate="-72" data-rotate-x="4" data-rotate-y="3" data-x="1559" data-y="7429" data-z="1" data-scale="1">
+    <div id=0 class="step " data-rel-x="4745" data-rel-y="5776" data-rotate="513" data-rotate-x="4" data-rotate-y="4" data-x="4890" data-y="6950" data-z="2" data-scale="9">
     <h1>Intro a Nim</h1>
 <p><img src="sarcastic-cat.jpg" alt="cat"></p>
 <p><em>...para Pythoneras</em></p>
@@ -32,24 +32,26 @@
     <!-- Ends presentation slide number: 0 -->
     
     <!-- Begins presentation slide number: 1 -->
-    <div id=1 class="step brightness" data-rel-x="3105" data-rel-y="7551" data-rotate="-621" data-rotate-x="4" data-rotate-y="3" data-x="4715" data-y="5121" data-z="1" data-scale="4">
+    <div id=1 class="step " data-rel-x="3996" data-rel-y="7530" data-rotate="-189" data-rotate-x="2" data-rotate-y="4" data-x="1407" data-y="5028" data-z="2" data-scale="6">
     <p><img src="nim-bad-cat.jpg" alt="use nim cat"></p>
 <ul>
 <li>Python Syntax y rendimiento de C.</li>
-<li>Compilado (Binario ejecutable).</li>
+<li>Compilado (1 archivo binario ejecutable).</li>
 <li>Tipado estatico fuerte con Inferencia.</li>
-<li>Compila a C / C++.</li>
-<li>Compila a JavaScript (DOM API).</li>
-<li>Linux, Windows, Mac, Web, etc.</li>
+<li>Compila a C / C++ / JavaScript (DOM API).</li>
+<li>Linux, Windows, Mac, Web, Raspi, ARM, etc</li>
 <li>Facil hacer modulos de Python.</li>
-<li>Facil usar librerias en C.</li>
+<li>Facil usar librerias en C/C++/JavaScript.</li>
+<li>Administrador de Paquetes y herramientas.</li>
+<li>Documentacion online completa con ejemplos</li>
+<li>Targets comunidad LLVM,Vulkan,WebGL,OpenGL,etc</li>
 </ul>
 
     </div>
     <!-- Ends presentation slide number: 1 -->
     
     <!-- Begins presentation slide number: 2 -->
-    <div id=2 class="step invert" data-rel-x="3513" data-rel-y="8846" data-rotate="-76" data-rotate-x="5" data-rotate-y="5" data-x="2436" data-y="8282" data-z="5" data-scale="5">
+    <div id=2 class="step brightness" data-rel-x="1104" data-rel-y="5504" data-rotate="-476" data-rotate-x="1" data-rotate-y="2" data-x="1368" data-y="7961" data-z="1" data-scale="8">
     <h3>Hola Mundo!</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1"> 1</a>
 <a href="#-2"> 2</a>
@@ -72,28 +74,30 @@
 <a href="#-19">19</a>
 <a href="#-20">20</a>
 <a href="#-21">21</a>
-<a href="#-22">22</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ mkdir /tmp/prueba <span class="p">;</span> <span class="nb">cd</span> /tmp/prueba/
+<a href="#-22">22</a>
+<a href="#-23">23</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="s1">&#39;echo &quot;Hola Mundo&quot;&#39;</span> &gt; hello.nim
 
-$ <span class="nb">echo</span> <span class="s1">&#39;echo &quot;Hola Mundo&quot;&#39;</span> &gt; hello.nim
-
-$ nim c -r hello.nim          <span class="c1"># C</span>
+$ nim c -r hello.nim         <span class="c1"># C</span>
 Hola Mundo
 
-$ nim cpp -r hello.nim        <span class="c1"># C++</span>
+$ nim cpp -r hello.nim       <span class="c1"># C++</span>
 Hola Mundo
 
-$ nim c --cpu:amd64 --os:windows hello.nim
-$ wine hello.exe              <span class="c1"># Windows</span>
+$ nim objc -r hello.nim      <span class="c1"># ObjectiveC</span>
 Hola Mundo
 
-$ nim js -d:nodejs hello.nim  <span class="c1"># NodeJS</span>
+$ nim c --os:windows hello.nim
+$ wine hello.exe             <span class="c1"># Windows</span>
+Hola Mundo
+
+$ nim js -d:nodejs hello.nim <span class="c1"># NodeJS</span>
 $ nodejs hello.js
 Hola Mundo
 
-$ nim js hello.nim            <span class="c1"># Web (Frontend)</span>
+$ nim e hello.nim            <span class="c1"># NimScript</span>
+Hola Mundo
 
-$ lsb_release -d
-Description:  Arch Linux
+$ nim js hello.nim           <span class="c1"># Web (Frontend)</span>
 </pre></div>
 </td></tr></table><p><a href="ejemplos/hello.nim"><sub>Codigo de todos los slides esta en el Repo</sub></a></p>
 
@@ -101,198 +105,82 @@ Description:  Arch Linux
     <!-- Ends presentation slide number: 2 -->
     
     <!-- Begins presentation slide number: 3 -->
-    <div id=3 class="step saturate" data-rel-x="2592" data-rel-y="6721" data-rotate="426" data-rotate-x="5" data-rotate-y="5" data-x="3644" data-y="8233" data-z="4" data-scale="6">
-    <h3>Interprete Interactivo</h3>
-<p><img src="inim.gif" alt="inim"></p>
+    <div id=3 class="step huerotate" data-rel-x="4987" data-rel-y="6715" data-rotate="-381" data-rotate-x="4" data-rotate-y="4" data-x="3291" data-y="8486" data-z="2" data-scale="5">
+    <h5>Syntaxis</h5>
 <ul>
-<li><code>nimble install inim</code> or <code>nim secret</code>.</li>
+<li>Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.</li>
+<li>Comentarios son Documentacion (RST/Markdown) empiezan con <code>##</code>.</li>
+<li>Tracebacks a color simil Python con linea, posicion y tipo de error.</li>
+<li>Templates, reemplazan su invocacion con su contenido en compilacion.</li>
+<li>Macros, bloques que agregan funcionalidad en tiempo de ejecucion.</li>
+<li>Overload en funciones, dependiendo el tipo de argumento.</li>
+<li>Exportar objetos con <code>*</code>, <code>cosa</code> es privado, <code>cosa*</code> es publico.</li>
+<li><code>import modulo</code> importa todo lo que tenga <code>*</code> en <code>modulo.nim</code>.</li>
+<li><a href="https://nimble.directory/search?query=python">Algunos modulos de Python fueron clonados en Nim.</a></li>
+<li>Nim esta escrito en Nim, facil de hackear.</li>
 </ul>
 
     </div>
     <!-- Ends presentation slide number: 3 -->
     
     <!-- Begins presentation slide number: 4 -->
-    <div id=4 class="step sepia" data-rel-x="2755" data-rel-y="5276" data-rotate="480" data-rotate-x="2" data-rotate-y="1" data-x="1590" data-y="5129" data-z="1" data-scale="7">
-    <h3>Enchufar C</h3>
-<p>C:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">suma2Enteros</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;}</span>
-</pre></div>
-</td></tr></table><p>Nim:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a>
-<a href="#-3">3</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{.</span><span class="n">compile</span><span class="p">:</span> <span class="s">&quot;suma.c&quot;</span><span class="p">.}</span>
-<span class="k">proc </span><span class="nf">suma2Enteros</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">cint</span><span class="p">):</span> <span class="n">cint</span> <span class="p">{.</span><span class="n">importc</span><span class="p">.}</span>
-<span class="n">echo</span> <span class="n">suma2Enteros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ nim c -r ejemplo.nim
-<span class="m">3</span>
-</pre></div>
-</td></tr></table><p><a href="ejemplos/ejemplo.nim"><sub>Codigo en Repo</sub></a></p>
+    <div id=4 class="step grayscale" data-rel-x="2102" data-rel-y="5482" data-rotate="648" data-rotate-x="4" data-rotate-y="5" data-x="4359" data-y="5137" data-z="1" data-scale="3">
+    <h5>Herramientas</h5>
+<ul>
+<li>Linters <code>nim check</code>, <code>nimble check</code>.</li>
+<li>Documentacion <code>nim doc</code>, <code>nim rst2html</code>, <code>nim rst2tex</code></li>
+<li>Template de nuevo projecto <code>nimble init</code>.</li>
+<li>Task Runner <code>nimble tasks</code> <em>(tipo Grunt/Gulp)</em>.</li>
+<li>Paquetes y docs hosteados <a href="https://nimble.directory">https://nimble.directory</a></li>
+<li>Publicar paquete <code>nimble publish</code> <em>(PR en GitHub)</em>.</li>
+<li>NimInst autogenerador de instaladores (InnoSetup, Bash).</li>
+<li>NimScript para reemplazar Bash.</li>
+<li><code>nimpretty</code> formateador de codigo (ala GoFmt, AutoPep8)</li>
+<li><code>c2nim</code> para portar codigo C a Nim.</li>
+<li>Toda herramienta de C/C++ sirve (gdb, etc).</li>
+</ul>
 
     </div>
     <!-- Ends presentation slide number: 4 -->
     
     <!-- Begins presentation slide number: 5 -->
-    <div id=5 class="step grayscale" data-rel-x="3795" data-rel-y="8307" data-rotate="361" data-rotate-x="2" data-rotate-y="2" data-x="4615" data-y="5923" data-z="5" data-scale="2">
-    <h5>Enchufar Web</h5>
-<p><sub>JavaScript &dzigrarr; Nim</sub></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a>
-<a href="#-3">3</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">&lt;!-- index.html ---&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="kd">function</span> <span class="nx">suma2Enteros</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">alert</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">)}&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;ejemplojs2nim.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</pre></div>
-</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a>
-<a href="#-3">3</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c"># ejemplojs2nim.nim</span>
-<span class="k">proc </span><span class="nf">suma2Enteros</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">cint</span><span class="p">):</span> <span class="n">cint</span> <span class="p">{.</span><span class="n">importc</span><span class="p">.}</span>
-<span class="n">echo</span> <span class="n">suma2Enteros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ nim js -o:ejemplojs2nim.js ejemplojs2nim.nim
-$ xdg-open index.html  <span class="c1"># Abre el Navegador Web.</span>
-</pre></div>
-</td></tr></table><p><sub>Nim &dzigrarr; JavaScript</sub></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a>
-<a href="#-3">3</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">&lt;!-- index2.html ---&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;ejemplonim2js.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nx">suma2Enteros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</pre></div>
-</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c"># ejemplonim2js.nim</span>
-<span class="k">proc </span><span class="nf">suma2Enteros</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">cint</span><span class="p">):</span> <span class="n">cint</span> <span class="p">{.</span><span class="n">exportc</span><span class="p">.}</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</pre></div>
-</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ nim js -o:ejemplonim2js.js ejemplonim2js.nim
-$ xdg-open index2.html  <span class="c1"># Abre el Navegador Web.</span>
-</pre></div>
-</td></tr></table>
+    <div id=5 class="step contrast" data-rel-x="3152" data-rel-y="8849" data-rotate="-367" data-rotate-x="4" data-rotate-y="5" data-x="2725" data-y="5413" data-z="4" data-scale="8">
+    <h5>Generador de Documentacion</h5>
+<p><em>Formato entrada:</em></p>
+<ul>
+<li>Codigo fuente Nim <code>*.nim</code></li>
+<li>ReStructuredText/Markdown.</li>
+</ul>
+<p><em>Formato salida:</em></p>
+<ul>
+<li>HTML5 (TOC, Search, links, index, etc).</li>
+<li>LaTeX.</li>
+<li>ODT (LibreOffice).</li>
+<li>JSON.</li>
+</ul>
+<p><em>Uso:</em></p>
+<ul>
+<li>Comentarios con <code>##</code> ReStructuredText/Markdown.</li>
+<li>No hay que instalar nada extra para usarlo.</li>
+</ul>
+
     </div>
     <!-- Ends presentation slide number: 5 -->
     
     <!-- Begins presentation slide number: 6 -->
-    <div id=6 class="step grayscale" data-rel-x="2135" data-rel-y="5139" data-rotate="-499" data-rotate-x="5" data-rotate-y="4" data-x="4410" data-y="6060" data-z="5" data-scale="7">
-    <h5>Enchufar Python</h5>
-<p>Nim:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="n">nimpy</span>
-<span class="k">proc </span><span class="nf">funcioncita</span><span class="o">*</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="kt">string</span><span class="p">):</span> <span class="kt">string</span> <span class="p">{.</span><span class="n">exportpy</span><span class="p">.}</span> <span class="o">=</span> <span class="s">&quot;Hola &quot;</span> <span class="o">&amp;</span> <span class="n">nombre</span>
-</pre></div>
-</td></tr></table><p>Python:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="n">nim2python</span>
-<span class="n">print</span><span class="p">(</span><span class="n">nim2python</span><span class="p">.</span><span class="n">funcioncita</span><span class="p">(</span><span class="s">&quot;Mundo&quot;</span><span class="p">))</span>
-</pre></div>
-</td></tr></table><p>Instalar puente Python-Nim:</p>
+    <div id=6 class="step grayscale" data-rel-x="1475" data-rel-y="7994" data-rotate="-440" data-rotate-x="1" data-rotate-y="4" data-x="1064" data-y="6231" data-z="5" data-scale="8">
+    <h3>Interprete Interactivo</h3>
+<p><img src="inim.gif" alt="inim"></p>
 <ul>
-<li><code>nimble install nimpy</code>.</li>
+<li><code>nimble install inim</code> o <code>nim secret</code>.</li>
 </ul>
-<p>Compilar:</p>
-<p><code>nim c --app:lib --out:modulo.so codigo.nim</code></p>
-<p><sub>Nim compila 1 *.so luego no requiere Nim para funcionar.</sub></p>
 
     </div>
     <!-- Ends presentation slide number: 6 -->
     
     <!-- Begins presentation slide number: 7 -->
-    <div id=7 class="step huerotate" data-rel-x="1423" data-rel-y="6846" data-rotate="307" data-rotate-x="3" data-rotate-y="4" data-x="1360" data-y="8022" data-z="3" data-scale="6">
-    <h5>Syntaxis</h5>
-<ul>
-<li>Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.</li>
-<li>Comentarios empiezan con <code>#</code>, DocStrings con <code>##</code>.</li>
-<li>Tracebacks a color simil Python con linea y tipado del error.</li>
-<li>Magias syntax sugar, tipo Python Jupiter Notebook.</li>
-<li>Templates, reemplazan su invocacion con su contenido en compilacion.</li>
-<li>Macros, bloques que agregan funcionalidad en tiempo de ejecucion.</li>
-<li>Overload en funciones, dependiendo el tipo de argumento.</li>
-<li>Exportar objetos con <code>*</code>, <code>cosa</code> es privado, <code>cosa*</code> es exportado.</li>
-<li><code>import modulo</code> importa todo lo que tenga <code>*</code> en <code>modulo.nim</code>.</li>
-<li><a href="https://nimble.directory/search?query=python">Algunos modulos de Python fueron clonados en Nim.</a></li>
-</ul>
-
-    </div>
-    <!-- Ends presentation slide number: 7 -->
-    
-    <!-- Begins presentation slide number: 8 -->
-    <div id=8 class="step grayscale" data-rel-x="1275" data-rel-y="8430" data-rotate="402" data-rotate-x="4" data-rotate-y="4" data-x="3441" data-y="8145" data-z="3" data-scale="5">
-    <h5>Herramientas</h5>
-<ul>
-<li>Linters <code>nim check</code>, <code>nimble check</code> y <code>nim pretty</code>.</li>
-<li>Generador de Documentacion integrado <code>nim doc</code>.</li>
-<li>Paquetes y docs hosteados <a href="https://nimble.directory">https://nimble.directory</a></li>
-<li>Nim esta escrito en Nim, facil de hackear.</li>
-<li>Template de nuevo projecto <code>nimble init</code>.</li>
-<li>Task Runner <code>nimble tasks</code> <em>(tipo Grunt/Gulp)</em>.</li>
-<li>Publicar paquete <code>nimble publish</code> <em>(PR en GitHub)</em>.</li>
-<li>NimSuggest autogenerador de autocompletado para IDE.</li>
-<li>NimInst autogenerador de instaladores (InnoSetup, Bash).</li>
-<li>NimGrep Grep optimizado para Nim (CamelCase vs snake_case).</li>
-<li>Garbage Collector GC personalizable o desactivado.</li>
-</ul>
-
-    </div>
-    <!-- Ends presentation slide number: 8 -->
-    
-    <!-- Begins presentation slide number: 9 -->
-    <div id=9 class="step sepia" data-rel-x="4007" data-rel-y="5829" data-rotate="-547" data-rotate-x="1" data-rotate-y="2" data-x="1215" data-y="5183" data-z="4" data-scale="3">
-    <h5>PyLib</h5>
-<ul>
-<li>Copia <em>(aun mas)</em> la syntaxis de Python en Nim.</li>
-<li><code>nimble install pylib</code>, luego <code>import pylib</code>.</li>
-</ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1"> 1</a>
-<a href="#-2"> 2</a>
-<a href="#-3"> 3</a>
-<a href="#-4"> 4</a>
-<a href="#-5"> 5</a>
-<a href="#-6"> 6</a>
-<a href="#-7"> 7</a>
-<a href="#-8"> 8</a>
-<a href="#-9"> 9</a>
-<a href="#-10">10</a>
-<a href="#-11">11</a>
-<a href="#-12">12</a>
-<a href="#-13">13</a>
-<a href="#-14">14</a>
-<a href="#-15">15</a>
-<a href="#-16">16</a>
-<a href="#-17">17</a>
-<a href="#-18">18</a>
-<a href="#-19">19</a>
-<a href="#-20">20</a>
-<a href="#-21">21</a>
-<a href="#-22">22</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pylib</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>   <span class="c1"># Mimic Pythons range()</span>
-      <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">endl</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>  <span class="c1"># Mimic Pythons print()</span>
-<span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">json_loads</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;{&quot;clave&quot;: &quot;valor&quot;}&quot;&quot;&quot;</span><span class="p">)</span>  <span class="c1">#  Mimic Pythons json.loads(str)</span>
-<span class="p">{</span><span class="s2">&quot;clave&quot;</span><span class="p">:</span> <span class="s2">&quot;valor&quot;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">)</span>              <span class="c1">#  Mimic Pythons sys.*</span>
-<span class="s2">&quot;linux&quot;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">platform</span><span class="o">.</span><span class="n">processor</span><span class="p">)</span>        <span class="c1">#  Mimic Pythons platform.*</span>
-<span class="s2">&quot;amd64&quot;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;9&#39;</span><span class="p">))</span>    <span class="c1"># integer from char.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span> <span class="ow">or</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>   <span class="c1">#  Mimic Pythons str or str</span>
-<span class="s2">&quot;b&quot;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="ow">or</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>
-<span class="s2">&quot;a&quot;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">timeit</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>  <span class="c1"># Mimic Pythons timeit.timeit(&quot;code_to_benchmark&quot;, number=int)</span>
-      <span class="n">sleep</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>    <span class="c1"># Repeats this code 100 times. Output is very informative.</span>
-<span class="mi">2018</span><span class="o">-</span><span class="mo">05</span><span class="o">-</span><span class="mi">09</span><span class="n">T02</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">33</span> <span class="n">TimeIt</span><span class="p">:</span> <span class="mi">100</span> <span class="n">Repetitions</span> <span class="n">on</span> <span class="mi">920</span> <span class="n">milliseconds</span><span class="p">,</span> <span class="ow">and</span> <span class="mi">9</span> <span class="n">microseconds</span><span class="p">,</span> <span class="n">CPU</span> <span class="n">Time</span> <span class="mf">0.00128</span><span class="o">.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">with_open</span><span class="p">(</span><span class="s2">&quot;archivo.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">):</span>  <span class="c1"># Mimics Pythons with open(file, mode=&#39;r&#39;) as file:</span>
-      <span class="k">while</span> <span class="ow">not</span> <span class="n">end_of_file</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>  <span class="c1"># File is automatically assigned to file variable.</span>
-        <span class="k">print</span><span class="p">(</span><span class="nb">file</span><span class="o">.</span><span class="n">read_line</span><span class="p">())</span>     <span class="c1"># No need for &quot; as file&quot;, just path and mode.</span>
-                                    <span class="c1"># File is closed automatically.</span>
-</pre></div>
-</td></tr></table>
-    </div>
-    <!-- Ends presentation slide number: 9 -->
-    
-    <!-- Begins presentation slide number: 10 -->
-    <div id=10 class="step brightness" data-rel-x="4413" data-rel-y="5395" data-rotate="-547" data-rotate-x="2" data-rotate-y="4" data-x="4305" data-y="8193" data-z="1" data-scale="3">
-    <h5>Inmutable en Nim</h5>
+    <div id=7 class="step grayscale" data-rel-x="3903" data-rel-y="6512" data-rotate="498" data-rotate-x="1" data-rotate-y="3" data-x="4439" data-y="5400" data-z="3" data-scale="8">
+    <h5>Inmutable</h5>
 <ul>
 <li><code>var</code> Mutable, como en Python.</li>
 <li><code>let</code> Inmutable, solo lectura.</li>
@@ -321,25 +209,75 @@ $ xdg-open index2.html  <span class="c1"># Abre el Navegador Web.</span>
 </td></tr></table><p><em>Si se te complica, podes usar <code>var</code> en todos lados.</em></p>
 
     </div>
-    <!-- Ends presentation slide number: 10 -->
+    <!-- Ends presentation slide number: 7 -->
     
-    <!-- Begins presentation slide number: 11 -->
-    <div id=11 class="step " data-rel-x="3611" data-rel-y="6531" data-rotate="666" data-rotate-x="4" data-rotate-y="4" data-x="1746" data-y="8757" data-z="5" data-scale="7">
+    <!-- Begins presentation slide number: 8 -->
+    <div id=8 class="step sepia" data-rel-x="1095" data-rel-y="5379" data-rotate="80" data-rotate-x="1" data-rotate-y="4" data-x="1005" data-y="7933" data-z="3" data-scale="2">
     <h5>Ejecutar en Tiempo de Compilacion</h5>
 <ul>
 <li><code>const constante = "compile time"</code> Constante de compilacion.</li>
 <li><code>include("incluir.nim")</code> Copia el archivo entero en el lugar.</li>
-<li><code>static_read("foo.json")</code> Lee archivo entero y devuelve string.</li>
-<li><code>static_exec("1 + 1")</code> Ejecuta argumentos y devuelve el retorno.</li>
+<li><code>staticRead("foo.json")</code> Lee archivo entero y devuelve string.</li>
+<li><code>staticExec("1 + 1")</code> Ejecuta argumentos y devuelve el retorno.</li>
 <li><code>static: echo("compile time")</code> Ejecuta Bloques de codigo.</li>
+<li>FFI, Regex, JSON, en tiempo de compilacion.</li>
 </ul>
 <p><em>Lo que se ejecuta en tiempo de compilacion no tiene costo en tiempo de ejecucion.</em></p>
 
     </div>
-    <!-- Ends presentation slide number: 11 -->
+    <!-- Ends presentation slide number: 8 -->
     
-    <!-- Begins presentation slide number: 12 -->
-    <div id=12 class="step contrast" data-rel-x="4398" data-rel-y="5897" data-rotate="438" data-rotate-x="3" data-rotate-y="4" data-x="2329" data-y="8964" data-z="1" data-scale="1">
+    <!-- Begins presentation slide number: 9 -->
+    <div id=9 class="step grayscale" data-rel-x="1669" data-rel-y="7470" data-rotate="-157" data-rotate-x="3" data-rotate-y="1" data-x="1710" data-y="5774" data-z="2" data-scale="9">
+    <h5>De Python a Nim</h5>
+<ul>
+<li><code>def</code> ➡️ <code>proc</code></li>
+<li><code>lambda</code> ➡️ <code>proc</code></li>
+<li><code>f"{foo},{1+1}"</code> ➡️ <code>fmt"{foo},{1+1}"</code></li>
+<li><code>dict</code> ➡️ <code>table</code></li>
+<li><code>NamedTuple</code> ➡️ <code>tuple</code></li>
+<li><code>set</code> ➡️ <code>HashSet</code></li>
+<li><code>b if a else c</code> ➡️ <code>if a: b else: c</code> inline</li>
+<li>Go <code>defer</code> ➡️ Nim <code>defer</code>.</li>
+<li>Go <code>channels</code> ➡️ Nim <code>channels</code>.</li>
+<li>JavaScript Arrows Functions en modulo <code>sugar</code>.</li>
+</ul>
+
+    </div>
+    <!-- Ends presentation slide number: 9 -->
+    
+    <!-- Begins presentation slide number: 10 -->
+    <div id=10 class="step sepia" data-rel-x="1136" data-rel-y="5927" data-rotate="-237" data-rotate-x="5" data-rotate-y="3" data-x="3452" data-y="8592" data-z="5" data-scale="8">
+    <h5>Nim Unified Functions Call Syntax</h5>
+<ul>
+<li>Todas las formas son validas y equivalentes.</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1"> 1</a>
+<a href="#-2"> 2</a>
+<a href="#-3"> 3</a>
+<a href="#-4"> 4</a>
+<a href="#-5"> 5</a>
+<a href="#-6"> 6</a>
+<a href="#-7"> 7</a>
+<a href="#-8"> 8</a>
+<a href="#-9"> 9</a>
+<a href="#-10">10</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">let</span> <span class="n">foo</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="p">.</span><span class="n">len</span><span class="p">()</span>
+<span class="mi">3</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">len</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+<span class="mi">3</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="p">.</span><span class="n">len</span><span class="p">.</span><span class="kt">float</span>  <span class="c"># Dot chain.</span>
+<span class="mf">3.0</span>
+</pre></div>
+</td></tr></table>
+    </div>
+    <!-- Ends presentation slide number: 10 -->
+    
+    <!-- Begins presentation slide number: 11 -->
+    <div id=11 class="step contrast" data-rel-x="4356" data-rel-y="5707" data-rotate="263" data-rotate-x="1" data-rotate-y="4" data-x="2606" data-y="8264" data-z="4" data-scale="4">
     <h5>Tipos Basicos</h5>
 <table>
 <thead><tr>
@@ -426,7 +364,7 @@ $ xdg-open index2.html  <span class="c1"># Abre el Navegador Web.</span>
 <tr>
 <td> <code>enum</code></td>
 <td style="text-align:left"><code>enum</code></td>
-<td style="text-align:center">?</td>
+<td style="text-align:center"><code>type enum</code></td>
 <td style="text-align:center">?</td>
 <td style="text-align:right">En Python no los usa nadie</td>
 <td></td>
@@ -447,39 +385,170 @@ $ xdg-open index2.html  <span class="c1"># Abre el Navegador Web.</span>
 <td style="text-align:right">Solo acepta int de 0 a 2,puede usar float</td>
 <td></td>
 </tr>
+<tr>
+<td> <code>concept</code></td>
+<td style="text-align:left">-</td>
+<td style="text-align:center"><code>type concept</code></td>
+<td style="text-align:center">-</td>
+<td style="text-align:right">Tipos definidos por usuario,compile time</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <p><em>Tipos de Nim estan optimizados para performance.</em></p>
 
     </div>
+    <!-- Ends presentation slide number: 11 -->
+    
+    <!-- Begins presentation slide number: 12 -->
+    <div id=12 class="step sepia" data-rel-x="1434" data-rel-y="7370" data-rotate="238" data-rotate-x="5" data-rotate-y="3" data-x="3725" data-y="5155" data-z="3" data-scale="6">
+    <h5>Velocidad</h5>
+<ul>
+<li>Nim fue pensado para ir muy rapido.</li>
+<li>Usa poca RAM y funciona rapido en PC viejas.</li>
+<li>No necesita "preparar un ambiente" en la PC.</li>
+</ul>
+<p>Ejemplo, mismo RayTracer implementado en varios lenguajes:</p>
+<p><img src="raytracer.jpg" alt="raytracer"></p>
+<p><a href="http://blog.johnnovak.net/2017/04/22/nim-performance-tuning-for-the-uninitiated/#does-it-all-matter"><sub>Source</sub></a></p>
+
+    </div>
     <!-- Ends presentation slide number: 12 -->
     
     <!-- Begins presentation slide number: 13 -->
-    <div id=13 class="step huerotate" data-rel-x="1737" data-rel-y="7473" data-rotate="-75" data-rotate-x="3" data-rotate-y="5" data-x="4897" data-y="7624" data-z="5" data-scale="4">
-    <h5>Detalles</h5>
+    <div id=13 class="step contrast" data-rel-x="2654" data-rel-y="6944" data-rotate="535" data-rotate-x="5" data-rotate-y="3" data-x="3188" data-y="5736" data-z="5" data-scale="7">
+    <h5>Peso</h5>
 <ul>
-<li>Python <code>def</code> es Nim <code>proc</code>.</li>
-<li>Python <code>lambda</code> es Nim <code>proc</code> (sin nombre).</li>
-<li>Python <code>f"{foo},{1+1}"</code> es Nim <code>fmt"{foo},{1+1}"</code>.</li>
-<li>Python <code>dict</code> es Nim <code>table</code> o <code>OrderedTable</code>.</li>
-<li>Python <code>NamedTuple</code> es Nim <code>tuple</code>.</li>
-<li>Python <code>set</code> es Nim <code>HashSet</code> o <code>OrderedSet</code>.</li>
-<li>Python Operador Ternario es Nim <code>if..else</code> inline.</li>
-<li>Python Comprension de Lista en modulo <code>sugar</code>.</li>
-<li>Nim string es <code>""</code>, no <code>''</code> (es <code>char</code>).</li>
-<li>Go <code>defer</code> es Nim <code>defer</code>.</li>
-<li>Go <code>channels</code> es Nim <code>channels</code>.</li>
-<li>JavaScript Arrows Functions en modulo <code>sugar</code>.</li>
+<li>Nim fue pensado para ser liviano (Raspi, Router, IoT, etc).</li>
+<li>Nim no incrusta Runtime, VM, Interprete, etc.</li>
+<li><a href="http://linkode.org/#narWOQnU9i2UDswu9NDYo1">HolaMundo Go 2Mb, HolaMundo Nim 20Kb.</a></li>
 </ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
+<a href="#-2">2</a>
+<a href="#-3">3</a>
+<a href="#-4">4</a>
+<a href="#-5">5</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="s1">&#39;echo &quot;Hola Mundo&quot;&#39;</span> &gt; hello.nim
+$ nim c -d:release --app:console --opt:size hello.nim
+$ strip --strip-all hello
+$ du -h hello
+15K     hello
+</pre></div>
+</td></tr></table><p><img src="node-modules.jpg" alt="cat"></p>
 
     </div>
     <!-- Ends presentation slide number: 13 -->
     
     <!-- Begins presentation slide number: 14 -->
-    <div id=14 class="step invert" data-rel-x="2957" data-rel-y="5034" data-rotate="657" data-rotate-x="2" data-rotate-y="4" data-x="4247" data-y="5269" data-z="3" data-scale="6">
-    <h5>Nim Unified Functions Call Syntax</h5>
+    <div id=14 class="step huerotate" data-rel-x="2451" data-rel-y="6546" data-rotate="-133" data-rotate-x="4" data-rotate-y="4" data-x="1719" data-y="5023" data-z="5" data-scale="2">
+    <h5>NimScript</h5>
 <ul>
-<li>Todas las formas son validas y equivalentes.</li>
+<li>Scripting MultiPlataforma, Nim en modo interpretado.</li>
+<li>Muchos modulos libreria standard disponibles.</li>
+<li>Configuracion, build (build tool).</li>
+<li>Puede usarse con Nimble.</li>
+<li>Puede usarse como multi-proposito (standalone).</li>
+<li>Extension de archivo <code>*.nims</code>.</li>
+<li>No se compila, usa <code>nim e archivo.nims</code>.</li>
+<li>Administrador de paquetes, test, docs, asserts.</li>
+</ul>
+<p><strong>Hola Mundo NimScript:</strong></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s">&quot;Hola mundo&quot;</span>
+</pre></div>
+</td></tr></table>
+    </div>
+    <!-- Ends presentation slide number: 14 -->
+    
+    <!-- Begins presentation slide number: 15 -->
+    <div id=15 class="step brightness" data-rel-x="2376" data-rel-y="7866" data-rotate="227" data-rotate-x="2" data-rotate-y="5" data-x="1283" data-y="7453" data-z="5" data-scale="3">
+    <h3>Conectar con C</h3>
+<p>C:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">suma2Enteros</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;}</span>
+</pre></div>
+</td></tr></table><p>Nim:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
+<a href="#-2">2</a>
+<a href="#-3">3</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{.</span><span class="n">compile</span><span class="p">:</span> <span class="s">&quot;suma.c&quot;</span><span class="p">.}</span>
+<span class="k">proc </span><span class="nf">suma2Enteros</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">cint</span><span class="p">):</span> <span class="n">cint</span> <span class="p">{.</span><span class="n">importc</span><span class="p">.}</span>
+<span class="n">echo</span> <span class="n">suma2Enteros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
+<a href="#-2">2</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ nim c -r ejemplo.nim
+<span class="m">3</span>
+</pre></div>
+</td></tr></table><p><a href="ejemplos/ejemplo.nim"><sub>Codigo en Repo</sub></a></p>
+
+    </div>
+    <!-- Ends presentation slide number: 15 -->
+    
+    <!-- Begins presentation slide number: 16 -->
+    <div id=16 class="step sepia" data-rel-x="1036" data-rel-y="5273" data-rotate="-662" data-rotate-x="1" data-rotate-y="4" data-x="3415" data-y="5917" data-z="5" data-scale="8">
+    <h5>Conectectar con la Web</h5>
+<p><sub>JavaScript &dzigrarr; Nim</sub></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
+<a href="#-2">2</a>
+<a href="#-3">3</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">&lt;!-- index.html ---&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="kd">function</span> <span class="nx">suma2Enteros</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">alert</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">)}&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;ejemplojs2nim.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
+<a href="#-2">2</a>
+<a href="#-3">3</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c"># ejemplojs2nim.nim</span>
+<span class="k">proc </span><span class="nf">suma2Enteros</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">cint</span><span class="p">):</span> <span class="n">cint</span> <span class="p">{.</span><span class="n">importc</span><span class="p">.}</span>
+<span class="n">echo</span> <span class="n">suma2Enteros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
+<a href="#-2">2</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ nim js -o:ejemplojs2nim.js ejemplojs2nim.nim
+$ xdg-open index.html  <span class="c1"># Abre el Navegador Web.</span>
+</pre></div>
+</td></tr></table><p><sub>Nim &dzigrarr; JavaScript</sub></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
+<a href="#-2">2</a>
+<a href="#-3">3</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">&lt;!-- index2.html ---&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;ejemplonim2js.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nx">suma2Enteros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
+<a href="#-2">2</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c"># ejemplonim2js.nim</span>
+<span class="k">proc </span><span class="nf">suma2Enteros</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">cint</span><span class="p">):</span> <span class="n">cint</span> <span class="p">{.</span><span class="n">exportc</span><span class="p">.}</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
+<a href="#-2">2</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ nim js -o:ejemplonim2js.js ejemplonim2js.nim
+$ xdg-open index2.html  <span class="c1"># Abre el Navegador Web.</span>
+</pre></div>
+</td></tr></table>
+    </div>
+    <!-- Ends presentation slide number: 16 -->
+    
+    <!-- Begins presentation slide number: 17 -->
+    <div id=17 class="step contrast" data-rel-x="3993" data-rel-y="5347" data-rotate="257" data-rotate-x="2" data-rotate-y="1" data-x="2014" data-y="5826" data-z="3" data-scale="5">
+    <h5>Conectar con Python</h5>
+<p>Nim:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
+<a href="#-2">2</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="n">nimpy</span>
+<span class="k">proc </span><span class="nf">funcioncita</span><span class="o">*</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="kt">string</span><span class="p">):</span> <span class="kt">string</span> <span class="p">{.</span><span class="n">exportpy</span><span class="p">.}</span> <span class="o">=</span> <span class="s">&quot;Hola &quot;</span> <span class="o">&amp;</span> <span class="n">nombre</span>
+</pre></div>
+</td></tr></table><p>Python (2 o 3):</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
+<a href="#-2">2</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="n">nim2python</span>
+<span class="n">print</span><span class="p">(</span><span class="n">nim2python</span><span class="p">.</span><span class="n">funcioncita</span><span class="p">(</span><span class="s">&quot;Mundo&quot;</span><span class="p">))</span>
+</pre></div>
+</td></tr></table><p>Instalar puente Python-Nim:</p>
+<ul>
+<li><code>nimble install nimpy</code>.</li>
+</ul>
+<p>Compilar:</p>
+<p><code>nim c --app:lib --out:modulo.so codigo.nim</code></p>
+<p><sub>Nim compila luego no requiere Nim para funcionar. Se puede subir a PyPI</sub></p>
+
+    </div>
+    <!-- Ends presentation slide number: 17 -->
+    
+    <!-- Begins presentation slide number: 18 -->
+    <div id=18 class="step huerotate" data-rel-x="1234" data-rel-y="6585" data-rotate="-599" data-rotate-x="4" data-rotate-y="4" data-x="2963" data-y="7708" data-z="2" data-scale="7">
+    <h5>PyLib</h5>
+<ul>
+<li>Copia <em>(aun mas)</em> la syntaxis de Python en Nim.</li>
+<li><code>nimble install pylib</code>, luego <code>import pylib</code>.</li>
 </ul>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1"> 1</a>
 <a href="#-2"> 2</a>
@@ -496,120 +565,44 @@ $ xdg-open index2.html  <span class="c1"># Abre el Navegador Web.</span>
 <a href="#-13">13</a>
 <a href="#-14">14</a>
 <a href="#-15">15</a>
-<a href="#-16">16</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">let</span> <span class="n">foo</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="p">.</span><span class="n">len</span>
-<span class="mi">3</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="p">.</span><span class="n">len</span><span class="p">()</span>
-<span class="mi">3</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="n">len</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
-<span class="mi">3</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="o">$</span><span class="n">foo</span><span class="p">.</span><span class="n">len</span>      <span class="c"># Magia convierte a string.</span>
-<span class="s">&quot;3&quot;</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="p">.</span><span class="n">len</span><span class="p">.</span><span class="kt">int8</span>  <span class="c"># Dot chain.</span>
-<span class="mi">3</span> <span class="p">:</span> <span class="kt">int8</span>
-</pre></div>
-</td></tr></table>
-    </div>
-    <!-- Ends presentation slide number: 14 -->
-    
-    <!-- Begins presentation slide number: 15 -->
-    <div id=15 class="step huerotate" data-rel-x="3737" data-rel-y="6676" data-rotate="362" data-rotate-x="5" data-rotate-y="5" data-x="3088" data-y="5526" data-z="3" data-scale="1">
-    <h5>Nim Case Insensitive</h5>
-<p><img src="nim-cool.jpg" alt="Nim is Cool"></p>
-<ul>
-<li>camelCase y snake_case podes usarlo como te guste.</li>
-<li>Todas las formas son validas y equivalentes.</li>
-</ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a>
-<a href="#-3">3</a>
-<a href="#-4">4</a>
-<a href="#-5">5</a>
-<a href="#-6">6</a>
-<a href="#-7">7</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">let</span> <span class="n">camelCase</span> <span class="o">=</span> <span class="mi">42</span>  <span class="c"># Es lo mismo que camel_case.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">camel_case</span>
-<span class="mi">42</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="k">let</span> <span class="n">snake_case</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c"># Es lo mismo que snakeCase.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">snakeCase</span>
-<span class="mi">1</span>
-</pre></div>
-</td></tr></table>
-    </div>
-    <!-- Ends presentation slide number: 15 -->
-    
-    <!-- Begins presentation slide number: 16 -->
-    <div id=16 class="step contrast" data-rel-x="3019" data-rel-y="6635" data-rotate="-293" data-rotate-x="1" data-rotate-y="2" data-x="2890" data-y="8128" data-z="1" data-scale="3">
-    <h5>Velocidad</h5>
-<ul>
-<li>Nim fue pensado para ir muy rapido.</li>
-<li>Benchmarks: Falta Nim o esta a la par con C.</li>
-</ul>
-<p>Ejemplo, mismo RayTracer implementado en varios lenguajes:</p>
-<p><img src="raytracer.jpg" alt="raytracer"></p>
-<p><a href="http://blog.johnnovak.net/2017/04/22/nim-performance-tuning-for-the-uninitiated/#does-it-all-matter"><sub>Source</sub></a></p>
-
-    </div>
-    <!-- Ends presentation slide number: 16 -->
-    
-    <!-- Begins presentation slide number: 17 -->
-    <div id=17 class="step brightness" data-rel-x="2039" data-rel-y="5423" data-rotate="-81" data-rotate-x="2" data-rotate-y="1" data-x="2700" data-y="8363" data-z="2" data-scale="7">
-    <h5>Peso</h5>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a>
-<a href="#-3">3</a>
-<a href="#-4">4</a>
-<a href="#-5">5</a>
-<a href="#-6">6</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="s1">&#39;echo &quot;Hola Mundo&quot;&#39;</span> &gt; hello.nim
-$ nim c -d:release --app:console --opt:size hello.nim
-$ strip --strip-all hello
-$ upx --best --ultra-brute hello
-$ du -h hello
-15K     hello
-</pre></div>
-</td></tr></table><ul>
-<li>Nim fue pensado para ser liviano (Raspi, Router, IoT, etc).</li>
-<li>Nim no incrusta Runtime, VM, Interprete, etc.</li>
-<li><a href="http://linkode.org/#narWOQnU9i2UDswu9NDYo1">HolaMundo Go 2Mb, HolaMundo Nim 20Kb.</a></li>
-</ul>
-<p><img src="node-modules.jpg" alt="cat"></p>
-
-    </div>
-    <!-- Ends presentation slide number: 17 -->
-    
-    <!-- Begins presentation slide number: 18 -->
-    <div id=18 class="step grayscale" data-rel-x="4725" data-rel-y="7358" data-rotate="439" data-rotate-x="4" data-rotate-y="1" data-x="4324" data-y="5499" data-z="3" data-scale="4">
-    <h5>NimScript</h5>
-<ul>
-<li>Lenguaje interpretado <em>(Nim limitado, no std lib)</em>.</li>
-<li>Modulos disponibles: strutils, ospaths, math, distros.</li>
-<li>Puede usarse como configuracion avanzada.</li>
-<li>Puede usarse como build (build tool).</li>
-<li>Puede usarse con Nimble.</li>
-<li>Puede usarse como multi-proposito (standalone).</li>
-<li>Extension de archivo <code>*.nims</code>.</li>
-<li>No se compila, usa <code>nim e archivo.nims</code>.</li>
-</ul>
-<p><strong>Hola Mundo NimScript:</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">#!/usr/bin/env nim</span>
-<span class="n">echo</span> <span class="s">&quot;Hola mundo&quot;</span>
+<a href="#-16">16</a>
+<a href="#-17">17</a>
+<a href="#-18">18</a>
+<a href="#-19">19</a>
+<a href="#-20">20</a>
+<a href="#-21">21</a>
+<a href="#-22">22</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pylib</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>   <span class="c1"># Mimic Pythons range()</span>
+      <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">endl</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>  <span class="c1"># Mimic Pythons print()</span>
+<span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">json_loads</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;{&quot;clave&quot;: &quot;valor&quot;}&quot;&quot;&quot;</span><span class="p">)</span>  <span class="c1">#  Mimic Pythons json.loads(str)</span>
+<span class="p">{</span><span class="s2">&quot;clave&quot;</span><span class="p">:</span> <span class="s2">&quot;valor&quot;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">)</span>              <span class="c1">#  Mimic Pythons sys.*</span>
+<span class="s2">&quot;linux&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">platform</span><span class="o">.</span><span class="n">processor</span><span class="p">)</span>        <span class="c1">#  Mimic Pythons platform.*</span>
+<span class="s2">&quot;amd64&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;9&#39;</span><span class="p">))</span>    <span class="c1"># integer from char.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span> <span class="ow">or</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>   <span class="c1">#  Mimic Pythons str or str</span>
+<span class="s2">&quot;b&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="ow">or</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="s2">&quot;a&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">timeit</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>  <span class="c1"># Mimic Pythons timeit.timeit(&quot;code_to_benchmark&quot;, number=int)</span>
+      <span class="n">sleep</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>    <span class="c1"># Repeats this code 100 times. Output is very informative.</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mo">05</span><span class="o">-</span><span class="mi">09</span><span class="n">T02</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">33</span> <span class="n">TimeIt</span><span class="p">:</span> <span class="mi">100</span> <span class="n">Repetitions</span> <span class="n">on</span> <span class="mi">920</span> <span class="n">milliseconds</span><span class="p">,</span> <span class="ow">and</span> <span class="mi">9</span> <span class="n">microseconds</span><span class="p">,</span> <span class="n">CPU</span> <span class="n">Time</span> <span class="mf">0.00128</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">with_open</span><span class="p">(</span><span class="s2">&quot;archivo.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">):</span>  <span class="c1"># Mimics Pythons with open(file, mode=&#39;r&#39;) as file:</span>
+      <span class="k">while</span> <span class="ow">not</span> <span class="n">end_of_file</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>  <span class="c1"># File is automatically assigned to file variable.</span>
+        <span class="k">print</span><span class="p">(</span><span class="nb">file</span><span class="o">.</span><span class="n">read_line</span><span class="p">())</span>     <span class="c1"># No need for &quot; as file&quot;, just path and mode.</span>
+                                    <span class="c1"># File is closed automatically.</span>
 </pre></div>
 </td></tr></table>
     </div>
     <!-- Ends presentation slide number: 18 -->
     
     <!-- Begins presentation slide number: 19 -->
-    <div id=19 class="step contrast" data-rel-x="3467" data-rel-y="8575" data-rotate="360" data-rotate-x="2" data-rotate-y="3" data-x="3984" data-y="5224" data-z="2" data-scale="1">
+    <div id=19 class="step brightness" data-rel-x="3894" data-rel-y="8042" data-rotate="533" data-rotate-x="4" data-rotate-y="3" data-x="4176" data-y="5365" data-z="4" data-scale="7">
     <h5>Unittests</h5>
 <ul>
-<li>Tests Runner amigable.</li>
-<li><code>nim c -r test "Nombre del test"</code>.</li>
+<li>Tests Runner amigable, <code>nim c -r test.nim</code>.</li>
 </ul>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1"> 1</a>
 <a href="#-2"> 2</a>
@@ -660,79 +653,7 @@ $ du -h hello
     <!-- Ends presentation slide number: 19 -->
     
     <!-- Begins presentation slide number: 20 -->
-    <div id=20 class="step brightness" data-rel-x="1695" data-rel-y="8579" data-rotate="34" data-rotate-x="1" data-rotate-y="4" data-x="4501" data-y="6951" data-z="1" data-scale="2">
-    <h5>Generador de Documentacion</h5>
-<p><em>Formato entrada:</em></p>
-<ul>
-<li>Codigo fuente texto plano Nim <code>*.nim</code></li>
-</ul>
-<p><em>Formato salida:</em></p>
-<ul>
-<li>HTML5 (TOC, Search, links, index, etc).</li>
-<li>reStructuredText.</li>
-<li>JSON.</li>
-<li>LaTeX.</li>
-</ul>
-<p><em>Uso:</em></p>
-<ul>
-<li>Comentarios con <code>##</code> parsea a RST o texto.</li>
-</ul>
-
-    </div>
-    <!-- Ends presentation slide number: 20 -->
-    
-    <!-- Begins presentation slide number: 21 -->
-    <div id=21 class="step huerotate" data-rel-x="4494" data-rel-y="7981" data-rotate="-646" data-rotate-x="2" data-rotate-y="2" data-x="1655" data-y="8329" data-z="3" data-scale="2">
-    <h5>CrossCompilar</h5>
-<p>Basicamente hay que pasarle la ruta donde esta el Compilador.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
-<a href="#-2">2</a>
-<a href="#-3">3</a>
-<a href="#-4">4</a>
-<a href="#-5">5</a>
-<a href="#-6">6</a>
-<a href="#-7">7</a>
-<a href="#-8">8</a>
-<a href="#-9">9</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ mkdir /tmp/prueba_nim_crosscompile <span class="p">;</span> <span class="nb">cd</span> /tmp/prueba_nim_crosscompile/
-
-$ <span class="nb">echo</span> <span class="s1">&#39;echo &quot;Hola Mundo&quot;&#39;</span> &gt; hello.nim
-
-$ nim c --cpu:amd64 --os:windows --gcc.exe:x86_64-w64-mingw32-gcc <span class="se">\</span>
-        --gcc.linkerexe:x86_64-w64-mingw32-gcc hello.nim
-
-$ wine hello.exe
-Hola Mundo
-</pre></div>
-</td></tr></table><p>Las libs de crosscompile se instalan instalando <code>mingw-w64-gcc</code> (Arch).</p>
-<p><em>Dependera un poco que tan amigable es tu Distro con las Libs de crosscompile.</em></p>
-
-    </div>
-    <!-- Ends presentation slide number: 21 -->
-    
-    <!-- Begins presentation slide number: 22 -->
-    <div id=22 class="step grayscale" data-rel-x="4853" data-rel-y="7855" data-rotate="-568" data-rotate-x="3" data-rotate-y="3" data-x="2520" data-y="6920" data-z="2" data-scale="5">
-    <h5>Funciones</h5>
-<p><strong>proc:</strong></p>
-<p>Funcion basica, generica,
-puede modificar variables y cosas globales (side effects),
-se resuelve estaticamente en tiempo de Compilacion (Static Dispatch).</p>
-<p><strong>func:</strong></p>
-<p>Funcion pura, es como una funcion matematica,
-no modifica variables y cosas globales (no side effects, muy segura),
-se resuelve estaticamente en tiempo de Compilacion (Static Dispatch).</p>
-<p><strong>method:</strong></p>
-<p>Metodo, para usar herencia (OOP),
-solo cuando pertenece a un objeto definido con <code>ref object of RootObj</code> y
-hay otros objetos que heredan de este objeto,
-puede modificar variables y cosas globales (con <em>side effects</em>),
-se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
-<p><em>Si se te complica podes usar <code>proc</code> para casi todo.</em></p>
-
-    </div>
-    <!-- Ends presentation slide number: 22 -->
-    
-    <!-- Begins presentation slide number: 23 -->
-    <div id=23 class="step " data-rel-x="4499" data-rel-y="8074" data-rotate="-218" data-rotate-x="2" data-rotate-y="2" data-x="1059" data-y="7153" data-z="5" data-scale="8">
+    <div id=20 class="step saturate" data-rel-x="4315" data-rel-y="6094" data-rotate="551" data-rotate-x="5" data-rotate-y="2" data-x="2015" data-y="6460" data-z="2" data-scale="2">
     <h5>Templates</h5>
 <p><sub>Template reemplazan su invocacion con su contenido en tiempo de compilacion.</sub></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1"> 1</a>
@@ -782,10 +703,10 @@ se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
 </td></tr></table><p><em>Codigo que hackea codigo a nivel de codigo en compilacion !</em></p>
 
     </div>
-    <!-- Ends presentation slide number: 23 -->
+    <!-- Ends presentation slide number: 20 -->
     
-    <!-- Begins presentation slide number: 24 -->
-    <div id=24 class="step brightness" data-rel-x="2622" data-rel-y="7645" data-rotate="177" data-rotate-x="4" data-rotate-y="1" data-x="4550" data-y="6850" data-z="1" data-scale="5">
+    <!-- Begins presentation slide number: 21 -->
+    <div id=21 class="step " data-rel-x="3250" data-rel-y="5123" data-rotate="-437" data-rotate-x="2" data-rotate-y="5" data-x="3865" data-y="7647" data-z="5" data-scale="5">
     <h5>Macros</h5>
 <p><sub>Macros son como Templates pero en tiempo de ejecucion y hackean el AST al vuelo.</sub></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1"> 1</a>
@@ -800,25 +721,25 @@ se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
 <a href="#-10">10</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="n">macros</span>
 
 <span class="k">macro</span> <span class="n">generate_hello</span><span class="p">():</span> <span class="n">typed</span> <span class="o">=</span>
-  <span class="n">parseStmt</span> <span class="s">&quot;&quot;&quot;proc hello() = echo &quot;hi&quot; &quot;&quot;&quot;</span>
+  <span class="n">parseStmt</span><span class="p">(</span><span class="s">&quot;&quot;&quot;proc hello() = echo &quot;hi&quot; &quot;&quot;&quot;</span><span class="p">)</span>
 
 <span class="n">generate_hello</span><span class="p">()</span>  <span class="c"># Generate a proc via Macros.</span>
 <span class="n">hello</span><span class="p">()</span>
 
-<span class="n">expandMacros</span><span class="p">:</span>      <span class="c"># Generar y ver el codigo generado por el Macro.</span>
-  <span class="n">generate_hello</span><span class="p">()</span>
+<span class="n">expandMacros</span><span class="p">:</span>      <span class="c"># Debug</span>
+  <span class="n">generate_hello</span><span class="p">()</span> <span class="c"># Generar y ver el codigo generado por el Macro.</span>
 </pre></div>
 </td></tr></table><p><em>Codigo que hackea codigo a nivel de AST en ejecucion !</em></p>
 
     </div>
-    <!-- Ends presentation slide number: 24 -->
+    <!-- Ends presentation slide number: 21 -->
     
-    <!-- Begins presentation slide number: 25 -->
-    <div id=25 class="step sepia" data-rel-x="4043" data-rel-y="8764" data-rotate="-319" data-rotate-x="5" data-rotate-y="1" data-x="2902" data-y="7837" data-z="2" data-scale="9">
+    <!-- Begins presentation slide number: 22 -->
+    <div id=22 class="step brightness" data-rel-x="2180" data-rel-y="7371" data-rotate="-169" data-rotate-x="5" data-rotate-y="5" data-x="4379" data-y="6851" data-z="5" data-scale="6">
     <h5>Template Engine</h5>
 <ul>
-<li>Template Engine integrado (ala Jinja).</li>
-<li>Archivos <code>*.tmpl</code>, shebang y syntaxis Nim.</li>
+<li>Template Engine integrado (ala Jinja, Jekyll, etc).</li>
+<li>Archivos <code>*.nimf</code>, shebang y syntaxis Nim.</li>
 <li>Lineas con <code>#</code> es codigo Nim, sino literal verbatim.</li>
 </ul>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
@@ -826,10 +747,8 @@ se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
 <a href="#-3">3</a>
 <a href="#-4">4</a>
 <a href="#-5">5</a>
-<a href="#-6">6</a>
-<a href="#-7">7</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">#? stdtmpl(subsChar = &#39;$&#39;, metaChar = &#39;#&#39;)</span>
+<a href="#-6">6</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">#? stdtmpl | standard</span>
 <span class="c">#proc generateXML(name, age: string): string =</span>
-<span class="c">#  result = &quot;&quot;</span>
 <span class="o">&lt;</span><span class="n">xml</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;$</span><span class="n">name</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">age</span><span class="o">&gt;$</span><span class="n">age</span><span class="o">&lt;/</span><span class="n">age</span><span class="o">&gt;</span>
@@ -846,10 +765,8 @@ se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
 <a href="#-9"> 9</a>
 <a href="#-10">10</a>
 <a href="#-11">11</a>
-<a href="#-12">12</a>
-<a href="#-13">13</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">#? stdtmpl | standard</span>
+<a href="#-12">12</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">#? stdtmpl | standard</span>
 <span class="c">#proc generateHTML(title, content: string, tabs: openArray[string]): string =</span>
-<span class="c">#  result = &quot;&quot;</span>
 <span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;&lt;</span><span class="n">title</span><span class="o">&gt;</span> <span class="o">$</span><span class="n">title</span> <span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
@@ -864,10 +781,67 @@ se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
 </td></tr></table><p><sub>No confundir Template-Engine con Templates.</sub></p>
 
     </div>
-    <!-- Ends presentation slide number: 25 -->
+    <!-- Ends presentation slide number: 22 -->
     
-    <!-- Begins presentation slide number: 26 -->
-    <div id=26 class="step sepia" data-rel-x="1299" data-rel-y="5414" data-rotate="-521" data-rotate-x="2" data-rotate-y="4" data-x="4485" data-y="5334" data-z="5" data-scale="5">
+    <!-- Begins presentation slide number: 23 -->
+    <div id=23 class="step contrast" data-rel-x="2988" data-rel-y="8124" data-rotate="-420" data-rotate-x="2" data-rotate-y="2" data-x="4690" data-y="6281" data-z="4" data-scale="6">
+    <h5>Garbage Collectors</h5>
+<ul>
+<li><code>RefC</code>: Cuenta referencias, Default, deferred.</li>
+<li><code>markAndSweep</code>: El mas Rapido, usa mas RAM.</li>
+<li><code>Boehm</code>: El mas lento, usa menos RAM.</li>
+<li><code>Go</code>: Clon de Go Lang.</li>
+<li><code>Regions</code>: Stack regions, casi sin GC.</li>
+<li><code>none</code>: Sin GC.</li>
+<li><code>--newruntime</code>: Experimental, estilo Rust (no BorrowChecker).</li>
+</ul>
+
+    </div>
+    <!-- Ends presentation slide number: 23 -->
+    
+    <!-- Begins presentation slide number: 24 -->
+    <div id=24 class="step brightness" data-rel-x="3662" data-rel-y="6287" data-rotate="-530" data-rotate-x="5" data-rotate-y="2" data-x="4943" data-y="8725" data-z="4" data-scale="9">
+    <h1>Ejemplos</h1>
+<h4>Levenshtein Distance</h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="n">editDistance</span><span class="p">(</span><span class="s">&quot;Gato&quot;</span><span class="p">,</span> <span class="s">&quot;Pato&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><h4>Diff</h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
+<a href="#-2">2</a>
+<a href="#-3">3</a>
+<a href="#-4">4</a>
+<a href="#-5">5</a>
+<a href="#-6">6</a>
+<a href="#-7">7</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c"># 2 txt (&quot;The Call of Cthulhu&quot;, Lovecraft)</span>
+<span class="k">let</span> <span class="n">txt0</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;I have looked upon all the universe has to hold of horror,</span>
+<span class="s">even skies of spring and flowers of summer must ever be poison to me.&quot;&quot;&quot;</span>
+<span class="k">let</span> <span class="n">txt1</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;I have looked upon all your code has to hold of bugs,</span>
+<span class="s">even skies of spring and flowers of summer must ever be poison to me.&quot;&quot;&quot;</span>
+
+<span class="n">echo</span> <span class="n">diffText</span><span class="p">(</span><span class="n">txt0</span><span class="p">,</span> <span class="n">txt1</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><h4>Syntax Highliting</h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#-1">1</a>
+<a href="#-2">2</a>
+<a href="#-3">3</a>
+<a href="#-4">4</a>
+<a href="#-5">5</a>
+<a href="#-6">6</a></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">let</span> <span class="n">code</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;for x in </span><span class="si">$int</span><span class="s">.high: echo x.ord mod 2 == 0&quot;&quot;&quot;</span>
+<span class="kd">var</span> <span class="n">toknizr</span><span class="p">:</span> <span class="n">GeneralTokenizer</span>
+<span class="n">initGeneralTokenizer</span><span class="p">(</span><span class="n">toknizr</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">toknizr</span><span class="p">.</span><span class="n">kind</span> <span class="o">!=</span> <span class="n">gtEof</span><span class="p">:</span>
+  <span class="n">getNextToken</span><span class="p">(</span><span class="n">toknizr</span><span class="p">,</span> <span class="n">langNim</span><span class="p">)</span>
+  <span class="n">echo</span> <span class="n">toknizr</span><span class="p">.</span><span class="n">kind</span>
+</pre></div>
+</td></tr></table><ul>
+<li>Todo esto es Libreria Standard.</li>
+</ul>
+
+    </div>
+    <!-- Ends presentation slide number: 24 -->
+    
+    <!-- Begins presentation slide number: 25 -->
+    <div id=25 class="step brightness" data-rel-x="3146" data-rel-y="5715" data-rotate="-242" data-rotate-x="5" data-rotate-y="5" data-x="3922" data-y="8732" data-z="1" data-scale="8">
     <h5>Nim Frontend</h5>
 <ul>
 <li>Nim compila a JavaScript.</li>
@@ -877,6 +851,7 @@ se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
 <li>Nim Frontend va muy rapido tambien.</li>
 <li>Hay paquetes con Libs Frontend en Nimble.</li>
 <li>Podes compilar Nim a JavaScript y usarlo en HTML Estatico.</li>
+<li>Se puede compilar a WebAssembly.</li>
 </ul>
 <p>Ejemplos:</p>
 <ul>
@@ -885,10 +860,10 @@ se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
 </ul>
 
     </div>
-    <!-- Ends presentation slide number: 26 -->
+    <!-- Ends presentation slide number: 25 -->
     
-    <!-- Begins presentation slide number: 27 -->
-    <div id=27 class="step invert" data-rel-x="1962" data-rel-y="5105" data-rotate="645" data-rotate-x="4" data-rotate-y="2" data-x="4690" data-y="5137" data-z="5" data-scale="8">
+    <!-- Begins presentation slide number: 26 -->
+    <div id=26 class="step grayscale" data-rel-x="4194" data-rel-y="5603" data-rotate="-480" data-rotate-x="5" data-rotate-y="5" data-x="2469" data-y="6202" data-z="3" data-scale="7">
     <p><em>Paquetes interesantes Terminal:</em></p>
 <ul>
 <li>Colores <a href="https://github.com/molnarmark/colorize">https://github.com/molnarmark/colorize</a></li>
@@ -909,10 +884,10 @@ se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
 </ul>
 
     </div>
-    <!-- Ends presentation slide number: 27 -->
+    <!-- Ends presentation slide number: 26 -->
     
-    <!-- Begins presentation slide number: 28 -->
-    <div id=28 class="step huerotate" data-rel-x="4694" data-rel-y="7727" data-rotate="-127" data-rotate-x="2" data-rotate-y="1" data-x="1230" data-y="5205" data-z="1" data-scale="9">
+    <!-- Begins presentation slide number: 27 -->
+    <div id=27 class="step invert" data-rel-x="2079" data-rel-y="7076" data-rotate="578" data-rotate-x="3" data-rotate-y="2" data-x="4943" data-y="6485" data-z="2" data-scale="2">
     <h5>Extras recomendados</h5>
 <ul>
 <li>Homepage <a href="https://nim-lang.org">https://nim-lang.org</a></li>
@@ -929,26 +904,33 @@ se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
 </ul>
 
     </div>
-    <!-- Ends presentation slide number: 28 -->
+    <!-- Ends presentation slide number: 27 -->
     
-    <!-- Begins presentation slide number: 29 -->
-    <div id=29 class="step brightness" data-rel-x="4523" data-rel-y="5347" data-rotate="-32" data-rotate-x="4" data-rotate-y="3" data-x="4155" data-y="5043" data-z="4" data-scale="5">
+    <!-- Begins presentation slide number: 28 -->
+    <div id=28 class="step grayscale" data-rel-x="2045" data-rel-y="7014" data-rotate="416" data-rotate-x="4" data-rotate-y="4" data-x="1327" data-y="6352" data-z="4" data-scale="6">
     <h5>Instalar</h5>
+<p><strong>Linux &amp; Mac</strong></p>
 <ul>
 <li><a href="https://github.com/dom96/choosenim#choosenim">ChooseNim</a></li>
-<li>Windows, es <a href="https://nim-lang.org/install_windows.html">1 ZIP.</a></li>
+</ul>
+
+<pre><code>curl https://nim-lang.org/choosenim/init.sh -sSf | sh</code></pre>
+<p><strong>Windows</strong></p>
+<ul>
+<li><a href="https://nim-lang.org/install_windows.html">1 ZIP.</a></li>
+</ul>
+<p><strong>Otros</strong></p>
+<ul>
 <li><a href="https://hub.docker.com/r/nimlang/nim/">Docker</a>, imagen <code>nimlang/nim</code>.</li>
-<li>Os X, igual a Linux.</li>
-<li>Linux, paquete de Distro o ChooseNim.</li>
 <li>Manual, codigo fuente en cualquier OS.</li>
 </ul>
 <p><em>Solo requiere un Compilador de C.</em></p>
 
     </div>
-    <!-- Ends presentation slide number: 29 -->
+    <!-- Ends presentation slide number: 28 -->
     
-    <!-- Begins presentation slide number: 30 -->
-    <div id=30 class="step saturate" data-rel-x="4938" data-rel-y="6657" data-rotate="244" data-rotate-x="2" data-rotate-y="1" data-x="3006" data-y="7074" data-z="2" data-scale="2">
+    <!-- Begins presentation slide number: 29 -->
+    <div id=29 class="step saturate" data-rel-x="2217" data-rel-y="7942" data-rotate="-198" data-rotate-x="5" data-rotate-y="4" data-x="4792" data-y="5552" data-z="1" data-scale="3">
     <h5>Editor / IDE soporte para Nim</h5>
 <p><img src="nim-spacemacs.png" alt="nim-spacemacs"></p>
 <p><a href="https://github.com/zah/nim.vim/">Vim</a>,
@@ -968,10 +950,10 @@ se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
 <a href="https://github.com/nim-lang/Nim/wiki/editor-support">etc etc...</a></p>
 
     </div>
-    <!-- Ends presentation slide number: 30 -->
+    <!-- Ends presentation slide number: 29 -->
     
-    <!-- Begins presentation slide number: 31 -->
-    <div id=31 class="step " data-rel-x="2076" data-rel-y="6223" data-rotate="-69" data-rotate-x="3" data-rotate-y="3" data-x="2262" data-y="5677" data-z="5" data-scale="4">
+    <!-- Begins presentation slide number: 30 -->
+    <div id=30 class="step grayscale" data-rel-x="2103" data-rel-y="7415" data-rotate="-485" data-rotate-x="2" data-rotate-y="2" data-x="1887" data-y="8940" data-z="5" data-scale="8">
     <h3>Nim necesita mas Comunidad</h3>
 <p><img src="gatas.jpg" alt="Nim Community"></p>
 <ul>
@@ -980,10 +962,10 @@ se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
 <p><em>Sumate!, Nim tiene cosas aun mas interesantes; Que empieze el hype !</em></p>
 
     </div>
-    <!-- Ends presentation slide number: 31 -->
+    <!-- Ends presentation slide number: 30 -->
     
-    <!-- Begins presentation slide number: 32 -->
-    <div id=32 class="step contrast" data-rel-x="3567" data-rel-y="8060" data-rotate="142" data-rotate-x="2" data-rotate-y="5" data-x="3383" data-y="6769" data-z="3" data-scale="1">
+    <!-- Begins presentation slide number: 31 -->
+    <div id=31 class="step brightness" data-rel-x="3060" data-rel-y="5490" data-rotate="-426" data-rotate-x="5" data-rotate-y="2" data-x="1090" data-y="8297" data-z="3" data-scale="1">
     <h5>Thanks! &hearts;</h5>
 <p><img src="stackoverflow-copypaste.jpg" alt="JuanCarlos"></p>
 <p><em>Juan Carlos</em></p>
@@ -994,10 +976,10 @@ se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
 </ul>
 
     </div>
-    <!-- Ends presentation slide number: 32 -->
+    <!-- Ends presentation slide number: 31 -->
     
 <!-- Begins presentation slide overview -->
-<div id=overview class=step data-x=2009 data-y=2835 data-scale=2 style='pointer-events:none' data-rotate=634 ></div>
+<div id=overview class=step data-x=4125 data-y=2812 data-scale=5 style='pointer-events:none' data-rotate=366 ></div>
 <!-- Ends presentation slide overview -->
 
 </div>
@@ -1025,44 +1007,96 @@ se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).</p>
 ![use nim cat](nim-bad-cat.jpg)
 
 * Python Syntax y rendimiento de C.
-* Compilado (Binario ejecutable).
+* Compilado (1 archivo binario ejecutable).
 * Tipado estatico fuerte con Inferencia.
-* Compila a C / C++.
-* Compila a JavaScript (DOM API).
-* Linux, Windows, Mac, Web, etc.
+* Compila a C / C++ / JavaScript (DOM API).
+* Linux, Windows, Mac, Web, Raspi, ARM, etc
 * Facil hacer modulos de Python.
-* Facil usar librerias en C.
+* Facil usar librerias en C/C++/JavaScript.
+* Administrador de Paquetes y herramientas.
+* Documentacion online completa con ejemplos
+* Targets comunidad LLVM,Vulkan,WebGL,OpenGL,etc
 
 -----
 
 ### Hola Mundo!
 
 ```bash
-$ mkdir /tmp/prueba ; cd /tmp/prueba/
-
 $ echo 'echo "Hola Mundo"' > hello.nim
 
-$ nim c -r hello.nim          # C
+$ nim c -r hello.nim         # C
 Hola Mundo
 
-$ nim cpp -r hello.nim        # C++
+$ nim cpp -r hello.nim       # C++
 Hola Mundo
 
-$ nim c --cpu:amd64 --os:windows hello.nim
-$ wine hello.exe              # Windows
+$ nim objc -r hello.nim      # ObjectiveC
 Hola Mundo
 
-$ nim js -d:nodejs hello.nim  # NodeJS
+$ nim c --os:windows hello.nim
+$ wine hello.exe             # Windows
+Hola Mundo
+
+$ nim js -d:nodejs hello.nim # NodeJS
 $ nodejs hello.js
 Hola Mundo
 
-$ nim js hello.nim            # Web (Frontend)
+$ nim e hello.nim            # NimScript
+Hola Mundo
 
-$ lsb_release -d
-Description:  Arch Linux
+$ nim js hello.nim           # Web (Frontend)
 ```
 
 [<sub>Codigo de todos los slides esta en el Repo</sub>](ejemplos/hello.nim)
+
+-----
+
+##### Syntaxis
+
+- Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.
+- Comentarios son Documentacion (RST/Markdown) empiezan con `##`.
+- Tracebacks a color simil Python con linea, posicion y tipo de error.
+- Templates, reemplazan su invocacion con su contenido en compilacion.
+- Macros, bloques que agregan funcionalidad en tiempo de ejecucion.
+- Overload en funciones, dependiendo el tipo de argumento.
+- Exportar objetos con `*`, `cosa` es privado, `cosa*` es publico.
+- `import modulo` importa todo lo que tenga `*` en `modulo.nim`.
+- [Algunos modulos de Python fueron clonados en Nim.](https://nimble.directory/search?query=python)
+- Nim esta escrito en Nim, facil de hackear.
+
+-----
+
+##### Herramientas
+
+- Linters `nim check`, `nimble check`.
+- Documentacion `nim doc`, `nim rst2html`, `nim rst2tex`
+- Template de nuevo projecto `nimble init`.
+- Task Runner `nimble tasks` *(tipo Grunt/Gulp)*.
+- Paquetes y docs hosteados https://nimble.directory
+- Publicar paquete `nimble publish` *(PR en GitHub)*.
+- NimInst autogenerador de instaladores (InnoSetup, Bash).
+- NimScript para reemplazar Bash.
+- `nimpretty` formateador de codigo (ala GoFmt, AutoPep8)
+- `c2nim` para portar codigo C a Nim.
+- Toda herramienta de C/C++ sirve (gdb, etc).
+
+-----
+
+##### Generador de Documentacion
+
+*Formato entrada:*
+- Codigo fuente Nim `*.nim`
+- ReStructuredText/Markdown.
+
+*Formato salida:*
+- HTML5 (TOC, Search, links, index, etc).
+- LaTeX.
+- ODT (LibreOffice).
+- JSON.
+
+*Uso:*
+- Comentarios con `##` ReStructuredText/Markdown.
+- No hay que instalar nada extra para usarlo.
 
 -----
 
@@ -1070,11 +1104,154 @@ Description:  Arch Linux
 
 ![inim](inim.gif)
 
-- `nimble install inim` or `nim secret`.
+- `nimble install inim` o `nim secret`.
 
 -----
 
-### Enchufar C
+##### Inmutable
+
+- `var` Mutable, como en Python.
+- `let` Inmutable, solo lectura.
+- `const` Inmutable, tiempo de Compilacion.
+
+```nim
+>>> var foo = "Esta variable puede cambiar"
+>>> foo = "Otra cosa"
+>>>
+>>> let bar = "Esta variable No se puede cambiar"
+>>> bar = "Da Error"
+Error: 'bar' cannot be assigned to
+>>>
+>>> const baz = "Constante de Compilacion"
+>>> baz = "Da Error"
+Error: 'baz' cannot be assigned to
+```
+
+*Si se te complica, podes usar `var` en todos lados.*
+
+-----
+
+##### Ejecutar en Tiempo de Compilacion
+
+- `const constante = "compile time"` Constante de compilacion.
+- `include("incluir.nim")` Copia el archivo entero en el lugar.
+- `staticRead("foo.json")` Lee archivo entero y devuelve string.
+- `staticExec("1 + 1")` Ejecuta argumentos y devuelve el retorno.
+- `static: echo("compile time")` Ejecuta Bloques de codigo.
+- FFI, Regex, JSON, en tiempo de compilacion.
+
+*Lo que se ejecuta en tiempo de compilacion no tiene costo en tiempo de ejecucion.*
+
+-----
+
+##### De Python a Nim
+
+- `def` ➡️ `proc`
+- `lambda` ➡️ `proc`
+- `f"{foo},{1+1}"` ➡️ `fmt"{foo},{1+1}"`
+- `dict` ➡️ `table`
+- `NamedTuple` ➡️ `tuple`
+- `set` ➡️ `HashSet`
+- `b if a else c` ➡️ `if a: b else: c` inline
+- Go `defer` ➡️ Nim `defer`.
+- Go `channels` ➡️ Nim `channels`.
+- JavaScript Arrows Functions en modulo `sugar`.
+
+-----
+
+##### Nim Unified Functions Call Syntax
+
+- Todas las formas son validas y equivalentes.
+
+```nim
+>>> let foo = [1, 2, 3]
+
+>>> foo.len()
+3
+
+>>> len(foo)
+3
+
+>>> foo.len.float  # Dot chain.
+3.0
+```
+
+-----
+
+##### Tipos Basicos
+
+Nim         | Python  | Ejemplo Nim    | Ejemplo Python  | Comentarios                               |
+------------|:--------|:--------------:|:---------------:|------------------------------------------:|
+ `string`   | `str`   | `"foo"`        | `"foo"`         | Unicode, UTF8, Emoji, etc                 |
+ `string`   | `str`   | `"""bar"""`    | `"""bar"""`     | String Multi-linea                        |
+ `char`     | -       | `'a'`          | -               | 1 char, Optimizado internamente a int     |
+ `int`      | `int`   | `42`           | `42`            | int8, int16, int32, int64, int            |
+ `float`    | `float` | `2.0`          | `2.0`           | float32, float64, float                   |
+ `bool`     | `bool`  | `true, false`  | `True, False`   | true, false en Nim                        |
+ `tuple`    | `tuple` | `(1, 2, 3)`    | `(1, 2, 3)`     | tuple de Nim es como NamedTuple de Py     |
+ `seq`      | `list`  | `@[1, 2, 3]`   | `[1, 2, 3]`     | Mismo Tipo en todos los items en Nim      |
+ `set`      | `set`   | `{1, 2, 3}`    | `{1, 2, 3}`     | int, char, bool en Nim                    |
+ `enum`     | `enum`  | `type enum`    | ?               | En Python no los usa nadie                |
+ `array`    | -       | `[1, 2, 3]`    | -               | Tamanio fijo, mismo tipo en los items     |
+ `subrange` | -       | `range[0..2]`  | -               | Solo acepta int de 0 a 2,puede usar float |
+ `concept`  | -       | `type concept` | -               | Tipos definidos por usuario,compile time  |
+
+*Tipos de Nim estan optimizados para performance.*
+
+-----
+
+##### Velocidad
+
+- Nim fue pensado para ir muy rapido.
+- Usa poca RAM y funciona rapido en PC viejas.
+- No necesita "preparar un ambiente" en la PC.
+
+Ejemplo, mismo RayTracer implementado en varios lenguajes:
+
+![raytracer](raytracer.jpg)
+
+[<sub>Source</sub>](http://blog.johnnovak.net/2017/04/22/nim-performance-tuning-for-the-uninitiated/#does-it-all-matter)
+
+-----
+
+##### Peso
+
+- Nim fue pensado para ser liviano (Raspi, Router, IoT, etc).
+- Nim no incrusta Runtime, VM, Interprete, etc.
+- [HolaMundo Go 2Mb, HolaMundo Nim 20Kb.](http://linkode.org/#narWOQnU9i2UDswu9NDYo1)
+
+```bash
+$ echo 'echo "Hola Mundo"' > hello.nim
+$ nim c -d:release --app:console --opt:size hello.nim
+$ strip --strip-all hello
+$ du -h hello
+15K     hello
+```
+
+![cat](node-modules.jpg)
+
+-----
+
+##### NimScript
+
+- Scripting MultiPlataforma, Nim en modo interpretado.
+- Muchos modulos libreria standard disponibles.
+- Configuracion, build (build tool).
+- Puede usarse con Nimble.
+- Puede usarse como multi-proposito (standalone).
+- Extension de archivo `*.nims`.
+- No se compila, usa `nim e archivo.nims`.
+- Administrador de paquetes, test, docs, asserts.
+
+**Hola Mundo NimScript:**
+
+```nim
+echo "Hola mundo"
+```
+
+-----
+
+### Conectar con C
 
 C:
 
@@ -1099,7 +1276,7 @@ $ nim c -r ejemplo.nim
 
 -----
 
-##### Enchufar Web
+##### Conectectar con la Web
 
 <sub>JavaScript &dzigrarr; Nim</sub>
 
@@ -1140,7 +1317,7 @@ $ xdg-open index2.html  # Abre el Navegador Web.
 
 -----
 
-##### Enchufar Python
+##### Conectar con Python
 
 Nim:
 
@@ -1149,7 +1326,7 @@ import nimpy
 proc funcioncita*(nombre: string): string {.exportpy.} = "Hola " & nombre
 ```
 
-Python:
+Python (2 o 3):
 
 ```nim
 import nim2python
@@ -1164,38 +1341,7 @@ Compilar:
 
 `nim c --app:lib --out:modulo.so codigo.nim`
 
-<sub>Nim compila 1 *.so luego no requiere Nim para funcionar.</sub>
-
------
-
-##### Syntaxis
-
-- Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.
-- Comentarios empiezan con `#`, DocStrings con `##`.
-- Tracebacks a color simil Python con linea y tipado del error.
-- Magias syntax sugar, tipo Python Jupiter Notebook.
-- Templates, reemplazan su invocacion con su contenido en compilacion.
-- Macros, bloques que agregan funcionalidad en tiempo de ejecucion.
-- Overload en funciones, dependiendo el tipo de argumento.
-- Exportar objetos con `*`, `cosa` es privado, `cosa*` es exportado.
-- `import modulo` importa todo lo que tenga `*` en `modulo.nim`.
-- [Algunos modulos de Python fueron clonados en Nim.](https://nimble.directory/search?query=python)
-
------
-
-##### Herramientas
-
-- Linters `nim check`, `nimble check` y `nim pretty`.
-- Generador de Documentacion integrado `nim doc`.
-- Paquetes y docs hosteados https://nimble.directory
-- Nim esta escrito en Nim, facil de hackear.
-- Template de nuevo projecto `nimble init`.
-- Task Runner `nimble tasks` *(tipo Grunt/Gulp)*.
-- Publicar paquete `nimble publish` *(PR en GitHub)*.
-- NimSuggest autogenerador de autocompletado para IDE.
-- NimInst autogenerador de instaladores (InnoSetup, Bash).
-- NimGrep Grep optimizado para Nim (CamelCase vs snake_case).
-- Garbage Collector GC personalizable o desactivado.
+<sub>Nim compila luego no requiere Nim para funcionar. Se puede subir a PyPI</sub>
 
 -----
 
@@ -1231,179 +1377,9 @@ Compilar:
 
 -----
 
-##### Inmutable en Nim
-
-- `var` Mutable, como en Python.
-- `let` Inmutable, solo lectura.
-- `const` Inmutable, tiempo de Compilacion.
-
-```nim
->>> var foo = "Esta variable puede cambiar"
->>> foo = "Otra cosa"
->>>
->>> let bar = "Esta variable No se puede cambiar"
->>> bar = "Da Error"
-Error: 'bar' cannot be assigned to
->>>
->>> const baz = "Constante de Compilacion"
->>> baz = "Da Error"
-Error: 'baz' cannot be assigned to
-```
-
-*Si se te complica, podes usar `var` en todos lados.*
-
------
-
-##### Ejecutar en Tiempo de Compilacion
-
-- `const constante = "compile time"` Constante de compilacion.
-- `include("incluir.nim")` Copia el archivo entero en el lugar.
-- `static_read("foo.json")` Lee archivo entero y devuelve string.
-- `static_exec("1 + 1")` Ejecuta argumentos y devuelve el retorno.
-- `static: echo("compile time")` Ejecuta Bloques de codigo.
-
-*Lo que se ejecuta en tiempo de compilacion no tiene costo en tiempo de ejecucion.*
-
------
-
-##### Tipos Basicos
-
-Nim         | Python  | Ejemplo Nim   | Ejemplo Python  | Comentarios                               |
-------------|:--------|:-------------:|:---------------:|------------------------------------------:|
- `string`   | `str`   | `"foo"`       | `"foo"`         | Unicode, UTF8, Emoji, etc                 |
- `string`   | `str`   | `"""bar"""`   | `"""bar"""`     | String Multi-linea                        |
- `char`     | -       | `'a'`         | -               | 1 char, Optimizado internamente a int     |
- `int`      | `int`   | `42`          | `42`            | int8, int16, int32, int64, int            |
- `float`    | `float` | `2.0`         | `2.0`           | float32, float64, float                   |
- `bool`     | `bool`  | `true, false` | `True, False`   | true, false en Nim                        |
- `tuple`    | `tuple` | `(1, 2, 3)`   | `(1, 2, 3)`     | tuple de Nim es como NamedTuple de Py     |
- `seq`      | `list`  | `@[1, 2, 3]`  | `[1, 2, 3]`     | Mismo Tipo en todos los items en Nim      |
- `set`      | `set`   | `{1, 2, 3}`   | `{1, 2, 3}`     | int, char, bool en Nim                    |
- `enum`     | `enum`  | ?             | ?               | En Python no los usa nadie                |
- `array`    | -       | `[1, 2, 3]`   | -               | Tamanio fijo, mismo tipo en los items     |
- `subrange` | -       | `range[0..2]` | -               | Solo acepta int de 0 a 2,puede usar float |
-
-*Tipos de Nim estan optimizados para performance.*
-
------
-
-##### Detalles
-
-- Python `def` es Nim `proc`.
-- Python `lambda` es Nim `proc` (sin nombre).
-- Python `f"{foo},{1+1}"` es Nim `fmt"{foo},{1+1}"`.
-- Python `dict` es Nim `table` o `OrderedTable`.
-- Python `NamedTuple` es Nim `tuple`.
-- Python `set` es Nim `HashSet` o `OrderedSet`.
-- Python Operador Ternario es Nim `if..else` inline.
-- Python Comprension de Lista en modulo `sugar`.
-- Nim string es `""`, no `''` (es `char`).
-- Go `defer` es Nim `defer`.
-- Go `channels` es Nim `channels`.
-- JavaScript Arrows Functions en modulo `sugar`.
-
------
-
-##### Nim Unified Functions Call Syntax
-
-- Todas las formas son validas y equivalentes.
-
-```nim
->>> let foo = [1, 2, 3]
-
->>> foo.len
-3
-
->>> foo.len()
-3
-
->>> len(foo)
-3
-
->>> $foo.len      # Magia convierte a string.
-"3"
-
->>> foo.len.int8  # Dot chain.
-3 : int8
-```
-
------
-
-##### Nim Case Insensitive
-
-![Nim is Cool](nim-cool.jpg)
-
-- camelCase y snake_case podes usarlo como te guste.
-- Todas las formas son validas y equivalentes.
-
-```nim
->>> let camelCase = 42  # Es lo mismo que camel_case.
->>> camel_case
-42
-
->>> let snake_case = 1  # Es lo mismo que snakeCase.
->>> snakeCase
-1
-```
-
------
-
-##### Velocidad
-
-- Nim fue pensado para ir muy rapido.
-- Benchmarks: Falta Nim o esta a la par con C.
-
-Ejemplo, mismo RayTracer implementado en varios lenguajes:
-
-![raytracer](raytracer.jpg)
-
-[<sub>Source</sub>](http://blog.johnnovak.net/2017/04/22/nim-performance-tuning-for-the-uninitiated/#does-it-all-matter)
-
------
-
-##### Peso
-
-```bash
-$ echo 'echo "Hola Mundo"' > hello.nim
-$ nim c -d:release --app:console --opt:size hello.nim
-$ strip --strip-all hello
-$ upx --best --ultra-brute hello
-$ du -h hello
-15K     hello
-```
-
-- Nim fue pensado para ser liviano (Raspi, Router, IoT, etc).
-- Nim no incrusta Runtime, VM, Interprete, etc.
-- [HolaMundo Go 2Mb, HolaMundo Nim 20Kb.](http://linkode.org/#narWOQnU9i2UDswu9NDYo1)
-
-![cat](node-modules.jpg)
-
------
-
-##### NimScript
-
-- Lenguaje interpretado *(Nim limitado, no std lib)*.
-- Modulos disponibles: strutils, ospaths, math, distros.
-- Puede usarse como configuracion avanzada.
-- Puede usarse como build (build tool).
-- Puede usarse con Nimble.
-- Puede usarse como multi-proposito (standalone).
-- Extension de archivo `*.nims`.
-- No se compila, usa `nim e archivo.nims`.
-
-**Hola Mundo NimScript:**
-
-```nim
-#!/usr/bin/env nim
-echo "Hola mundo"
-```
-
------
-
 ##### Unittests
 
-- Tests Runner amigable.
-- `nim c -r test "Nombre del test"`.
+- Tests Runner amigable, `nim c -r test.nim`.
 
 ```nim
 suite "Nombre del test":
@@ -1430,70 +1406,6 @@ suite "Nombre del test":
   echo "Teardown: Esto se ejecuta 1 vez DESPUES de TODOS los Tests."
 
 ```
-
------
-
-##### Generador de Documentacion
-
-*Formato entrada:*
-- Codigo fuente texto plano Nim `*.nim`
-
-*Formato salida:*
-- HTML5 (TOC, Search, links, index, etc).
-- reStructuredText.
-- JSON.
-- LaTeX.
-
-*Uso:*
-- Comentarios con `##` parsea a RST o texto.
-
------
-
-##### CrossCompilar
-
-Basicamente hay que pasarle la ruta donde esta el Compilador.
-
-```bash
-$ mkdir /tmp/prueba_nim_crosscompile ; cd /tmp/prueba_nim_crosscompile/
-
-$ echo 'echo "Hola Mundo"' > hello.nim
-
-$ nim c --cpu:amd64 --os:windows --gcc.exe:x86_64-w64-mingw32-gcc \
-        --gcc.linkerexe:x86_64-w64-mingw32-gcc hello.nim
-
-$ wine hello.exe
-Hola Mundo
-```
-
-Las libs de crosscompile se instalan instalando `mingw-w64-gcc` (Arch).
-
-*Dependera un poco que tan amigable es tu Distro con las Libs de crosscompile.*
-
------
-
-##### Funciones
-
-**proc:**
-
-Funcion basica, generica,
-puede modificar variables y cosas globales (side effects),
-se resuelve estaticamente en tiempo de Compilacion (Static Dispatch).
-
-**func:**
-
-Funcion pura, es como una funcion matematica,
-no modifica variables y cosas globales (no side effects, muy segura),
-se resuelve estaticamente en tiempo de Compilacion (Static Dispatch).
-
-**method:**
-
-Metodo, para usar herencia (OOP),
-solo cuando pertenece a un objeto definido con `ref object of RootObj` y
-hay otros objetos que heredan de este objeto,
-puede modificar variables y cosas globales (con *side effects*),
-se resuelve dinamicamente en tiempo de Ejecucion (Runtime Dispatch).
-
-*Si se te complica podes usar `proc` para casi todo.*
 
 -----
 
@@ -1538,13 +1450,13 @@ templatecita("primer argumento", "segundo argumento"):
 import macros
 
 macro generate_hello(): typed =
-  parseStmt """proc hello() = echo "hi" """
+  parseStmt("""proc hello() = echo "hi" """)
 
 generate_hello()  # Generate a proc via Macros.
 hello()
 
-expandMacros:      # Generar y ver el codigo generado por el Macro.
-  generate_hello()
+expandMacros:      # Debug
+  generate_hello() # Generar y ver el codigo generado por el Macro.
 ```
 
 *Codigo que hackea codigo a nivel de AST en ejecucion !*
@@ -1553,14 +1465,13 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 
 ##### Template Engine
 
-- Template Engine integrado (ala Jinja).
-- Archivos `*.tmpl`, shebang y syntaxis Nim.
+- Template Engine integrado (ala Jinja, Jekyll, etc).
+- Archivos `*.nimf`, shebang y syntaxis Nim.
 - Lineas con `#` es codigo Nim, sino literal verbatim.
 
 ```nim
-#? stdtmpl(subsChar = '$', metaChar = '#')
+#? stdtmpl | standard
 #proc generateXML(name, age: string): string =
-#  result = ""
 <xml>
   <name>$name</name>
   <age>$age</age>
@@ -1570,7 +1481,6 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 ```nim
 #? stdtmpl | standard
 #proc generateHTML(title, content: string, tabs: openArray[string]): string =
-#  result = ""
 <head><title> $title </title></head>
 <body>
     <ul>
@@ -1587,6 +1497,53 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 
 -----
 
+##### Garbage Collectors
+
+- `RefC`: Cuenta referencias, Default, deferred.
+- `markAndSweep`: El mas Rapido, usa mas RAM.
+- `Boehm`: El mas lento, usa menos RAM.
+- `Go`: Clon de Go Lang.
+- `Regions`: Stack regions, casi sin GC.
+- `none`: Sin GC.
+- `--newruntime`: Experimental, estilo Rust (no BorrowChecker).
+
+-----
+
+# Ejemplos
+
+#### Levenshtein Distance
+
+```nim
+echo editDistance("Gato", "Pato")
+```
+
+#### Diff
+
+```nim
+# 2 txt ("The Call of Cthulhu", Lovecraft)
+let txt0 = """I have looked upon all the universe has to hold of horror,
+even skies of spring and flowers of summer must ever be poison to me."""
+let txt1 = """I have looked upon all your code has to hold of bugs,
+even skies of spring and flowers of summer must ever be poison to me."""
+
+echo diffText(txt0, txt1)
+```
+
+#### Syntax Highliting
+
+```nim
+let code = """for x in $int.high: echo x.ord mod 2 == 0"""
+var toknizr: GeneralTokenizer
+initGeneralTokenizer(toknizr, code)
+while toknizr.kind != gtEof:
+  getNextToken(toknizr, langNim)
+  echo toknizr.kind
+```
+
+- Todo esto es Libreria Standard.
+
+-----
+
 ##### Nim Frontend
 
 - Nim compila a JavaScript.
@@ -1596,6 +1553,7 @@ expandMacros:      # Generar y ver el codigo generado por el Macro.
 - Nim Frontend va muy rapido tambien.
 - Hay paquetes con Libs Frontend en Nimble.
 - Podes compilar Nim a JavaScript y usarlo en HTML Estatico.
+- Se puede compilar a WebAssembly.
 
 Ejemplos:
 - Frontend SPA (React-like) https://github.com/pragmagic/karax
@@ -1639,11 +1597,18 @@ Ejemplos:
 
 ##### Instalar
 
+**Linux & Mac**
 - [ChooseNim](https://github.com/dom96/choosenim#choosenim)
-- Windows, es [1 ZIP.](https://nim-lang.org/install_windows.html)
+
+```
+curl https://nim-lang.org/choosenim/init.sh -sSf | sh
+```
+
+**Windows**
+- [1 ZIP.](https://nim-lang.org/install_windows.html)
+
+**Otros**
 - [Docker](https://hub.docker.com/r/nimlang/nim/), imagen `nimlang/nim`.
-- Os X, igual a Linux.
-- Linux, paquete de Distro o ChooseNim.
 - Manual, codigo fuente en cualquier OS.
 
 *Solo requiere un Compilador de C.*
@@ -1691,7 +1656,7 @@ Ejemplos:
 - [<sub>github.com/juancarlospaco</sub>](https://github.com/juancarlospaco) [<sub>twitter.com/juancarlospaco</sub>](https://twitter.com/juancarlospaco) [<sub>t.me/juancarlospaco</sub>](https://t.me/juancarlospaco)
 - [<sub>Repo de esta Presentacion en GitHub.</sub>](https://github.com/juancarlospaco/nim-presentation-slides#nim-presentation-slides)
 - [<sub><i>Presentacion hecha en Markdown con Microraptor.</i></sub>](https://github.com/juancarlospaco/microraptor#microraptor)</textarea><br>
-    <a href="data:text/plain;charset=utf8;base64,IyBJbnRybyBhIE5pbQoKIVtjYXRdKHNhcmNhc3RpYy1jYXQuanBnKQoKKi4uLnBhcmEgUHl0aG9uZXJhcyoKCi0tLS0tCgohW3VzZSBuaW0gY2F0XShuaW0tYmFkLWNhdC5qcGcpCgoqIFB5dGhvbiBTeW50YXggeSByZW5kaW1pZW50byBkZSBDLgoqIENvbXBpbGFkbyAoQmluYXJpbyBlamVjdXRhYmxlKS4KKiBUaXBhZG8gZXN0YXRpY28gZnVlcnRlIGNvbiBJbmZlcmVuY2lhLgoqIENvbXBpbGEgYSBDIC8gQysrLgoqIENvbXBpbGEgYSBKYXZhU2NyaXB0IChET00gQVBJKS4KKiBMaW51eCwgV2luZG93cywgTWFjLCBXZWIsIGV0Yy4KKiBGYWNpbCBoYWNlciBtb2R1bG9zIGRlIFB5dGhvbi4KKiBGYWNpbCB1c2FyIGxpYnJlcmlhcyBlbiBDLgoKLS0tLS0KCiMjIyBIb2xhIE11bmRvIQoKYGBgYmFzaAokIG1rZGlyIC90bXAvcHJ1ZWJhIDsgY2QgL3RtcC9wcnVlYmEvCgokIGVjaG8gJ2VjaG8gIkhvbGEgTXVuZG8iJyA-IGhlbGxvLm5pbQoKJCBuaW0gYyAtciBoZWxsby5uaW0gICAgICAgICAgIyBDCkhvbGEgTXVuZG8KCiQgbmltIGNwcCAtciBoZWxsby5uaW0gICAgICAgICMgQysrCkhvbGEgTXVuZG8KCiQgbmltIGMgLS1jcHU6YW1kNjQgLS1vczp3aW5kb3dzIGhlbGxvLm5pbQokIHdpbmUgaGVsbG8uZXhlICAgICAgICAgICAgICAjIFdpbmRvd3MKSG9sYSBNdW5kbwoKJCBuaW0ganMgLWQ6bm9kZWpzIGhlbGxvLm5pbSAgIyBOb2RlSlMKJCBub2RlanMgaGVsbG8uanMKSG9sYSBNdW5kbwoKJCBuaW0ganMgaGVsbG8ubmltICAgICAgICAgICAgIyBXZWIgKEZyb250ZW5kKQoKJCBsc2JfcmVsZWFzZSAtZApEZXNjcmlwdGlvbjogIEFyY2ggTGludXgKYGBgCgpbPHN1Yj5Db2RpZ28gZGUgdG9kb3MgbG9zIHNsaWRlcyBlc3RhIGVuIGVsIFJlcG88L3N1Yj5dKGVqZW1wbG9zL2hlbGxvLm5pbSkKCi0tLS0tCgojIyMgSW50ZXJwcmV0ZSBJbnRlcmFjdGl2bwoKIVtpbmltXShpbmltLmdpZikKCi0gYG5pbWJsZSBpbnN0YWxsIGluaW1gIG9yIGBuaW0gc2VjcmV0YC4KCi0tLS0tCgojIyMgRW5jaHVmYXIgQwoKQzoKCmBgYGMKaW50IHN1bWEyRW50ZXJvcyhpbnQgYSwgaW50IGIpIHtyZXR1cm4gYSArIGI7fQpgYGAKCk5pbToKCmBgYG5pbQp7LmNvbXBpbGU6ICJzdW1hLmMiLn0KcHJvYyBzdW1hMkVudGVyb3MoYSwgYjogY2ludCk6IGNpbnQgey5pbXBvcnRjLn0KZWNobyBzdW1hMkVudGVyb3MoMSwgMikKYGBgCgpgYGBiYXNoCiQgbmltIGMgLXIgZWplbXBsby5uaW0KMwpgYGAKCls8c3ViPkNvZGlnbyBlbiBSZXBvPC9zdWI-XShlamVtcGxvcy9lamVtcGxvLm5pbSkKCi0tLS0tCgojIyMjIyBFbmNodWZhciBXZWIKCjxzdWI-SmF2YVNjcmlwdCAmZHppZ3JhcnI7IE5pbTwvc3ViPgoKYGBgaHRtbAo8IS0tIGluZGV4Lmh0bWwgLS0tPgo8c2NyaXB0PmZ1bmN0aW9uIHN1bWEyRW50ZXJvcyhhLCBiKSB7cmV0dXJuIGFsZXJ0KGEgKyBiKX08L3NjcmlwdD4KPHNjcmlwdCBzcmM9ImVqZW1wbG9qczJuaW0uanMiPjwvc2NyaXB0PgpgYGAKCmBgYG5pbQojIGVqZW1wbG9qczJuaW0ubmltCnByb2Mgc3VtYTJFbnRlcm9zKGEsIGI6IGNpbnQpOiBjaW50IHsuaW1wb3J0Yy59CmVjaG8gc3VtYTJFbnRlcm9zKDEsIDIpCmBgYAoKYGBgYmFzaAokIG5pbSBqcyAtbzplamVtcGxvanMybmltLmpzIGVqZW1wbG9qczJuaW0ubmltCiQgeGRnLW9wZW4gaW5kZXguaHRtbCAgIyBBYnJlIGVsIE5hdmVnYWRvciBXZWIuCmBgYAoKPHN1Yj5OaW0gJmR6aWdyYXJyOyBKYXZhU2NyaXB0PC9zdWI-CgpgYGBodG1sCjwhLS0gaW5kZXgyLmh0bWwgLS0tPgo8c2NyaXB0IHNyYz0iZWplbXBsb25pbTJqcy5qcyI-PC9zY3JpcHQ-CjxzY3JpcHQ-YWxlcnQoc3VtYTJFbnRlcm9zKDEsIDIpKTwvc2NyaXB0PgpgYGAKCmBgYG5pbQojIGVqZW1wbG9uaW0yanMubmltCnByb2Mgc3VtYTJFbnRlcm9zKGEsIGI6IGNpbnQpOiBjaW50IHsuZXhwb3J0Yy59ID0gYSArIGIKYGBgCgpgYGBiYXNoCiQgbmltIGpzIC1vOmVqZW1wbG9uaW0yanMuanMgZWplbXBsb25pbTJqcy5uaW0KJCB4ZGctb3BlbiBpbmRleDIuaHRtbCAgIyBBYnJlIGVsIE5hdmVnYWRvciBXZWIuCmBgYAoKLS0tLS0KCiMjIyMjIEVuY2h1ZmFyIFB5dGhvbgoKTmltOgoKYGBgbmltCmltcG9ydCBuaW1weQpwcm9jIGZ1bmNpb25jaXRhKihub21icmU6IHN0cmluZyk6IHN0cmluZyB7LmV4cG9ydHB5Ln0gPSAiSG9sYSAiICYgbm9tYnJlCmBgYAoKUHl0aG9uOgoKYGBgbmltCmltcG9ydCBuaW0ycHl0aG9uCnByaW50KG5pbTJweXRob24uZnVuY2lvbmNpdGEoIk11bmRvIikpCmBgYAoKSW5zdGFsYXIgcHVlbnRlIFB5dGhvbi1OaW06CgotIGBuaW1ibGUgaW5zdGFsbCBuaW1weWAuCgpDb21waWxhcjoKCmBuaW0gYyAtLWFwcDpsaWIgLS1vdXQ6bW9kdWxvLnNvIGNvZGlnby5uaW1gCgo8c3ViPk5pbSBjb21waWxhIDEgKi5zbyBsdWVnbyBubyByZXF1aWVyZSBOaW0gcGFyYSBmdW5jaW9uYXIuPC9zdWI-CgotLS0tLQoKIyMjIyMgU3ludGF4aXMKCi0gQmxvcXVlcyBkZSBjb2RpZ28gcG9yIEluZGVudGFjaW9uLCBubyBUYWJzLCBubyBCcmFja2V0cywgbm8gU2VtaWNvbG9uLgotIENvbWVudGFyaW9zIGVtcGllemFuIGNvbiBgI2AsIERvY1N0cmluZ3MgY29uIGAjI2AuCi0gVHJhY2ViYWNrcyBhIGNvbG9yIHNpbWlsIFB5dGhvbiBjb24gbGluZWEgeSB0aXBhZG8gZGVsIGVycm9yLgotIE1hZ2lhcyBzeW50YXggc3VnYXIsIHRpcG8gUHl0aG9uIEp1cGl0ZXIgTm90ZWJvb2suCi0gVGVtcGxhdGVzLCByZWVtcGxhemFuIHN1IGludm9jYWNpb24gY29uIHN1IGNvbnRlbmlkbyBlbiBjb21waWxhY2lvbi4KLSBNYWNyb3MsIGJsb3F1ZXMgcXVlIGFncmVnYW4gZnVuY2lvbmFsaWRhZCBlbiB0aWVtcG8gZGUgZWplY3VjaW9uLgotIE92ZXJsb2FkIGVuIGZ1bmNpb25lcywgZGVwZW5kaWVuZG8gZWwgdGlwbyBkZSBhcmd1bWVudG8uCi0gRXhwb3J0YXIgb2JqZXRvcyBjb24gYCpgLCBgY29zYWAgZXMgcHJpdmFkbywgYGNvc2EqYCBlcyBleHBvcnRhZG8uCi0gYGltcG9ydCBtb2R1bG9gIGltcG9ydGEgdG9kbyBsbyBxdWUgdGVuZ2EgYCpgIGVuIGBtb2R1bG8ubmltYC4KLSBbQWxndW5vcyBtb2R1bG9zIGRlIFB5dGhvbiBmdWVyb24gY2xvbmFkb3MgZW4gTmltLl0oaHR0cHM6Ly9uaW1ibGUuZGlyZWN0b3J5L3NlYXJjaD9xdWVyeT1weXRob24pCgotLS0tLQoKIyMjIyMgSGVycmFtaWVudGFzCgotIExpbnRlcnMgYG5pbSBjaGVja2AsIGBuaW1ibGUgY2hlY2tgIHkgYG5pbSBwcmV0dHlgLgotIEdlbmVyYWRvciBkZSBEb2N1bWVudGFjaW9uIGludGVncmFkbyBgbmltIGRvY2AuCi0gUGFxdWV0ZXMgeSBkb2NzIGhvc3RlYWRvcyBodHRwczovL25pbWJsZS5kaXJlY3RvcnkKLSBOaW0gZXN0YSBlc2NyaXRvIGVuIE5pbSwgZmFjaWwgZGUgaGFja2Vhci4KLSBUZW1wbGF0ZSBkZSBudWV2byBwcm9qZWN0byBgbmltYmxlIGluaXRgLgotIFRhc2sgUnVubmVyIGBuaW1ibGUgdGFza3NgICoodGlwbyBHcnVudC9HdWxwKSouCi0gUHVibGljYXIgcGFxdWV0ZSBgbmltYmxlIHB1Ymxpc2hgICooUFIgZW4gR2l0SHViKSouCi0gTmltU3VnZ2VzdCBhdXRvZ2VuZXJhZG9yIGRlIGF1dG9jb21wbGV0YWRvIHBhcmEgSURFLgotIE5pbUluc3QgYXV0b2dlbmVyYWRvciBkZSBpbnN0YWxhZG9yZXMgKElubm9TZXR1cCwgQmFzaCkuCi0gTmltR3JlcCBHcmVwIG9wdGltaXphZG8gcGFyYSBOaW0gKENhbWVsQ2FzZSB2cyBzbmFrZV9jYXNlKS4KLSBHYXJiYWdlIENvbGxlY3RvciBHQyBwZXJzb25hbGl6YWJsZSBvIGRlc2FjdGl2YWRvLgoKLS0tLS0KCiMjIyMjIFB5TGliCgotIENvcGlhICooYXVuIG1hcykqIGxhIHN5bnRheGlzIGRlIFB5dGhvbiBlbiBOaW0uCi0gYG5pbWJsZSBpbnN0YWxsIHB5bGliYCwgbHVlZ28gYGltcG9ydCBweWxpYmAuCgpgYGBweXRob24KPj4-IGltcG9ydCBweWxpYgo-Pj4gZm9yIGkgaW4gcmFuZ2UoMTApOiAgICMgTWltaWMgUHl0aG9ucyByYW5nZSgpCiAgICAgIHByaW50KGksIGVuZGw9IiAiKSAgIyBNaW1pYyBQeXRob25zIHByaW50KCkKMCAxIDIgMyA0IDUgNiA3IDggOQo-Pj4gcHJpbnQoanNvbl9sb2FkcygiIiJ7ImNsYXZlIjogInZhbG9yIn0iIiIpICAjICBNaW1pYyBQeXRob25zIGpzb24ubG9hZHMoc3RyKQp7ImNsYXZlIjogInZhbG9yIn0KPj4-IHByaW50KHN5cy5wbGF0Zm9ybSkgICAgICAgICAgICAgICMgIE1pbWljIFB5dGhvbnMgc3lzLioKImxpbnV4Igo-Pj4gcHJpbnQocGxhdGZvcm0ucHJvY2Vzc29yKSAgICAgICAgIyAgTWltaWMgUHl0aG9ucyBwbGF0Zm9ybS4qCiJhbWQ2NCIKPj4-IHByaW50KGludCgnOScpKSAgICAjIGludGVnZXIgZnJvbSBjaGFyLgo-Pj4gcHJpbnQoIiIgb3IgImIiKSAgICMgIE1pbWljIFB5dGhvbnMgc3RyIG9yIHN0cgoiYiIKPj4-IHByaW50KCJhIiBvciAiYiIpCiJhIgo-Pj4gdGltZWl0KDEwMCk6ICAjIE1pbWljIFB5dGhvbnMgdGltZWl0LnRpbWVpdCgiY29kZV90b19iZW5jaG1hcmsiLCBudW1iZXI9aW50KQogICAgICBzbGVlcCg5KSAgICAjIFJlcGVhdHMgdGhpcyBjb2RlIDEwMCB0aW1lcy4gT3V0cHV0IGlzIHZlcnkgaW5mb3JtYXRpdmUuCjIwMTgtMDUtMDlUMDI6MDE6MzMgVGltZUl0OiAxMDAgUmVwZXRpdGlvbnMgb24gOTIwIG1pbGxpc2Vjb25kcywgYW5kIDkgbWljcm9zZWNvbmRzLCBDUFUgVGltZSAwLjAwMTI4Lgo-Pj4gd2l0aF9vcGVuKCJhcmNoaXZvLnR4dCIsICdyJyk6ICAjIE1pbWljcyBQeXRob25zIHdpdGggb3BlbihmaWxlLCBtb2RlPSdyJykgYXMgZmlsZToKICAgICAgd2hpbGUgbm90IGVuZF9vZl9maWxlKGZpbGUpOiAgIyBGaWxlIGlzIGF1dG9tYXRpY2FsbHkgYXNzaWduZWQgdG8gZmlsZSB2YXJpYWJsZS4KICAgICAgICBwcmludChmaWxlLnJlYWRfbGluZSgpKSAgICAgIyBObyBuZWVkIGZvciAiIGFzIGZpbGUiLCBqdXN0IHBhdGggYW5kIG1vZGUuCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgRmlsZSBpcyBjbG9zZWQgYXV0b21hdGljYWxseS4KYGBgCgotLS0tLQoKIyMjIyMgSW5tdXRhYmxlIGVuIE5pbQoKLSBgdmFyYCBNdXRhYmxlLCBjb21vIGVuIFB5dGhvbi4KLSBgbGV0YCBJbm11dGFibGUsIHNvbG8gbGVjdHVyYS4KLSBgY29uc3RgIElubXV0YWJsZSwgdGllbXBvIGRlIENvbXBpbGFjaW9uLgoKYGBgbmltCj4-PiB2YXIgZm9vID0gIkVzdGEgdmFyaWFibGUgcHVlZGUgY2FtYmlhciIKPj4-IGZvbyA9ICJPdHJhIGNvc2EiCj4-Pgo-Pj4gbGV0IGJhciA9ICJFc3RhIHZhcmlhYmxlIE5vIHNlIHB1ZWRlIGNhbWJpYXIiCj4-PiBiYXIgPSAiRGEgRXJyb3IiCkVycm9yOiAnYmFyJyBjYW5ub3QgYmUgYXNzaWduZWQgdG8KPj4-Cj4-PiBjb25zdCBiYXogPSAiQ29uc3RhbnRlIGRlIENvbXBpbGFjaW9uIgo-Pj4gYmF6ID0gIkRhIEVycm9yIgpFcnJvcjogJ2JheicgY2Fubm90IGJlIGFzc2lnbmVkIHRvCmBgYAoKKlNpIHNlIHRlIGNvbXBsaWNhLCBwb2RlcyB1c2FyIGB2YXJgIGVuIHRvZG9zIGxhZG9zLioKCi0tLS0tCgojIyMjIyBFamVjdXRhciBlbiBUaWVtcG8gZGUgQ29tcGlsYWNpb24KCi0gYGNvbnN0IGNvbnN0YW50ZSA9ICJjb21waWxlIHRpbWUiYCBDb25zdGFudGUgZGUgY29tcGlsYWNpb24uCi0gYGluY2x1ZGUoImluY2x1aXIubmltIilgIENvcGlhIGVsIGFyY2hpdm8gZW50ZXJvIGVuIGVsIGx1Z2FyLgotIGBzdGF0aWNfcmVhZCgiZm9vLmpzb24iKWAgTGVlIGFyY2hpdm8gZW50ZXJvIHkgZGV2dWVsdmUgc3RyaW5nLgotIGBzdGF0aWNfZXhlYygiMSArIDEiKWAgRWplY3V0YSBhcmd1bWVudG9zIHkgZGV2dWVsdmUgZWwgcmV0b3Juby4KLSBgc3RhdGljOiBlY2hvKCJjb21waWxlIHRpbWUiKWAgRWplY3V0YSBCbG9xdWVzIGRlIGNvZGlnby4KCipMbyBxdWUgc2UgZWplY3V0YSBlbiB0aWVtcG8gZGUgY29tcGlsYWNpb24gbm8gdGllbmUgY29zdG8gZW4gdGllbXBvIGRlIGVqZWN1Y2lvbi4qCgotLS0tLQoKIyMjIyMgVGlwb3MgQmFzaWNvcwoKTmltICAgICAgICAgfCBQeXRob24gIHwgRWplbXBsbyBOaW0gICB8IEVqZW1wbG8gUHl0aG9uICB8IENvbWVudGFyaW9zICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwKLS0tLS0tLS0tLS0tfDotLS0tLS0tLXw6LS0tLS0tLS0tLS0tLTp8Oi0tLS0tLS0tLS0tLS0tLTp8LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tOnwKIGBzdHJpbmdgICAgfCBgc3RyYCAgIHwgYCJmb28iYCAgICAgICB8IGAiZm9vImAgICAgICAgICB8IFVuaWNvZGUsIFVURjgsIEVtb2ppLCBldGMgICAgICAgICAgICAgICAgIHwKIGBzdHJpbmdgICAgfCBgc3RyYCAgIHwgYCIiImJhciIiImAgICB8IGAiIiJiYXIiIiJgICAgICB8IFN0cmluZyBNdWx0aS1saW5lYSAgICAgICAgICAgICAgICAgICAgICAgIHwKIGBjaGFyYCAgICAgfCAtICAgICAgIHwgYCdhJ2AgICAgICAgICB8IC0gICAgICAgICAgICAgICB8IDEgY2hhciwgT3B0aW1pemFkbyBpbnRlcm5hbWVudGUgYSBpbnQgICAgIHwKIGBpbnRgICAgICAgfCBgaW50YCAgIHwgYDQyYCAgICAgICAgICB8IGA0MmAgICAgICAgICAgICB8IGludDgsIGludDE2LCBpbnQzMiwgaW50NjQsIGludCAgICAgICAgICAgIHwKIGBmbG9hdGAgICAgfCBgZmxvYXRgIHwgYDIuMGAgICAgICAgICB8IGAyLjBgICAgICAgICAgICB8IGZsb2F0MzIsIGZsb2F0NjQsIGZsb2F0ICAgICAgICAgICAgICAgICAgIHwKIGBib29sYCAgICAgfCBgYm9vbGAgIHwgYHRydWUsIGZhbHNlYCB8IGBUcnVlLCBGYWxzZWAgICB8IHRydWUsIGZhbHNlIGVuIE5pbSAgICAgICAgICAgICAgICAgICAgICAgIHwKIGB0dXBsZWAgICAgfCBgdHVwbGVgIHwgYCgxLCAyLCAzKWAgICB8IGAoMSwgMiwgMylgICAgICB8IHR1cGxlIGRlIE5pbSBlcyBjb21vIE5hbWVkVHVwbGUgZGUgUHkgICAgIHwKIGBzZXFgICAgICAgfCBgbGlzdGAgIHwgYEBbMSwgMiwgM11gICB8IGBbMSwgMiwgM11gICAgICB8IE1pc21vIFRpcG8gZW4gdG9kb3MgbG9zIGl0ZW1zIGVuIE5pbSAgICAgIHwKIGBzZXRgICAgICAgfCBgc2V0YCAgIHwgYHsxLCAyLCAzfWAgICB8IGB7MSwgMiwgM31gICAgICB8IGludCwgY2hhciwgYm9vbCBlbiBOaW0gICAgICAgICAgICAgICAgICAgIHwKIGBlbnVtYCAgICAgfCBgZW51bWAgIHwgPyAgICAgICAgICAgICB8ID8gICAgICAgICAgICAgICB8IEVuIFB5dGhvbiBubyBsb3MgdXNhIG5hZGllICAgICAgICAgICAgICAgIHwKIGBhcnJheWAgICAgfCAtICAgICAgIHwgYFsxLCAyLCAzXWAgICB8IC0gICAgICAgICAgICAgICB8IFRhbWFuaW8gZmlqbywgbWlzbW8gdGlwbyBlbiBsb3MgaXRlbXMgICAgIHwKIGBzdWJyYW5nZWAgfCAtICAgICAgIHwgYHJhbmdlWzAuLjJdYCB8IC0gICAgICAgICAgICAgICB8IFNvbG8gYWNlcHRhIGludCBkZSAwIGEgMixwdWVkZSB1c2FyIGZsb2F0IHwKCipUaXBvcyBkZSBOaW0gZXN0YW4gb3B0aW1pemFkb3MgcGFyYSBwZXJmb3JtYW5jZS4qCgotLS0tLQoKIyMjIyMgRGV0YWxsZXMKCi0gUHl0aG9uIGBkZWZgIGVzIE5pbSBgcHJvY2AuCi0gUHl0aG9uIGBsYW1iZGFgIGVzIE5pbSBgcHJvY2AgKHNpbiBub21icmUpLgotIFB5dGhvbiBgZiJ7Zm9vfSx7MSsxfSJgIGVzIE5pbSBgZm10Intmb299LHsxKzF9ImAuCi0gUHl0aG9uIGBkaWN0YCBlcyBOaW0gYHRhYmxlYCBvIGBPcmRlcmVkVGFibGVgLgotIFB5dGhvbiBgTmFtZWRUdXBsZWAgZXMgTmltIGB0dXBsZWAuCi0gUHl0aG9uIGBzZXRgIGVzIE5pbSBgSGFzaFNldGAgbyBgT3JkZXJlZFNldGAuCi0gUHl0aG9uIE9wZXJhZG9yIFRlcm5hcmlvIGVzIE5pbSBgaWYuLmVsc2VgIGlubGluZS4KLSBQeXRob24gQ29tcHJlbnNpb24gZGUgTGlzdGEgZW4gbW9kdWxvIGBzdWdhcmAuCi0gTmltIHN0cmluZyBlcyBgIiJgLCBubyBgJydgIChlcyBgY2hhcmApLgotIEdvIGBkZWZlcmAgZXMgTmltIGBkZWZlcmAuCi0gR28gYGNoYW5uZWxzYCBlcyBOaW0gYGNoYW5uZWxzYC4KLSBKYXZhU2NyaXB0IEFycm93cyBGdW5jdGlvbnMgZW4gbW9kdWxvIGBzdWdhcmAuCgotLS0tLQoKIyMjIyMgTmltIFVuaWZpZWQgRnVuY3Rpb25zIENhbGwgU3ludGF4CgotIFRvZGFzIGxhcyBmb3JtYXMgc29uIHZhbGlkYXMgeSBlcXVpdmFsZW50ZXMuCgpgYGBuaW0KPj4-IGxldCBmb28gPSBbMSwgMiwgM10KCj4-PiBmb28ubGVuCjMKCj4-PiBmb28ubGVuKCkKMwoKPj4-IGxlbihmb28pCjMKCj4-PiAkZm9vLmxlbiAgICAgICMgTWFnaWEgY29udmllcnRlIGEgc3RyaW5nLgoiMyIKCj4-PiBmb28ubGVuLmludDggICMgRG90IGNoYWluLgozIDogaW50OApgYGAKCi0tLS0tCgojIyMjIyBOaW0gQ2FzZSBJbnNlbnNpdGl2ZQoKIVtOaW0gaXMgQ29vbF0obmltLWNvb2wuanBnKQoKLSBjYW1lbENhc2UgeSBzbmFrZV9jYXNlIHBvZGVzIHVzYXJsbyBjb21vIHRlIGd1c3RlLgotIFRvZGFzIGxhcyBmb3JtYXMgc29uIHZhbGlkYXMgeSBlcXVpdmFsZW50ZXMuCgpgYGBuaW0KPj4-IGxldCBjYW1lbENhc2UgPSA0MiAgIyBFcyBsbyBtaXNtbyBxdWUgY2FtZWxfY2FzZS4KPj4-IGNhbWVsX2Nhc2UKNDIKCj4-PiBsZXQgc25ha2VfY2FzZSA9IDEgICMgRXMgbG8gbWlzbW8gcXVlIHNuYWtlQ2FzZS4KPj4-IHNuYWtlQ2FzZQoxCmBgYAoKLS0tLS0KCiMjIyMjIFZlbG9jaWRhZAoKLSBOaW0gZnVlIHBlbnNhZG8gcGFyYSBpciBtdXkgcmFwaWRvLgotIEJlbmNobWFya3M6IEZhbHRhIE5pbSBvIGVzdGEgYSBsYSBwYXIgY29uIEMuCgpFamVtcGxvLCBtaXNtbyBSYXlUcmFjZXIgaW1wbGVtZW50YWRvIGVuIHZhcmlvcyBsZW5ndWFqZXM6CgohW3JheXRyYWNlcl0ocmF5dHJhY2VyLmpwZykKCls8c3ViPlNvdXJjZTwvc3ViPl0oaHR0cDovL2Jsb2cuam9obm5vdmFrLm5ldC8yMDE3LzA0LzIyL25pbS1wZXJmb3JtYW5jZS10dW5pbmctZm9yLXRoZS11bmluaXRpYXRlZC8jZG9lcy1pdC1hbGwtbWF0dGVyKQoKLS0tLS0KCiMjIyMjIFBlc28KCmBgYGJhc2gKJCBlY2hvICdlY2hvICJIb2xhIE11bmRvIicgPiBoZWxsby5uaW0KJCBuaW0gYyAtZDpyZWxlYXNlIC0tYXBwOmNvbnNvbGUgLS1vcHQ6c2l6ZSBoZWxsby5uaW0KJCBzdHJpcCAtLXN0cmlwLWFsbCBoZWxsbwokIHVweCAtLWJlc3QgLS11bHRyYS1icnV0ZSBoZWxsbwokIGR1IC1oIGhlbGxvCjE1SyAgICAgaGVsbG8KYGBgCgotIE5pbSBmdWUgcGVuc2FkbyBwYXJhIHNlciBsaXZpYW5vIChSYXNwaSwgUm91dGVyLCBJb1QsIGV0YykuCi0gTmltIG5vIGluY3J1c3RhIFJ1bnRpbWUsIFZNLCBJbnRlcnByZXRlLCBldGMuCi0gW0hvbGFNdW5kbyBHbyAyTWIsIEhvbGFNdW5kbyBOaW0gMjBLYi5dKGh0dHA6Ly9saW5rb2RlLm9yZy8jbmFyV09RblU5aTJVRHN3dTlORFlvMSkKCiFbY2F0XShub2RlLW1vZHVsZXMuanBnKQoKLS0tLS0KCiMjIyMjIE5pbVNjcmlwdAoKLSBMZW5ndWFqZSBpbnRlcnByZXRhZG8gKihOaW0gbGltaXRhZG8sIG5vIHN0ZCBsaWIpKi4KLSBNb2R1bG9zIGRpc3BvbmlibGVzOiBzdHJ1dGlscywgb3NwYXRocywgbWF0aCwgZGlzdHJvcy4KLSBQdWVkZSB1c2Fyc2UgY29tbyBjb25maWd1cmFjaW9uIGF2YW56YWRhLgotIFB1ZWRlIHVzYXJzZSBjb21vIGJ1aWxkIChidWlsZCB0b29sKS4KLSBQdWVkZSB1c2Fyc2UgY29uIE5pbWJsZS4KLSBQdWVkZSB1c2Fyc2UgY29tbyBtdWx0aS1wcm9wb3NpdG8gKHN0YW5kYWxvbmUpLgotIEV4dGVuc2lvbiBkZSBhcmNoaXZvIGAqLm5pbXNgLgotIE5vIHNlIGNvbXBpbGEsIHVzYSBgbmltIGUgYXJjaGl2by5uaW1zYC4KCioqSG9sYSBNdW5kbyBOaW1TY3JpcHQ6KioKCmBgYG5pbQojIS91c3IvYmluL2VudiBuaW0KZWNobyAiSG9sYSBtdW5kbyIKYGBgCgotLS0tLQoKIyMjIyMgVW5pdHRlc3RzCgotIFRlc3RzIFJ1bm5lciBhbWlnYWJsZS4KLSBgbmltIGMgLXIgdGVzdCAiTm9tYnJlIGRlbCB0ZXN0ImAuCgpgYGBuaW0Kc3VpdGUgIk5vbWJyZSBkZWwgdGVzdCI6CgogIGVjaG8gIlNldHVwOiBFc3RvIHNlIGVqZWN1dGEgMSB2ZXogQU5URVMgZGUgVE9ET1MgbG9zIFRlc3RzLiIKCiAgc2V0dXA6CiAgICBlY2hvICJTZXR1cDogRXN0byBzZSBlamVjdXRhIDEgdmV6IEFOVEVTIGRlIENBREEgVGVzdC4iCgogIHRlYXJkb3duOgogICAgZWNobyAiVGVhcmRvd246IEVzdG8gc2UgZWplY3V0YSAxIHZleiBERVNQVUVTIGRlIENBREEgVGVzdC4iCgogIHRlc3QgImVqZW1wbG8iOgogICAgYXNzZXJ0IHRydWUKCiAgdGVzdCAib3RybyBlamVtcGxvIjoKICAgIGNoZWNrKDEgIT0gMSkKCiAgdGVzdCAiZWplbXBsbyBjb24gZXJyb3IgZXNwZXJhZG8iOgogICAgbGV0IGZvbyA9IFsxLCAyLCAzXQogICAgZXhwZWN0KEluZGV4RXJyb3IpOgogICAgICBlY2hvIGZvb1s5XQoKICBlY2hvICJUZWFyZG93bjogRXN0byBzZSBlamVjdXRhIDEgdmV6IERFU1BVRVMgZGUgVE9ET1MgbG9zIFRlc3RzLiIKCmBgYAoKLS0tLS0KCiMjIyMjIEdlbmVyYWRvciBkZSBEb2N1bWVudGFjaW9uCgoqRm9ybWF0byBlbnRyYWRhOioKLSBDb2RpZ28gZnVlbnRlIHRleHRvIHBsYW5vIE5pbSBgKi5uaW1gCgoqRm9ybWF0byBzYWxpZGE6KgotIEhUTUw1IChUT0MsIFNlYXJjaCwgbGlua3MsIGluZGV4LCBldGMpLgotIHJlU3RydWN0dXJlZFRleHQuCi0gSlNPTi4KLSBMYVRlWC4KCipVc286KgotIENvbWVudGFyaW9zIGNvbiBgIyNgIHBhcnNlYSBhIFJTVCBvIHRleHRvLgoKLS0tLS0KCiMjIyMjIENyb3NzQ29tcGlsYXIKCkJhc2ljYW1lbnRlIGhheSBxdWUgcGFzYXJsZSBsYSBydXRhIGRvbmRlIGVzdGEgZWwgQ29tcGlsYWRvci4KCmBgYGJhc2gKJCBta2RpciAvdG1wL3BydWViYV9uaW1fY3Jvc3Njb21waWxlIDsgY2QgL3RtcC9wcnVlYmFfbmltX2Nyb3NzY29tcGlsZS8KCiQgZWNobyAnZWNobyAiSG9sYSBNdW5kbyInID4gaGVsbG8ubmltCgokIG5pbSBjIC0tY3B1OmFtZDY0IC0tb3M6d2luZG93cyAtLWdjYy5leGU6eDg2XzY0LXc2NC1taW5ndzMyLWdjYyBcCiAgICAgICAgLS1nY2MubGlua2VyZXhlOng4Nl82NC13NjQtbWluZ3czMi1nY2MgaGVsbG8ubmltCgokIHdpbmUgaGVsbG8uZXhlCkhvbGEgTXVuZG8KYGBgCgpMYXMgbGlicyBkZSBjcm9zc2NvbXBpbGUgc2UgaW5zdGFsYW4gaW5zdGFsYW5kbyBgbWluZ3ctdzY0LWdjY2AgKEFyY2gpLgoKKkRlcGVuZGVyYSB1biBwb2NvIHF1ZSB0YW4gYW1pZ2FibGUgZXMgdHUgRGlzdHJvIGNvbiBsYXMgTGlicyBkZSBjcm9zc2NvbXBpbGUuKgoKLS0tLS0KCiMjIyMjIEZ1bmNpb25lcwoKKipwcm9jOioqCgpGdW5jaW9uIGJhc2ljYSwgZ2VuZXJpY2EsCnB1ZWRlIG1vZGlmaWNhciB2YXJpYWJsZXMgeSBjb3NhcyBnbG9iYWxlcyAoc2lkZSBlZmZlY3RzKSwKc2UgcmVzdWVsdmUgZXN0YXRpY2FtZW50ZSBlbiB0aWVtcG8gZGUgQ29tcGlsYWNpb24gKFN0YXRpYyBEaXNwYXRjaCkuCgoqKmZ1bmM6KioKCkZ1bmNpb24gcHVyYSwgZXMgY29tbyB1bmEgZnVuY2lvbiBtYXRlbWF0aWNhLApubyBtb2RpZmljYSB2YXJpYWJsZXMgeSBjb3NhcyBnbG9iYWxlcyAobm8gc2lkZSBlZmZlY3RzLCBtdXkgc2VndXJhKSwKc2UgcmVzdWVsdmUgZXN0YXRpY2FtZW50ZSBlbiB0aWVtcG8gZGUgQ29tcGlsYWNpb24gKFN0YXRpYyBEaXNwYXRjaCkuCgoqKm1ldGhvZDoqKgoKTWV0b2RvLCBwYXJhIHVzYXIgaGVyZW5jaWEgKE9PUCksCnNvbG8gY3VhbmRvIHBlcnRlbmVjZSBhIHVuIG9iamV0byBkZWZpbmlkbyBjb24gYHJlZiBvYmplY3Qgb2YgUm9vdE9iamAgeQpoYXkgb3Ryb3Mgb2JqZXRvcyBxdWUgaGVyZWRhbiBkZSBlc3RlIG9iamV0bywKcHVlZGUgbW9kaWZpY2FyIHZhcmlhYmxlcyB5IGNvc2FzIGdsb2JhbGVzIChjb24gKnNpZGUgZWZmZWN0cyopLApzZSByZXN1ZWx2ZSBkaW5hbWljYW1lbnRlIGVuIHRpZW1wbyBkZSBFamVjdWNpb24gKFJ1bnRpbWUgRGlzcGF0Y2gpLgoKKlNpIHNlIHRlIGNvbXBsaWNhIHBvZGVzIHVzYXIgYHByb2NgIHBhcmEgY2FzaSB0b2RvLioKCi0tLS0tCgojIyMjIyBUZW1wbGF0ZXMKCjxzdWI-VGVtcGxhdGUgcmVlbXBsYXphbiBzdSBpbnZvY2FjaW9uIGNvbiBzdSBjb250ZW5pZG8gZW4gdGllbXBvIGRlIGNvbXBpbGFjaW9uLjwvc3ViPgoKYGBgbmltCnRlbXBsYXRlIHRlbXBsYXRlY2l0YShhcmd1bWVudG8wLCBhcmd1bWVudG8xOiBzdHJpbmcsIGNvbnRlbmlkbzogdW50eXBlZCk6IHVudHlwZWQgPQoKICBlY2hvIDEgKyAyICAgICAgICMgU2ltdWxhIGFsZ28gZGUgbG9naWNhICJwcmUtY29jaWRhIiBkZW50cm8gZGVsIHRlbXBsYXRlLgoKICBlY2hvIGFyZ3VtZW50bzAgICMgU2UgcHVlZGUgdHJhYmFqYXIgY29uIHRvZG9zIGxvcyBhcmd1bWVudG9zIHF1ZSByZWNpYmUuCiAgZWNobyBhcmd1bWVudG8xCgogICMgTGFzIHZhcmlhYmxlcyB5IG5vbWJyZXMgZGVudHJvIGRlIHVuIHRlbXBsYXRlIHNvbiBzb2xvIGxvY2FsZXMgcG9yIGRlZmVjdG8uCiAgdmFyIHZhcmlhYmxlX2luamVjdGFkYSB7LmluamVjdC59ID0gIkdhdGl0b3MiICMgTm8gZXMgc29sbyBsb2NhbC4KICB2YXIgdmFyaWFibGVfc29sb19sb2NhbCA9ICJQZXJyaXRvcyIgICAgICAgICAgIyBTaSBlcyBzb2xvIGxvY2FsLgoKICBjb250ZW5pZG8gICMgU2UgcHVlZGUgZXZhbHVhciBsb3MgY29udGVuaWRvcyBxdWUgcmVjaWJlLgoKCnRlbXBsYXRlY2l0YSgicHJpbWVyIGFyZ3VtZW50byIsICJzZWd1bmRvIGFyZ3VtZW50byIpOgoKICBlY2hvIHZhcmlhYmxlX2luamVjdGFkYQogICMgRXJyb3I6IHVuZGVjbGFyZWQgaWRlbnRpZmllcjogJ3ZhcmlhYmxlX3NvbG9fbG9jYWwnLgogICMgTm8gZXN0YSBJbmplY3RhZGEgY29uIHsuaW5qZWN0Ln0sIG5vIGV4aXN0ZSBmdWVyYSBkZWwgdGVtcGxhdGUuCiAgIyBlY2hvIHZhcmlhYmxlX3NvbG9fbG9jYWwKCiAgZWNobyAiRXN0ZSBlcyBlbCBjb250ZW5pZG8sIGVsIGN1ZXJwbyBkZWwgdGVtcGxhdGUuIgpgYGAKCipDb2RpZ28gcXVlIGhhY2tlYSBjb2RpZ28gYSBuaXZlbCBkZSBjb2RpZ28gZW4gY29tcGlsYWNpb24gISoKCi0tLS0tCgojIyMjIyBNYWNyb3MKCjxzdWI-TWFjcm9zIHNvbiBjb21vIFRlbXBsYXRlcyBwZXJvIGVuIHRpZW1wbyBkZSBlamVjdWNpb24geSBoYWNrZWFuIGVsIEFTVCBhbCB2dWVsby48L3N1Yj4KCmBgYG5pbQppbXBvcnQgbWFjcm9zCgptYWNybyBnZW5lcmF0ZV9oZWxsbygpOiB0eXBlZCA9CiAgcGFyc2VTdG10ICIiInByb2MgaGVsbG8oKSA9IGVjaG8gImhpIiAiIiIKCmdlbmVyYXRlX2hlbGxvKCkgICMgR2VuZXJhdGUgYSBwcm9jIHZpYSBNYWNyb3MuCmhlbGxvKCkKCmV4cGFuZE1hY3JvczogICAgICAjIEdlbmVyYXIgeSB2ZXIgZWwgY29kaWdvIGdlbmVyYWRvIHBvciBlbCBNYWNyby4KICBnZW5lcmF0ZV9oZWxsbygpCmBgYAoKKkNvZGlnbyBxdWUgaGFja2VhIGNvZGlnbyBhIG5pdmVsIGRlIEFTVCBlbiBlamVjdWNpb24gISoKCi0tLS0tCgojIyMjIyBUZW1wbGF0ZSBFbmdpbmUKCi0gVGVtcGxhdGUgRW5naW5lIGludGVncmFkbyAoYWxhIEppbmphKS4KLSBBcmNoaXZvcyBgKi50bXBsYCwgc2hlYmFuZyB5IHN5bnRheGlzIE5pbS4KLSBMaW5lYXMgY29uIGAjYCBlcyBjb2RpZ28gTmltLCBzaW5vIGxpdGVyYWwgdmVyYmF0aW0uCgpgYGBuaW0KIz8gc3RkdG1wbChzdWJzQ2hhciA9ICckJywgbWV0YUNoYXIgPSAnIycpCiNwcm9jIGdlbmVyYXRlWE1MKG5hbWUsIGFnZTogc3RyaW5nKTogc3RyaW5nID0KIyAgcmVzdWx0ID0gIiIKPHhtbD4KICA8bmFtZT4kbmFtZTwvbmFtZT4KICA8YWdlPiRhZ2U8L2FnZT4KPC94bWw-CmBgYAoKYGBgbmltCiM_IHN0ZHRtcGwgfCBzdGFuZGFyZAojcHJvYyBnZW5lcmF0ZUhUTUwodGl0bGUsIGNvbnRlbnQ6IHN0cmluZywgdGFiczogb3BlbkFycmF5W3N0cmluZ10pOiBzdHJpbmcgPQojICByZXN1bHQgPSAiIgo8aGVhZD48dGl0bGU-ICR0aXRsZSA8L3RpdGxlPjwvaGVhZD4KPGJvZHk-CiAgICA8dWw-CiAgI2ZvciB0YWIgaW4gaXRlbXModGFicyk6CiAgICA8bGk-PGEgaHJlZj0iJHt0YWJ9Lmh0bWwiPiR0YWI8L2E-PC9saT4KICAjZW5kIGZvcgogICAgPC91bD4KICAgICRjb250ZW50CiAgICBBIGRvbGxhcjogJCQuCjwvYm9keT4KYGBgCgo8c3ViPk5vIGNvbmZ1bmRpciBUZW1wbGF0ZS1FbmdpbmUgY29uIFRlbXBsYXRlcy48L3N1Yj4KCi0tLS0tCgojIyMjIyBOaW0gRnJvbnRlbmQKCi0gTmltIGNvbXBpbGEgYSBKYXZhU2NyaXB0LgotIE5pbSB0aWVuZSBBUEkgZGVsIERPTS4KLSBKYXZhU2NyaXB0IGVzICJGaXJzdCBDbGFzcyBDaXRpemVuIi4KLSBOaW0gd3JhcHBlYSBMaWJzIEpTIGZhY2lsbWVudGUuCi0gTmltIEZyb250ZW5kIHZhIG11eSByYXBpZG8gdGFtYmllbi4KLSBIYXkgcGFxdWV0ZXMgY29uIExpYnMgRnJvbnRlbmQgZW4gTmltYmxlLgotIFBvZGVzIGNvbXBpbGFyIE5pbSBhIEphdmFTY3JpcHQgeSB1c2FybG8gZW4gSFRNTCBFc3RhdGljby4KCkVqZW1wbG9zOgotIEZyb250ZW5kIFNQQSAoUmVhY3QtbGlrZSkgaHR0cHM6Ly9naXRodWIuY29tL3ByYWdtYWdpYy9rYXJheAotIEZvcm8gTmltIGVzdGEgaGVjaG8gZW4gTmltIGh0dHBzOi8vZm9ydW0ubmltLWxhbmcub3JnCgotLS0tLQoKKlBhcXVldGVzIGludGVyZXNhbnRlcyBUZXJtaW5hbDoqCi0gQ29sb3JlcyBodHRwczovL2dpdGh1Yi5jb20vbW9sbmFybWFyay9jb2xvcml6ZQotIFNwaW5uZXJzIGh0dHBzOi8vZ2l0aHViLmNvbS9tb2xuYXJtYXJrL3NwaW5ueQotIFByb2dyZXNzQmFyIGh0dHBzOi8vZ2l0aHViLmNvbS9ldWFudG9yYW5vL3Byb2dyZXNzLm5pbQotIEdyYWZpY29zIGh0dHBzOi8vZ2l0aHViLmNvbS9GZWRlcmljb0NlcmF0dG8vbmltLWRhc2hpbmcKLSBDb25maWdzIGh0dHBzOi8vZ2l0aHViLmNvbS9ldWFudG9yYW5vL2RvdGVudi5uaW0KCipQYXF1ZXRlcyBpbnRlcmVzYW50ZXMgV2ViOioKLSBXZWIgQ3JlYXRvciBodHRwczovL2dpdGh1Yi5jb20vVGhvbWFzVEpkZXYvbmltX3dlYnNpdGVjcmVhdG9yCi0gV2ViIEZyYW1ld29yayBodHRwczovL2dpdGh1Yi5jb20vZG9tOTYvamVzdGVyCi0gTWFya2Rvd24gYSBIVE1MIGh0dHBzOi8vZ2l0aHViLmNvbS9oM3JhbGQvaGFzdHlzY3JpYmUKLSBTY3JhcHBlciBodHRwczovL2dpdGh1Yi5jb20vT3BlblN5c3RlbXNMYWIvcS5uaW0KLSBKdXB5dGVyIEtlcm5lbCBodHRwczovL2dpdGh1Yi5jb20vc3Rpc2EvanVweXRlci1uaW0ta2VybmVsCi0gUGxvdGx5IGh0dHBzOi8vZ2l0aHViLmNvbS9icmVudHAvbmltLXBsb3RseQotIFBvb3JzIFdvbWFuIERlc2lnbiBodHRwczovL2dpdGh1Yi5jb20vanVhbmNhcmxvc3BhY28vbmltLXJhbmRvbS1mb250LWNvbG9yCgotLS0tLQoKIyMjIyMgRXh0cmFzIHJlY29tZW5kYWRvcwoKLSBIb21lcGFnZSBodHRwczovL25pbS1sYW5nLm9yZwotIFByb2JhciBOaW0gZGVzZGUgZWwgQnJvd3NlciBodHRwczovL3BsYXkubmltLWxhbmcub3JnCi0gRGV2RG9jcyBodHRwOi8vZGV2ZG9jcy5pby9uaW0KLSBTdGFja092ZXJmbG93IGh0dHBzOi8vc3RhY2tvdmVyZmxvdy5jb20vcXVlc3Rpb25zL3RhZ2dlZC9uaW0KLSBSb3NldHRhIGh0dHA6Ly9yb3NldHRhY29kZS5vcmcvd2lraS9DYXRlZ29yeTpOaW0KLSBUdXRvcmlhbCBodHRwczovL25pbS1sYW5nLm9yZy9kb2NzL3R1dDEuaHRtbAotIFN5bnRheCBQeXRob24gaHR0cHM6Ly9naXRodWIuY29tL1lhcmRhbmljby9uaW1weWxpYgotIEdVSSBzdXBlciBmYWNpbCBodHRwczovL2dpdGh1Yi5jb20vanVhbmNhcmxvc3BhY28vbmltLWtkaWFsb2cKLSBBd2Vzb21lIE5pbSBodHRwczovL2dpdGh1Yi5jb20vVlBhc2hrb3YvYXdlc29tZS1uaW0KLSBDb211bmlkYWQgT25saW5lIE5pbSBBUiBodHRwczovL3QubWUvTmltQXJnZW50aW5hCi0gQ29tdW5pZGFkIE9ubGluZSBOaW0gRU4gaHR0cHM6Ly90Lm1lL25pbV9sYW5nCgotLS0tLQoKIyMjIyMgSW5zdGFsYXIKCi0gW0Nob29zZU5pbV0oaHR0cHM6Ly9naXRodWIuY29tL2RvbTk2L2Nob29zZW5pbSNjaG9vc2VuaW0pCi0gV2luZG93cywgZXMgWzEgWklQLl0oaHR0cHM6Ly9uaW0tbGFuZy5vcmcvaW5zdGFsbF93aW5kb3dzLmh0bWwpCi0gW0RvY2tlcl0oaHR0cHM6Ly9odWIuZG9ja2VyLmNvbS9yL25pbWxhbmcvbmltLyksIGltYWdlbiBgbmltbGFuZy9uaW1gLgotIE9zIFgsIGlndWFsIGEgTGludXguCi0gTGludXgsIHBhcXVldGUgZGUgRGlzdHJvIG8gQ2hvb3NlTmltLgotIE1hbnVhbCwgY29kaWdvIGZ1ZW50ZSBlbiBjdWFscXVpZXIgT1MuCgoqU29sbyByZXF1aWVyZSB1biBDb21waWxhZG9yIGRlIEMuKgoKLS0tLS0KCiMjIyMjIEVkaXRvciAvIElERSBzb3BvcnRlIHBhcmEgTmltCgohW25pbS1zcGFjZW1hY3NdKG5pbS1zcGFjZW1hY3MucG5nKQoKW1ZpbV0oaHR0cHM6Ly9naXRodWIuY29tL3phaC9uaW0udmltLyksCltFbWFjc10oaHR0cHM6Ly9naXRodWIuY29tL25pbS1sYW5nL25pbS1tb2RlKSwKW0F0b21dKGh0dHBzOi8vZ2l0aHViLmNvbS9ydXNzcG93ZXJzL25pbS1hdG9tKSwKW1N1YmxpbWVdKGh0dHBzOi8vZ2l0aHViLmNvbS9WYXJyaW91bnQvTmltTGltZSksCltLYXRlXShodHRwczovL2dpdGh1Yi5jb20vanVhbmNhcmxvc3BhY28vTmltS2F0ZSNzY3JlZW5zaG90cyksCltHZWRpdF0oaHR0cHM6Ly9naXRodWIuY29tL25pbS1sYW5nL0Fwb3JpYS9ibG9iL21hc3Rlci9zaGFyZS9ndGtzb3VyY2V2aWV3LTIuMC9sYW5ndWFnZS1zcGVjcy9uaW0ubGFuZyksCltHZWFueV0oaHR0cHM6Ly9naXRodWIuY29tL2dlYW55L2dlYW55L3B1bGwvMTkzKSwKW0tEZXZlbG9wXShodHRwczovL2dpdGh1Yi5jb20veHl6MzIvS0RldmVsb3AtdGVtcGxhdGUpLApbVlMgQ29kZV0oaHR0cHM6Ly9tYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tL2l0ZW1zP2l0ZW1OYW1lPWtvc3o3OC5uaW0pLApbU3BhY2VtYWNzXShodHRwczovL2dpdGh1Yi5jb20vanVhbmNhcmxvc3BhY28vc3BhY2VtYWNzLW5pbS1weXRob24jc3BhY2VtYWNzLW5pbS1weXRob24pLApbTmVvVmltXShodHRwczovL2dpdGh1Yi5jb20vYmFhYmVsZmlzaC9udmltLW5pbSksCltOb3RlcGFkKytdKGh0dHBzOi8vZ2l0aHViLmNvbS9qYW5na28vbnBwbmltL3JlbGVhc2VzKSwKW0xpZ2h0VGFibGVdKGh0dHBzOi8vZ2l0aHViLmNvbS96YWgvbmltLmx0LyksCltBcG9yaWFdKGh0dHBzOi8vZ2l0aHViLmNvbS9uaW0tbGFuZy9BcG9yaWEpLApbZXRjIGV0Yy4uLl0oaHR0cHM6Ly9naXRodWIuY29tL25pbS1sYW5nL05pbS93aWtpL2VkaXRvci1zdXBwb3J0KQoKLS0tLS0KCiMjIyBOaW0gbmVjZXNpdGEgbWFzIENvbXVuaWRhZAoKIVtOaW0gQ29tbXVuaXR5XShnYXRhcy5qcGcpCgotIGAgaHR0cHM6Ly90Lm1lL05pbUFyZ2VudGluYSBgCgoqU3VtYXRlISwgTmltIHRpZW5lIGNvc2FzIGF1biBtYXMgaW50ZXJlc2FudGVzOyBRdWUgZW1waWV6ZSBlbCBoeXBlICEqCgotLS0tLQoKIyMjIyMgVGhhbmtzISAmaGVhcnRzOwoKIVtKdWFuQ2FybG9zXShzdGFja292ZXJmbG93LWNvcHlwYXN0ZS5qcGcpCgoqSnVhbiBDYXJsb3MqCgotIFs8c3ViPmdpdGh1Yi5jb20vanVhbmNhcmxvc3BhY288L3N1Yj5dKGh0dHBzOi8vZ2l0aHViLmNvbS9qdWFuY2FybG9zcGFjbykgWzxzdWI-dHdpdHRlci5jb20vanVhbmNhcmxvc3BhY288L3N1Yj5dKGh0dHBzOi8vdHdpdHRlci5jb20vanVhbmNhcmxvc3BhY28pIFs8c3ViPnQubWUvanVhbmNhcmxvc3BhY288L3N1Yj5dKGh0dHBzOi8vdC5tZS9qdWFuY2FybG9zcGFjbykKLSBbPHN1Yj5SZXBvIGRlIGVzdGEgUHJlc2VudGFjaW9uIGVuIEdpdEh1Yi48L3N1Yj5dKGh0dHBzOi8vZ2l0aHViLmNvbS9qdWFuY2FybG9zcGFjby9uaW0tcHJlc2VudGF0aW9uLXNsaWRlcyNuaW0tcHJlc2VudGF0aW9uLXNsaWRlcykKLSBbPHN1Yj48aT5QcmVzZW50YWNpb24gaGVjaGEgZW4gTWFya2Rvd24gY29uIE1pY3JvcmFwdG9yLjwvaT48L3N1Yj5dKGh0dHBzOi8vZ2l0aHViLmNvbS9qdWFuY2FybG9zcGFjby9taWNyb3JhcHRvciNtaWNyb3JhcHRvcik=" rel="noopener noreferrer nofollow" download="presentation.md" title=Source target=_blank >Source Download</a><br>
+    <a href="data:text/plain;charset=utf8;base64,IyBJbnRybyBhIE5pbQoKIVtjYXRdKHNhcmNhc3RpYy1jYXQuanBnKQoKKi4uLnBhcmEgUHl0aG9uZXJhcyoKCi0tLS0tCgohW3VzZSBuaW0gY2F0XShuaW0tYmFkLWNhdC5qcGcpCgoqIFB5dGhvbiBTeW50YXggeSByZW5kaW1pZW50byBkZSBDLgoqIENvbXBpbGFkbyAoMSBhcmNoaXZvIGJpbmFyaW8gZWplY3V0YWJsZSkuCiogVGlwYWRvIGVzdGF0aWNvIGZ1ZXJ0ZSBjb24gSW5mZXJlbmNpYS4KKiBDb21waWxhIGEgQyAvIEMrKyAvIEphdmFTY3JpcHQgKERPTSBBUEkpLgoqIExpbnV4LCBXaW5kb3dzLCBNYWMsIFdlYiwgUmFzcGksIEFSTSwgZXRjCiogRmFjaWwgaGFjZXIgbW9kdWxvcyBkZSBQeXRob24uCiogRmFjaWwgdXNhciBsaWJyZXJpYXMgZW4gQy9DKysvSmF2YVNjcmlwdC4KKiBBZG1pbmlzdHJhZG9yIGRlIFBhcXVldGVzIHkgaGVycmFtaWVudGFzLgoqIERvY3VtZW50YWNpb24gb25saW5lIGNvbXBsZXRhIGNvbiBlamVtcGxvcwoqIFRhcmdldHMgY29tdW5pZGFkIExMVk0sVnVsa2FuLFdlYkdMLE9wZW5HTCxldGMKCi0tLS0tCgojIyMgSG9sYSBNdW5kbyEKCmBgYGJhc2gKJCBlY2hvICdlY2hvICJIb2xhIE11bmRvIicgPiBoZWxsby5uaW0KCiQgbmltIGMgLXIgaGVsbG8ubmltICAgICAgICAgIyBDCkhvbGEgTXVuZG8KCiQgbmltIGNwcCAtciBoZWxsby5uaW0gICAgICAgIyBDKysKSG9sYSBNdW5kbwoKJCBuaW0gb2JqYyAtciBoZWxsby5uaW0gICAgICAjIE9iamVjdGl2ZUMKSG9sYSBNdW5kbwoKJCBuaW0gYyAtLW9zOndpbmRvd3MgaGVsbG8ubmltCiQgd2luZSBoZWxsby5leGUgICAgICAgICAgICAgIyBXaW5kb3dzCkhvbGEgTXVuZG8KCiQgbmltIGpzIC1kOm5vZGVqcyBoZWxsby5uaW0gIyBOb2RlSlMKJCBub2RlanMgaGVsbG8uanMKSG9sYSBNdW5kbwoKJCBuaW0gZSBoZWxsby5uaW0gICAgICAgICAgICAjIE5pbVNjcmlwdApIb2xhIE11bmRvCgokIG5pbSBqcyBoZWxsby5uaW0gICAgICAgICAgICMgV2ViIChGcm9udGVuZCkKYGBgCgpbPHN1Yj5Db2RpZ28gZGUgdG9kb3MgbG9zIHNsaWRlcyBlc3RhIGVuIGVsIFJlcG88L3N1Yj5dKGVqZW1wbG9zL2hlbGxvLm5pbSkKCi0tLS0tCgojIyMjIyBTeW50YXhpcwoKLSBCbG9xdWVzIGRlIGNvZGlnbyBwb3IgSW5kZW50YWNpb24sIG5vIFRhYnMsIG5vIEJyYWNrZXRzLCBubyBTZW1pY29sb24uCi0gQ29tZW50YXJpb3Mgc29uIERvY3VtZW50YWNpb24gKFJTVC9NYXJrZG93bikgZW1waWV6YW4gY29uIGAjI2AuCi0gVHJhY2ViYWNrcyBhIGNvbG9yIHNpbWlsIFB5dGhvbiBjb24gbGluZWEsIHBvc2ljaW9uIHkgdGlwbyBkZSBlcnJvci4KLSBUZW1wbGF0ZXMsIHJlZW1wbGF6YW4gc3UgaW52b2NhY2lvbiBjb24gc3UgY29udGVuaWRvIGVuIGNvbXBpbGFjaW9uLgotIE1hY3JvcywgYmxvcXVlcyBxdWUgYWdyZWdhbiBmdW5jaW9uYWxpZGFkIGVuIHRpZW1wbyBkZSBlamVjdWNpb24uCi0gT3ZlcmxvYWQgZW4gZnVuY2lvbmVzLCBkZXBlbmRpZW5kbyBlbCB0aXBvIGRlIGFyZ3VtZW50by4KLSBFeHBvcnRhciBvYmpldG9zIGNvbiBgKmAsIGBjb3NhYCBlcyBwcml2YWRvLCBgY29zYSpgIGVzIHB1YmxpY28uCi0gYGltcG9ydCBtb2R1bG9gIGltcG9ydGEgdG9kbyBsbyBxdWUgdGVuZ2EgYCpgIGVuIGBtb2R1bG8ubmltYC4KLSBbQWxndW5vcyBtb2R1bG9zIGRlIFB5dGhvbiBmdWVyb24gY2xvbmFkb3MgZW4gTmltLl0oaHR0cHM6Ly9uaW1ibGUuZGlyZWN0b3J5L3NlYXJjaD9xdWVyeT1weXRob24pCi0gTmltIGVzdGEgZXNjcml0byBlbiBOaW0sIGZhY2lsIGRlIGhhY2tlYXIuCgotLS0tLQoKIyMjIyMgSGVycmFtaWVudGFzCgotIExpbnRlcnMgYG5pbSBjaGVja2AsIGBuaW1ibGUgY2hlY2tgLgotIERvY3VtZW50YWNpb24gYG5pbSBkb2NgLCBgbmltIHJzdDJodG1sYCwgYG5pbSByc3QydGV4YAotIFRlbXBsYXRlIGRlIG51ZXZvIHByb2plY3RvIGBuaW1ibGUgaW5pdGAuCi0gVGFzayBSdW5uZXIgYG5pbWJsZSB0YXNrc2AgKih0aXBvIEdydW50L0d1bHApKi4KLSBQYXF1ZXRlcyB5IGRvY3MgaG9zdGVhZG9zIGh0dHBzOi8vbmltYmxlLmRpcmVjdG9yeQotIFB1YmxpY2FyIHBhcXVldGUgYG5pbWJsZSBwdWJsaXNoYCAqKFBSIGVuIEdpdEh1YikqLgotIE5pbUluc3QgYXV0b2dlbmVyYWRvciBkZSBpbnN0YWxhZG9yZXMgKElubm9TZXR1cCwgQmFzaCkuCi0gTmltU2NyaXB0IHBhcmEgcmVlbXBsYXphciBCYXNoLgotIGBuaW1wcmV0dHlgIGZvcm1hdGVhZG9yIGRlIGNvZGlnbyAoYWxhIEdvRm10LCBBdXRvUGVwOCkKLSBgYzJuaW1gIHBhcmEgcG9ydGFyIGNvZGlnbyBDIGEgTmltLgotIFRvZGEgaGVycmFtaWVudGEgZGUgQy9DKysgc2lydmUgKGdkYiwgZXRjKS4KCi0tLS0tCgojIyMjIyBHZW5lcmFkb3IgZGUgRG9jdW1lbnRhY2lvbgoKKkZvcm1hdG8gZW50cmFkYToqCi0gQ29kaWdvIGZ1ZW50ZSBOaW0gYCoubmltYAotIFJlU3RydWN0dXJlZFRleHQvTWFya2Rvd24uCgoqRm9ybWF0byBzYWxpZGE6KgotIEhUTUw1IChUT0MsIFNlYXJjaCwgbGlua3MsIGluZGV4LCBldGMpLgotIExhVGVYLgotIE9EVCAoTGlicmVPZmZpY2UpLgotIEpTT04uCgoqVXNvOioKLSBDb21lbnRhcmlvcyBjb24gYCMjYCBSZVN0cnVjdHVyZWRUZXh0L01hcmtkb3duLgotIE5vIGhheSBxdWUgaW5zdGFsYXIgbmFkYSBleHRyYSBwYXJhIHVzYXJsby4KCi0tLS0tCgojIyMgSW50ZXJwcmV0ZSBJbnRlcmFjdGl2bwoKIVtpbmltXShpbmltLmdpZikKCi0gYG5pbWJsZSBpbnN0YWxsIGluaW1gIG8gYG5pbSBzZWNyZXRgLgoKLS0tLS0KCiMjIyMjIElubXV0YWJsZQoKLSBgdmFyYCBNdXRhYmxlLCBjb21vIGVuIFB5dGhvbi4KLSBgbGV0YCBJbm11dGFibGUsIHNvbG8gbGVjdHVyYS4KLSBgY29uc3RgIElubXV0YWJsZSwgdGllbXBvIGRlIENvbXBpbGFjaW9uLgoKYGBgbmltCj4-PiB2YXIgZm9vID0gIkVzdGEgdmFyaWFibGUgcHVlZGUgY2FtYmlhciIKPj4-IGZvbyA9ICJPdHJhIGNvc2EiCj4-Pgo-Pj4gbGV0IGJhciA9ICJFc3RhIHZhcmlhYmxlIE5vIHNlIHB1ZWRlIGNhbWJpYXIiCj4-PiBiYXIgPSAiRGEgRXJyb3IiCkVycm9yOiAnYmFyJyBjYW5ub3QgYmUgYXNzaWduZWQgdG8KPj4-Cj4-PiBjb25zdCBiYXogPSAiQ29uc3RhbnRlIGRlIENvbXBpbGFjaW9uIgo-Pj4gYmF6ID0gIkRhIEVycm9yIgpFcnJvcjogJ2JheicgY2Fubm90IGJlIGFzc2lnbmVkIHRvCmBgYAoKKlNpIHNlIHRlIGNvbXBsaWNhLCBwb2RlcyB1c2FyIGB2YXJgIGVuIHRvZG9zIGxhZG9zLioKCi0tLS0tCgojIyMjIyBFamVjdXRhciBlbiBUaWVtcG8gZGUgQ29tcGlsYWNpb24KCi0gYGNvbnN0IGNvbnN0YW50ZSA9ICJjb21waWxlIHRpbWUiYCBDb25zdGFudGUgZGUgY29tcGlsYWNpb24uCi0gYGluY2x1ZGUoImluY2x1aXIubmltIilgIENvcGlhIGVsIGFyY2hpdm8gZW50ZXJvIGVuIGVsIGx1Z2FyLgotIGBzdGF0aWNSZWFkKCJmb28uanNvbiIpYCBMZWUgYXJjaGl2byBlbnRlcm8geSBkZXZ1ZWx2ZSBzdHJpbmcuCi0gYHN0YXRpY0V4ZWMoIjEgKyAxIilgIEVqZWN1dGEgYXJndW1lbnRvcyB5IGRldnVlbHZlIGVsIHJldG9ybm8uCi0gYHN0YXRpYzogZWNobygiY29tcGlsZSB0aW1lIilgIEVqZWN1dGEgQmxvcXVlcyBkZSBjb2RpZ28uCi0gRkZJLCBSZWdleCwgSlNPTiwgZW4gdGllbXBvIGRlIGNvbXBpbGFjaW9uLgoKKkxvIHF1ZSBzZSBlamVjdXRhIGVuIHRpZW1wbyBkZSBjb21waWxhY2lvbiBubyB0aWVuZSBjb3N0byBlbiB0aWVtcG8gZGUgZWplY3VjaW9uLioKCi0tLS0tCgojIyMjIyBEZSBQeXRob24gYSBOaW0KCi0gYGRlZmAg4p6h77iPIGBwcm9jYAotIGBsYW1iZGFgIOKeoe-4jyBgcHJvY2AKLSBgZiJ7Zm9vfSx7MSsxfSJgIOKeoe-4jyBgZm10Intmb299LHsxKzF9ImAKLSBgZGljdGAg4p6h77iPIGB0YWJsZWAKLSBgTmFtZWRUdXBsZWAg4p6h77iPIGB0dXBsZWAKLSBgc2V0YCDinqHvuI8gYEhhc2hTZXRgCi0gYGIgaWYgYSBlbHNlIGNgIOKeoe-4jyBgaWYgYTogYiBlbHNlOiBjYCBpbmxpbmUKLSBHbyBgZGVmZXJgIOKeoe-4jyBOaW0gYGRlZmVyYC4KLSBHbyBgY2hhbm5lbHNgIOKeoe-4jyBOaW0gYGNoYW5uZWxzYC4KLSBKYXZhU2NyaXB0IEFycm93cyBGdW5jdGlvbnMgZW4gbW9kdWxvIGBzdWdhcmAuCgotLS0tLQoKIyMjIyMgTmltIFVuaWZpZWQgRnVuY3Rpb25zIENhbGwgU3ludGF4CgotIFRvZGFzIGxhcyBmb3JtYXMgc29uIHZhbGlkYXMgeSBlcXVpdmFsZW50ZXMuCgpgYGBuaW0KPj4-IGxldCBmb28gPSBbMSwgMiwgM10KCj4-PiBmb28ubGVuKCkKMwoKPj4-IGxlbihmb28pCjMKCj4-PiBmb28ubGVuLmZsb2F0ICAjIERvdCBjaGFpbi4KMy4wCmBgYAoKLS0tLS0KCiMjIyMjIFRpcG9zIEJhc2ljb3MKCk5pbSAgICAgICAgIHwgUHl0aG9uICB8IEVqZW1wbG8gTmltICAgIHwgRWplbXBsbyBQeXRob24gIHwgQ29tZW50YXJpb3MgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfAotLS0tLS0tLS0tLS18Oi0tLS0tLS0tfDotLS0tLS0tLS0tLS0tLTp8Oi0tLS0tLS0tLS0tLS0tLTp8LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tOnwKIGBzdHJpbmdgICAgfCBgc3RyYCAgIHwgYCJmb28iYCAgICAgICAgfCBgImZvbyJgICAgICAgICAgfCBVbmljb2RlLCBVVEY4LCBFbW9qaSwgZXRjICAgICAgICAgICAgICAgICB8CiBgc3RyaW5nYCAgIHwgYHN0cmAgICB8IGAiIiJiYXIiIiJgICAgIHwgYCIiImJhciIiImAgICAgIHwgU3RyaW5nIE11bHRpLWxpbmVhICAgICAgICAgICAgICAgICAgICAgICAgfAogYGNoYXJgICAgICB8IC0gICAgICAgfCBgJ2EnYCAgICAgICAgICB8IC0gICAgICAgICAgICAgICB8IDEgY2hhciwgT3B0aW1pemFkbyBpbnRlcm5hbWVudGUgYSBpbnQgICAgIHwKIGBpbnRgICAgICAgfCBgaW50YCAgIHwgYDQyYCAgICAgICAgICAgfCBgNDJgICAgICAgICAgICAgfCBpbnQ4LCBpbnQxNiwgaW50MzIsIGludDY0LCBpbnQgICAgICAgICAgICB8CiBgZmxvYXRgICAgIHwgYGZsb2F0YCB8IGAyLjBgICAgICAgICAgIHwgYDIuMGAgICAgICAgICAgIHwgZmxvYXQzMiwgZmxvYXQ2NCwgZmxvYXQgICAgICAgICAgICAgICAgICAgfAogYGJvb2xgICAgICB8IGBib29sYCAgfCBgdHJ1ZSwgZmFsc2VgICB8IGBUcnVlLCBGYWxzZWAgICB8IHRydWUsIGZhbHNlIGVuIE5pbSAgICAgICAgICAgICAgICAgICAgICAgIHwKIGB0dXBsZWAgICAgfCBgdHVwbGVgIHwgYCgxLCAyLCAzKWAgICAgfCBgKDEsIDIsIDMpYCAgICAgfCB0dXBsZSBkZSBOaW0gZXMgY29tbyBOYW1lZFR1cGxlIGRlIFB5ICAgICB8CiBgc2VxYCAgICAgIHwgYGxpc3RgICB8IGBAWzEsIDIsIDNdYCAgIHwgYFsxLCAyLCAzXWAgICAgIHwgTWlzbW8gVGlwbyBlbiB0b2RvcyBsb3MgaXRlbXMgZW4gTmltICAgICAgfAogYHNldGAgICAgICB8IGBzZXRgICAgfCBgezEsIDIsIDN9YCAgICB8IGB7MSwgMiwgM31gICAgICB8IGludCwgY2hhciwgYm9vbCBlbiBOaW0gICAgICAgICAgICAgICAgICAgIHwKIGBlbnVtYCAgICAgfCBgZW51bWAgIHwgYHR5cGUgZW51bWAgICAgfCA_ICAgICAgICAgICAgICAgfCBFbiBQeXRob24gbm8gbG9zIHVzYSBuYWRpZSAgICAgICAgICAgICAgICB8CiBgYXJyYXlgICAgIHwgLSAgICAgICB8IGBbMSwgMiwgM11gICAgIHwgLSAgICAgICAgICAgICAgIHwgVGFtYW5pbyBmaWpvLCBtaXNtbyB0aXBvIGVuIGxvcyBpdGVtcyAgICAgfAogYHN1YnJhbmdlYCB8IC0gICAgICAgfCBgcmFuZ2VbMC4uMl1gICB8IC0gICAgICAgICAgICAgICB8IFNvbG8gYWNlcHRhIGludCBkZSAwIGEgMixwdWVkZSB1c2FyIGZsb2F0IHwKIGBjb25jZXB0YCAgfCAtICAgICAgIHwgYHR5cGUgY29uY2VwdGAgfCAtICAgICAgICAgICAgICAgfCBUaXBvcyBkZWZpbmlkb3MgcG9yIHVzdWFyaW8sY29tcGlsZSB0aW1lICB8CgoqVGlwb3MgZGUgTmltIGVzdGFuIG9wdGltaXphZG9zIHBhcmEgcGVyZm9ybWFuY2UuKgoKLS0tLS0KCiMjIyMjIFZlbG9jaWRhZAoKLSBOaW0gZnVlIHBlbnNhZG8gcGFyYSBpciBtdXkgcmFwaWRvLgotIFVzYSBwb2NhIFJBTSB5IGZ1bmNpb25hIHJhcGlkbyBlbiBQQyB2aWVqYXMuCi0gTm8gbmVjZXNpdGEgInByZXBhcmFyIHVuIGFtYmllbnRlIiBlbiBsYSBQQy4KCkVqZW1wbG8sIG1pc21vIFJheVRyYWNlciBpbXBsZW1lbnRhZG8gZW4gdmFyaW9zIGxlbmd1YWplczoKCiFbcmF5dHJhY2VyXShyYXl0cmFjZXIuanBnKQoKWzxzdWI-U291cmNlPC9zdWI-XShodHRwOi8vYmxvZy5qb2hubm92YWsubmV0LzIwMTcvMDQvMjIvbmltLXBlcmZvcm1hbmNlLXR1bmluZy1mb3ItdGhlLXVuaW5pdGlhdGVkLyNkb2VzLWl0LWFsbC1tYXR0ZXIpCgotLS0tLQoKIyMjIyMgUGVzbwoKLSBOaW0gZnVlIHBlbnNhZG8gcGFyYSBzZXIgbGl2aWFubyAoUmFzcGksIFJvdXRlciwgSW9ULCBldGMpLgotIE5pbSBubyBpbmNydXN0YSBSdW50aW1lLCBWTSwgSW50ZXJwcmV0ZSwgZXRjLgotIFtIb2xhTXVuZG8gR28gMk1iLCBIb2xhTXVuZG8gTmltIDIwS2IuXShodHRwOi8vbGlua29kZS5vcmcvI25hcldPUW5VOWkyVURzd3U5TkRZbzEpCgpgYGBiYXNoCiQgZWNobyAnZWNobyAiSG9sYSBNdW5kbyInID4gaGVsbG8ubmltCiQgbmltIGMgLWQ6cmVsZWFzZSAtLWFwcDpjb25zb2xlIC0tb3B0OnNpemUgaGVsbG8ubmltCiQgc3RyaXAgLS1zdHJpcC1hbGwgaGVsbG8KJCBkdSAtaCBoZWxsbwoxNUsgICAgIGhlbGxvCmBgYAoKIVtjYXRdKG5vZGUtbW9kdWxlcy5qcGcpCgotLS0tLQoKIyMjIyMgTmltU2NyaXB0CgotIFNjcmlwdGluZyBNdWx0aVBsYXRhZm9ybWEsIE5pbSBlbiBtb2RvIGludGVycHJldGFkby4KLSBNdWNob3MgbW9kdWxvcyBsaWJyZXJpYSBzdGFuZGFyZCBkaXNwb25pYmxlcy4KLSBDb25maWd1cmFjaW9uLCBidWlsZCAoYnVpbGQgdG9vbCkuCi0gUHVlZGUgdXNhcnNlIGNvbiBOaW1ibGUuCi0gUHVlZGUgdXNhcnNlIGNvbW8gbXVsdGktcHJvcG9zaXRvIChzdGFuZGFsb25lKS4KLSBFeHRlbnNpb24gZGUgYXJjaGl2byBgKi5uaW1zYC4KLSBObyBzZSBjb21waWxhLCB1c2EgYG5pbSBlIGFyY2hpdm8ubmltc2AuCi0gQWRtaW5pc3RyYWRvciBkZSBwYXF1ZXRlcywgdGVzdCwgZG9jcywgYXNzZXJ0cy4KCioqSG9sYSBNdW5kbyBOaW1TY3JpcHQ6KioKCmBgYG5pbQplY2hvICJIb2xhIG11bmRvIgpgYGAKCi0tLS0tCgojIyMgQ29uZWN0YXIgY29uIEMKCkM6CgpgYGBjCmludCBzdW1hMkVudGVyb3MoaW50IGEsIGludCBiKSB7cmV0dXJuIGEgKyBiO30KYGBgCgpOaW06CgpgYGBuaW0Key5jb21waWxlOiAic3VtYS5jIi59CnByb2Mgc3VtYTJFbnRlcm9zKGEsIGI6IGNpbnQpOiBjaW50IHsuaW1wb3J0Yy59CmVjaG8gc3VtYTJFbnRlcm9zKDEsIDIpCmBgYAoKYGBgYmFzaAokIG5pbSBjIC1yIGVqZW1wbG8ubmltCjMKYGBgCgpbPHN1Yj5Db2RpZ28gZW4gUmVwbzwvc3ViPl0oZWplbXBsb3MvZWplbXBsby5uaW0pCgotLS0tLQoKIyMjIyMgQ29uZWN0ZWN0YXIgY29uIGxhIFdlYgoKPHN1Yj5KYXZhU2NyaXB0ICZkemlncmFycjsgTmltPC9zdWI-CgpgYGBodG1sCjwhLS0gaW5kZXguaHRtbCAtLS0-CjxzY3JpcHQ-ZnVuY3Rpb24gc3VtYTJFbnRlcm9zKGEsIGIpIHtyZXR1cm4gYWxlcnQoYSArIGIpfTwvc2NyaXB0Pgo8c2NyaXB0IHNyYz0iZWplbXBsb2pzMm5pbS5qcyI-PC9zY3JpcHQ-CmBgYAoKYGBgbmltCiMgZWplbXBsb2pzMm5pbS5uaW0KcHJvYyBzdW1hMkVudGVyb3MoYSwgYjogY2ludCk6IGNpbnQgey5pbXBvcnRjLn0KZWNobyBzdW1hMkVudGVyb3MoMSwgMikKYGBgCgpgYGBiYXNoCiQgbmltIGpzIC1vOmVqZW1wbG9qczJuaW0uanMgZWplbXBsb2pzMm5pbS5uaW0KJCB4ZGctb3BlbiBpbmRleC5odG1sICAjIEFicmUgZWwgTmF2ZWdhZG9yIFdlYi4KYGBgCgo8c3ViPk5pbSAmZHppZ3JhcnI7IEphdmFTY3JpcHQ8L3N1Yj4KCmBgYGh0bWwKPCEtLSBpbmRleDIuaHRtbCAtLS0-CjxzY3JpcHQgc3JjPSJlamVtcGxvbmltMmpzLmpzIj48L3NjcmlwdD4KPHNjcmlwdD5hbGVydChzdW1hMkVudGVyb3MoMSwgMikpPC9zY3JpcHQ-CmBgYAoKYGBgbmltCiMgZWplbXBsb25pbTJqcy5uaW0KcHJvYyBzdW1hMkVudGVyb3MoYSwgYjogY2ludCk6IGNpbnQgey5leHBvcnRjLn0gPSBhICsgYgpgYGAKCmBgYGJhc2gKJCBuaW0ganMgLW86ZWplbXBsb25pbTJqcy5qcyBlamVtcGxvbmltMmpzLm5pbQokIHhkZy1vcGVuIGluZGV4Mi5odG1sICAjIEFicmUgZWwgTmF2ZWdhZG9yIFdlYi4KYGBgCgotLS0tLQoKIyMjIyMgQ29uZWN0YXIgY29uIFB5dGhvbgoKTmltOgoKYGBgbmltCmltcG9ydCBuaW1weQpwcm9jIGZ1bmNpb25jaXRhKihub21icmU6IHN0cmluZyk6IHN0cmluZyB7LmV4cG9ydHB5Ln0gPSAiSG9sYSAiICYgbm9tYnJlCmBgYAoKUHl0aG9uICgyIG8gMyk6CgpgYGBuaW0KaW1wb3J0IG5pbTJweXRob24KcHJpbnQobmltMnB5dGhvbi5mdW5jaW9uY2l0YSgiTXVuZG8iKSkKYGBgCgpJbnN0YWxhciBwdWVudGUgUHl0aG9uLU5pbToKCi0gYG5pbWJsZSBpbnN0YWxsIG5pbXB5YC4KCkNvbXBpbGFyOgoKYG5pbSBjIC0tYXBwOmxpYiAtLW91dDptb2R1bG8uc28gY29kaWdvLm5pbWAKCjxzdWI-TmltIGNvbXBpbGEgbHVlZ28gbm8gcmVxdWllcmUgTmltIHBhcmEgZnVuY2lvbmFyLiBTZSBwdWVkZSBzdWJpciBhIFB5UEk8L3N1Yj4KCi0tLS0tCgojIyMjIyBQeUxpYgoKLSBDb3BpYSAqKGF1biBtYXMpKiBsYSBzeW50YXhpcyBkZSBQeXRob24gZW4gTmltLgotIGBuaW1ibGUgaW5zdGFsbCBweWxpYmAsIGx1ZWdvIGBpbXBvcnQgcHlsaWJgLgoKYGBgcHl0aG9uCj4-PiBpbXBvcnQgcHlsaWIKPj4-IGZvciBpIGluIHJhbmdlKDEwKTogICAjIE1pbWljIFB5dGhvbnMgcmFuZ2UoKQogICAgICBwcmludChpLCBlbmRsPSIgIikgICMgTWltaWMgUHl0aG9ucyBwcmludCgpCjAgMSAyIDMgNCA1IDYgNyA4IDkKPj4-IHByaW50KGpzb25fbG9hZHMoIiIieyJjbGF2ZSI6ICJ2YWxvciJ9IiIiKSAgIyAgTWltaWMgUHl0aG9ucyBqc29uLmxvYWRzKHN0cikKeyJjbGF2ZSI6ICJ2YWxvciJ9Cj4-PiBwcmludChzeXMucGxhdGZvcm0pICAgICAgICAgICAgICAjICBNaW1pYyBQeXRob25zIHN5cy4qCiJsaW51eCIKPj4-IHByaW50KHBsYXRmb3JtLnByb2Nlc3NvcikgICAgICAgICMgIE1pbWljIFB5dGhvbnMgcGxhdGZvcm0uKgoiYW1kNjQiCj4-PiBwcmludChpbnQoJzknKSkgICAgIyBpbnRlZ2VyIGZyb20gY2hhci4KPj4-IHByaW50KCIiIG9yICJiIikgICAjICBNaW1pYyBQeXRob25zIHN0ciBvciBzdHIKImIiCj4-PiBwcmludCgiYSIgb3IgImIiKQoiYSIKPj4-IHRpbWVpdCgxMDApOiAgIyBNaW1pYyBQeXRob25zIHRpbWVpdC50aW1laXQoImNvZGVfdG9fYmVuY2htYXJrIiwgbnVtYmVyPWludCkKICAgICAgc2xlZXAoOSkgICAgIyBSZXBlYXRzIHRoaXMgY29kZSAxMDAgdGltZXMuIE91dHB1dCBpcyB2ZXJ5IGluZm9ybWF0aXZlLgoyMDE4LTA1LTA5VDAyOjAxOjMzIFRpbWVJdDogMTAwIFJlcGV0aXRpb25zIG9uIDkyMCBtaWxsaXNlY29uZHMsIGFuZCA5IG1pY3Jvc2Vjb25kcywgQ1BVIFRpbWUgMC4wMDEyOC4KPj4-IHdpdGhfb3BlbigiYXJjaGl2by50eHQiLCAncicpOiAgIyBNaW1pY3MgUHl0aG9ucyB3aXRoIG9wZW4oZmlsZSwgbW9kZT0ncicpIGFzIGZpbGU6CiAgICAgIHdoaWxlIG5vdCBlbmRfb2ZfZmlsZShmaWxlKTogICMgRmlsZSBpcyBhdXRvbWF0aWNhbGx5IGFzc2lnbmVkIHRvIGZpbGUgdmFyaWFibGUuCiAgICAgICAgcHJpbnQoZmlsZS5yZWFkX2xpbmUoKSkgICAgICMgTm8gbmVlZCBmb3IgIiBhcyBmaWxlIiwganVzdCBwYXRoIGFuZCBtb2RlLgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIEZpbGUgaXMgY2xvc2VkIGF1dG9tYXRpY2FsbHkuCmBgYAoKLS0tLS0KCiMjIyMjIFVuaXR0ZXN0cwoKLSBUZXN0cyBSdW5uZXIgYW1pZ2FibGUsIGBuaW0gYyAtciB0ZXN0Lm5pbWAuCgpgYGBuaW0Kc3VpdGUgIk5vbWJyZSBkZWwgdGVzdCI6CgogIGVjaG8gIlNldHVwOiBFc3RvIHNlIGVqZWN1dGEgMSB2ZXogQU5URVMgZGUgVE9ET1MgbG9zIFRlc3RzLiIKCiAgc2V0dXA6CiAgICBlY2hvICJTZXR1cDogRXN0byBzZSBlamVjdXRhIDEgdmV6IEFOVEVTIGRlIENBREEgVGVzdC4iCgogIHRlYXJkb3duOgogICAgZWNobyAiVGVhcmRvd246IEVzdG8gc2UgZWplY3V0YSAxIHZleiBERVNQVUVTIGRlIENBREEgVGVzdC4iCgogIHRlc3QgImVqZW1wbG8iOgogICAgYXNzZXJ0IHRydWUKCiAgdGVzdCAib3RybyBlamVtcGxvIjoKICAgIGNoZWNrKDEgIT0gMSkKCiAgdGVzdCAiZWplbXBsbyBjb24gZXJyb3IgZXNwZXJhZG8iOgogICAgbGV0IGZvbyA9IFsxLCAyLCAzXQogICAgZXhwZWN0KEluZGV4RXJyb3IpOgogICAgICBlY2hvIGZvb1s5XQoKICBlY2hvICJUZWFyZG93bjogRXN0byBzZSBlamVjdXRhIDEgdmV6IERFU1BVRVMgZGUgVE9ET1MgbG9zIFRlc3RzLiIKCmBgYAoKLS0tLS0KCiMjIyMjIFRlbXBsYXRlcwoKPHN1Yj5UZW1wbGF0ZSByZWVtcGxhemFuIHN1IGludm9jYWNpb24gY29uIHN1IGNvbnRlbmlkbyBlbiB0aWVtcG8gZGUgY29tcGlsYWNpb24uPC9zdWI-CgpgYGBuaW0KdGVtcGxhdGUgdGVtcGxhdGVjaXRhKGFyZ3VtZW50bzAsIGFyZ3VtZW50bzE6IHN0cmluZywgY29udGVuaWRvOiB1bnR5cGVkKTogdW50eXBlZCA9CgogIGVjaG8gMSArIDIgICAgICAgIyBTaW11bGEgYWxnbyBkZSBsb2dpY2EgInByZS1jb2NpZGEiIGRlbnRybyBkZWwgdGVtcGxhdGUuCgogIGVjaG8gYXJndW1lbnRvMCAgIyBTZSBwdWVkZSB0cmFiYWphciBjb24gdG9kb3MgbG9zIGFyZ3VtZW50b3MgcXVlIHJlY2liZS4KICBlY2hvIGFyZ3VtZW50bzEKCiAgIyBMYXMgdmFyaWFibGVzIHkgbm9tYnJlcyBkZW50cm8gZGUgdW4gdGVtcGxhdGUgc29uIHNvbG8gbG9jYWxlcyBwb3IgZGVmZWN0by4KICB2YXIgdmFyaWFibGVfaW5qZWN0YWRhIHsuaW5qZWN0Ln0gPSAiR2F0aXRvcyIgIyBObyBlcyBzb2xvIGxvY2FsLgogIHZhciB2YXJpYWJsZV9zb2xvX2xvY2FsID0gIlBlcnJpdG9zIiAgICAgICAgICAjIFNpIGVzIHNvbG8gbG9jYWwuCgogIGNvbnRlbmlkbyAgIyBTZSBwdWVkZSBldmFsdWFyIGxvcyBjb250ZW5pZG9zIHF1ZSByZWNpYmUuCgoKdGVtcGxhdGVjaXRhKCJwcmltZXIgYXJndW1lbnRvIiwgInNlZ3VuZG8gYXJndW1lbnRvIik6CgogIGVjaG8gdmFyaWFibGVfaW5qZWN0YWRhCiAgIyBFcnJvcjogdW5kZWNsYXJlZCBpZGVudGlmaWVyOiAndmFyaWFibGVfc29sb19sb2NhbCcuCiAgIyBObyBlc3RhIEluamVjdGFkYSBjb24gey5pbmplY3QufSwgbm8gZXhpc3RlIGZ1ZXJhIGRlbCB0ZW1wbGF0ZS4KICAjIGVjaG8gdmFyaWFibGVfc29sb19sb2NhbAoKICBlY2hvICJFc3RlIGVzIGVsIGNvbnRlbmlkbywgZWwgY3VlcnBvIGRlbCB0ZW1wbGF0ZS4iCmBgYAoKKkNvZGlnbyBxdWUgaGFja2VhIGNvZGlnbyBhIG5pdmVsIGRlIGNvZGlnbyBlbiBjb21waWxhY2lvbiAhKgoKLS0tLS0KCiMjIyMjIE1hY3JvcwoKPHN1Yj5NYWNyb3Mgc29uIGNvbW8gVGVtcGxhdGVzIHBlcm8gZW4gdGllbXBvIGRlIGVqZWN1Y2lvbiB5IGhhY2tlYW4gZWwgQVNUIGFsIHZ1ZWxvLjwvc3ViPgoKYGBgbmltCmltcG9ydCBtYWNyb3MKCm1hY3JvIGdlbmVyYXRlX2hlbGxvKCk6IHR5cGVkID0KICBwYXJzZVN0bXQoIiIicHJvYyBoZWxsbygpID0gZWNobyAiaGkiICIiIikKCmdlbmVyYXRlX2hlbGxvKCkgICMgR2VuZXJhdGUgYSBwcm9jIHZpYSBNYWNyb3MuCmhlbGxvKCkKCmV4cGFuZE1hY3JvczogICAgICAjIERlYnVnCiAgZ2VuZXJhdGVfaGVsbG8oKSAjIEdlbmVyYXIgeSB2ZXIgZWwgY29kaWdvIGdlbmVyYWRvIHBvciBlbCBNYWNyby4KYGBgCgoqQ29kaWdvIHF1ZSBoYWNrZWEgY29kaWdvIGEgbml2ZWwgZGUgQVNUIGVuIGVqZWN1Y2lvbiAhKgoKLS0tLS0KCiMjIyMjIFRlbXBsYXRlIEVuZ2luZQoKLSBUZW1wbGF0ZSBFbmdpbmUgaW50ZWdyYWRvIChhbGEgSmluamEsIEpla3lsbCwgZXRjKS4KLSBBcmNoaXZvcyBgKi5uaW1mYCwgc2hlYmFuZyB5IHN5bnRheGlzIE5pbS4KLSBMaW5lYXMgY29uIGAjYCBlcyBjb2RpZ28gTmltLCBzaW5vIGxpdGVyYWwgdmVyYmF0aW0uCgpgYGBuaW0KIz8gc3RkdG1wbCB8IHN0YW5kYXJkCiNwcm9jIGdlbmVyYXRlWE1MKG5hbWUsIGFnZTogc3RyaW5nKTogc3RyaW5nID0KPHhtbD4KICA8bmFtZT4kbmFtZTwvbmFtZT4KICA8YWdlPiRhZ2U8L2FnZT4KPC94bWw-CmBgYAoKYGBgbmltCiM_IHN0ZHRtcGwgfCBzdGFuZGFyZAojcHJvYyBnZW5lcmF0ZUhUTUwodGl0bGUsIGNvbnRlbnQ6IHN0cmluZywgdGFiczogb3BlbkFycmF5W3N0cmluZ10pOiBzdHJpbmcgPQo8aGVhZD48dGl0bGU-ICR0aXRsZSA8L3RpdGxlPjwvaGVhZD4KPGJvZHk-CiAgICA8dWw-CiAgI2ZvciB0YWIgaW4gaXRlbXModGFicyk6CiAgICA8bGk-PGEgaHJlZj0iJHt0YWJ9Lmh0bWwiPiR0YWI8L2E-PC9saT4KICAjZW5kIGZvcgogICAgPC91bD4KICAgICRjb250ZW50CiAgICBBIGRvbGxhcjogJCQuCjwvYm9keT4KYGBgCgo8c3ViPk5vIGNvbmZ1bmRpciBUZW1wbGF0ZS1FbmdpbmUgY29uIFRlbXBsYXRlcy48L3N1Yj4KCi0tLS0tCgojIyMjIyBHYXJiYWdlIENvbGxlY3RvcnMKCi0gYFJlZkNgOiBDdWVudGEgcmVmZXJlbmNpYXMsIERlZmF1bHQsIGRlZmVycmVkLgotIGBtYXJrQW5kU3dlZXBgOiBFbCBtYXMgUmFwaWRvLCB1c2EgbWFzIFJBTS4KLSBgQm9laG1gOiBFbCBtYXMgbGVudG8sIHVzYSBtZW5vcyBSQU0uCi0gYEdvYDogQ2xvbiBkZSBHbyBMYW5nLgotIGBSZWdpb25zYDogU3RhY2sgcmVnaW9ucywgY2FzaSBzaW4gR0MuCi0gYG5vbmVgOiBTaW4gR0MuCi0gYC0tbmV3cnVudGltZWA6IEV4cGVyaW1lbnRhbCwgZXN0aWxvIFJ1c3QgKG5vIEJvcnJvd0NoZWNrZXIpLgoKLS0tLS0KCiMgRWplbXBsb3MKCiMjIyMgTGV2ZW5zaHRlaW4gRGlzdGFuY2UKCmBgYG5pbQplY2hvIGVkaXREaXN0YW5jZSgiR2F0byIsICJQYXRvIikKYGBgCgojIyMjIERpZmYKCmBgYG5pbQojIDIgdHh0ICgiVGhlIENhbGwgb2YgQ3RodWxodSIsIExvdmVjcmFmdCkKbGV0IHR4dDAgPSAiIiJJIGhhdmUgbG9va2VkIHVwb24gYWxsIHRoZSB1bml2ZXJzZSBoYXMgdG8gaG9sZCBvZiBob3Jyb3IsCmV2ZW4gc2tpZXMgb2Ygc3ByaW5nIGFuZCBmbG93ZXJzIG9mIHN1bW1lciBtdXN0IGV2ZXIgYmUgcG9pc29uIHRvIG1lLiIiIgpsZXQgdHh0MSA9ICIiIkkgaGF2ZSBsb29rZWQgdXBvbiBhbGwgeW91ciBjb2RlIGhhcyB0byBob2xkIG9mIGJ1Z3MsCmV2ZW4gc2tpZXMgb2Ygc3ByaW5nIGFuZCBmbG93ZXJzIG9mIHN1bW1lciBtdXN0IGV2ZXIgYmUgcG9pc29uIHRvIG1lLiIiIgoKZWNobyBkaWZmVGV4dCh0eHQwLCB0eHQxKQpgYGAKCiMjIyMgU3ludGF4IEhpZ2hsaXRpbmcKCmBgYG5pbQpsZXQgY29kZSA9ICIiImZvciB4IGluICRpbnQuaGlnaDogZWNobyB4Lm9yZCBtb2QgMiA9PSAwIiIiCnZhciB0b2tuaXpyOiBHZW5lcmFsVG9rZW5pemVyCmluaXRHZW5lcmFsVG9rZW5pemVyKHRva25penIsIGNvZGUpCndoaWxlIHRva25penIua2luZCAhPSBndEVvZjoKICBnZXROZXh0VG9rZW4odG9rbml6ciwgbGFuZ05pbSkKICBlY2hvIHRva25penIua2luZApgYGAKCi0gVG9kbyBlc3RvIGVzIExpYnJlcmlhIFN0YW5kYXJkLgoKLS0tLS0KCiMjIyMjIE5pbSBGcm9udGVuZAoKLSBOaW0gY29tcGlsYSBhIEphdmFTY3JpcHQuCi0gTmltIHRpZW5lIEFQSSBkZWwgRE9NLgotIEphdmFTY3JpcHQgZXMgIkZpcnN0IENsYXNzIENpdGl6ZW4iLgotIE5pbSB3cmFwcGVhIExpYnMgSlMgZmFjaWxtZW50ZS4KLSBOaW0gRnJvbnRlbmQgdmEgbXV5IHJhcGlkbyB0YW1iaWVuLgotIEhheSBwYXF1ZXRlcyBjb24gTGlicyBGcm9udGVuZCBlbiBOaW1ibGUuCi0gUG9kZXMgY29tcGlsYXIgTmltIGEgSmF2YVNjcmlwdCB5IHVzYXJsbyBlbiBIVE1MIEVzdGF0aWNvLgotIFNlIHB1ZWRlIGNvbXBpbGFyIGEgV2ViQXNzZW1ibHkuCgpFamVtcGxvczoKLSBGcm9udGVuZCBTUEEgKFJlYWN0LWxpa2UpIGh0dHBzOi8vZ2l0aHViLmNvbS9wcmFnbWFnaWMva2FyYXgKLSBGb3JvIE5pbSBlc3RhIGhlY2hvIGVuIE5pbSBodHRwczovL2ZvcnVtLm5pbS1sYW5nLm9yZwoKLS0tLS0KCipQYXF1ZXRlcyBpbnRlcmVzYW50ZXMgVGVybWluYWw6KgotIENvbG9yZXMgaHR0cHM6Ly9naXRodWIuY29tL21vbG5hcm1hcmsvY29sb3JpemUKLSBTcGlubmVycyBodHRwczovL2dpdGh1Yi5jb20vbW9sbmFybWFyay9zcGlubnkKLSBQcm9ncmVzc0JhciBodHRwczovL2dpdGh1Yi5jb20vZXVhbnRvcmFuby9wcm9ncmVzcy5uaW0KLSBHcmFmaWNvcyBodHRwczovL2dpdGh1Yi5jb20vRmVkZXJpY29DZXJhdHRvL25pbS1kYXNoaW5nCi0gQ29uZmlncyBodHRwczovL2dpdGh1Yi5jb20vZXVhbnRvcmFuby9kb3RlbnYubmltCgoqUGFxdWV0ZXMgaW50ZXJlc2FudGVzIFdlYjoqCi0gV2ViIENyZWF0b3IgaHR0cHM6Ly9naXRodWIuY29tL1Rob21hc1RKZGV2L25pbV93ZWJzaXRlY3JlYXRvcgotIFdlYiBGcmFtZXdvcmsgaHR0cHM6Ly9naXRodWIuY29tL2RvbTk2L2plc3RlcgotIE1hcmtkb3duIGEgSFRNTCBodHRwczovL2dpdGh1Yi5jb20vaDNyYWxkL2hhc3R5c2NyaWJlCi0gU2NyYXBwZXIgaHR0cHM6Ly9naXRodWIuY29tL09wZW5TeXN0ZW1zTGFiL3EubmltCi0gSnVweXRlciBLZXJuZWwgaHR0cHM6Ly9naXRodWIuY29tL3N0aXNhL2p1cHl0ZXItbmltLWtlcm5lbAotIFBsb3RseSBodHRwczovL2dpdGh1Yi5jb20vYnJlbnRwL25pbS1wbG90bHkKLSBQb29ycyBXb21hbiBEZXNpZ24gaHR0cHM6Ly9naXRodWIuY29tL2p1YW5jYXJsb3NwYWNvL25pbS1yYW5kb20tZm9udC1jb2xvcgoKLS0tLS0KCiMjIyMjIEV4dHJhcyByZWNvbWVuZGFkb3MKCi0gSG9tZXBhZ2UgaHR0cHM6Ly9uaW0tbGFuZy5vcmcKLSBQcm9iYXIgTmltIGRlc2RlIGVsIEJyb3dzZXIgaHR0cHM6Ly9wbGF5Lm5pbS1sYW5nLm9yZwotIERldkRvY3MgaHR0cDovL2RldmRvY3MuaW8vbmltCi0gU3RhY2tPdmVyZmxvdyBodHRwczovL3N0YWNrb3ZlcmZsb3cuY29tL3F1ZXN0aW9ucy90YWdnZWQvbmltCi0gUm9zZXR0YSBodHRwOi8vcm9zZXR0YWNvZGUub3JnL3dpa2kvQ2F0ZWdvcnk6TmltCi0gVHV0b3JpYWwgaHR0cHM6Ly9uaW0tbGFuZy5vcmcvZG9jcy90dXQxLmh0bWwKLSBTeW50YXggUHl0aG9uIGh0dHBzOi8vZ2l0aHViLmNvbS9ZYXJkYW5pY28vbmltcHlsaWIKLSBHVUkgc3VwZXIgZmFjaWwgaHR0cHM6Ly9naXRodWIuY29tL2p1YW5jYXJsb3NwYWNvL25pbS1rZGlhbG9nCi0gQXdlc29tZSBOaW0gaHR0cHM6Ly9naXRodWIuY29tL1ZQYXNoa292L2F3ZXNvbWUtbmltCi0gQ29tdW5pZGFkIE9ubGluZSBOaW0gQVIgaHR0cHM6Ly90Lm1lL05pbUFyZ2VudGluYQotIENvbXVuaWRhZCBPbmxpbmUgTmltIEVOIGh0dHBzOi8vdC5tZS9uaW1fbGFuZwoKLS0tLS0KCiMjIyMjIEluc3RhbGFyCgoqKkxpbnV4ICYgTWFjKioKLSBbQ2hvb3NlTmltXShodHRwczovL2dpdGh1Yi5jb20vZG9tOTYvY2hvb3NlbmltI2Nob29zZW5pbSkKCmBgYApjdXJsIGh0dHBzOi8vbmltLWxhbmcub3JnL2Nob29zZW5pbS9pbml0LnNoIC1zU2YgfCBzaApgYGAKCioqV2luZG93cyoqCi0gWzEgWklQLl0oaHR0cHM6Ly9uaW0tbGFuZy5vcmcvaW5zdGFsbF93aW5kb3dzLmh0bWwpCgoqKk90cm9zKioKLSBbRG9ja2VyXShodHRwczovL2h1Yi5kb2NrZXIuY29tL3IvbmltbGFuZy9uaW0vKSwgaW1hZ2VuIGBuaW1sYW5nL25pbWAuCi0gTWFudWFsLCBjb2RpZ28gZnVlbnRlIGVuIGN1YWxxdWllciBPUy4KCipTb2xvIHJlcXVpZXJlIHVuIENvbXBpbGFkb3IgZGUgQy4qCgotLS0tLQoKIyMjIyMgRWRpdG9yIC8gSURFIHNvcG9ydGUgcGFyYSBOaW0KCiFbbmltLXNwYWNlbWFjc10obmltLXNwYWNlbWFjcy5wbmcpCgpbVmltXShodHRwczovL2dpdGh1Yi5jb20vemFoL25pbS52aW0vKSwKW0VtYWNzXShodHRwczovL2dpdGh1Yi5jb20vbmltLWxhbmcvbmltLW1vZGUpLApbQXRvbV0oaHR0cHM6Ly9naXRodWIuY29tL3J1c3Nwb3dlcnMvbmltLWF0b20pLApbU3VibGltZV0oaHR0cHM6Ly9naXRodWIuY29tL1ZhcnJpb3VudC9OaW1MaW1lKSwKW0thdGVdKGh0dHBzOi8vZ2l0aHViLmNvbS9qdWFuY2FybG9zcGFjby9OaW1LYXRlI3NjcmVlbnNob3RzKSwKW0dlZGl0XShodHRwczovL2dpdGh1Yi5jb20vbmltLWxhbmcvQXBvcmlhL2Jsb2IvbWFzdGVyL3NoYXJlL2d0a3NvdXJjZXZpZXctMi4wL2xhbmd1YWdlLXNwZWNzL25pbS5sYW5nKSwKW0dlYW55XShodHRwczovL2dpdGh1Yi5jb20vZ2VhbnkvZ2VhbnkvcHVsbC8xOTMpLApbS0RldmVsb3BdKGh0dHBzOi8vZ2l0aHViLmNvbS94eXozMi9LRGV2ZWxvcC10ZW1wbGF0ZSksCltWUyBDb2RlXShodHRwczovL21hcmtldHBsYWNlLnZpc3VhbHN0dWRpby5jb20vaXRlbXM_aXRlbU5hbWU9a29zejc4Lm5pbSksCltTcGFjZW1hY3NdKGh0dHBzOi8vZ2l0aHViLmNvbS9qdWFuY2FybG9zcGFjby9zcGFjZW1hY3MtbmltLXB5dGhvbiNzcGFjZW1hY3MtbmltLXB5dGhvbiksCltOZW9WaW1dKGh0dHBzOi8vZ2l0aHViLmNvbS9iYWFiZWxmaXNoL252aW0tbmltKSwKW05vdGVwYWQrK10oaHR0cHM6Ly9naXRodWIuY29tL2phbmdrby9ucHBuaW0vcmVsZWFzZXMpLApbTGlnaHRUYWJsZV0oaHR0cHM6Ly9naXRodWIuY29tL3phaC9uaW0ubHQvKSwKW0Fwb3JpYV0oaHR0cHM6Ly9naXRodWIuY29tL25pbS1sYW5nL0Fwb3JpYSksCltldGMgZXRjLi4uXShodHRwczovL2dpdGh1Yi5jb20vbmltLWxhbmcvTmltL3dpa2kvZWRpdG9yLXN1cHBvcnQpCgotLS0tLQoKIyMjIE5pbSBuZWNlc2l0YSBtYXMgQ29tdW5pZGFkCgohW05pbSBDb21tdW5pdHldKGdhdGFzLmpwZykKCi0gYCBodHRwczovL3QubWUvTmltQXJnZW50aW5hIGAKCipTdW1hdGUhLCBOaW0gdGllbmUgY29zYXMgYXVuIG1hcyBpbnRlcmVzYW50ZXM7IFF1ZSBlbXBpZXplIGVsIGh5cGUgISoKCi0tLS0tCgojIyMjIyBUaGFua3MhICZoZWFydHM7CgohW0p1YW5DYXJsb3NdKHN0YWNrb3ZlcmZsb3ctY29weXBhc3RlLmpwZykKCipKdWFuIENhcmxvcyoKCi0gWzxzdWI-Z2l0aHViLmNvbS9qdWFuY2FybG9zcGFjbzwvc3ViPl0oaHR0cHM6Ly9naXRodWIuY29tL2p1YW5jYXJsb3NwYWNvKSBbPHN1Yj50d2l0dGVyLmNvbS9qdWFuY2FybG9zcGFjbzwvc3ViPl0oaHR0cHM6Ly90d2l0dGVyLmNvbS9qdWFuY2FybG9zcGFjbykgWzxzdWI-dC5tZS9qdWFuY2FybG9zcGFjbzwvc3ViPl0oaHR0cHM6Ly90Lm1lL2p1YW5jYXJsb3NwYWNvKQotIFs8c3ViPlJlcG8gZGUgZXN0YSBQcmVzZW50YWNpb24gZW4gR2l0SHViLjwvc3ViPl0oaHR0cHM6Ly9naXRodWIuY29tL2p1YW5jYXJsb3NwYWNvL25pbS1wcmVzZW50YXRpb24tc2xpZGVzI25pbS1wcmVzZW50YXRpb24tc2xpZGVzKQotIFs8c3ViPjxpPlByZXNlbnRhY2lvbiBoZWNoYSBlbiBNYXJrZG93biBjb24gTWljcm9yYXB0b3IuPC9pPjwvc3ViPl0oaHR0cHM6Ly9naXRodWIuY29tL2p1YW5jYXJsb3NwYWNvL21pY3JvcmFwdG9yI21pY3JvcmFwdG9yKQ==" rel="noopener noreferrer nofollow" download="presentation.md" title=Source target=_blank >Source Download</a><br>
 
     <b>Notes:</b><br>
     <textarea placeholder="Presentation Notes" title=Notes readonly ></textarea><br>
@@ -1705,16 +1670,16 @@ Ejemplos:
 
 
 <style>
-@import url(https://fonts.googleapis.com/css?family='Spirax');
-@import url(https://fonts.googleapis.com/css?family='Share Tech Mono');
-@import url(https://fonts.googleapis.com/css?family='Electrolize');
-@import url(https://fonts.googleapis.com/css?family='Neucha');
-@import url(https://fonts.googleapis.com/css?family='Italiana');
-body, .step             {font-family: Electrolize};
-table, tbody, del       {font-family: Italiana};
-h1, h2, h3              {font-family: Spirax};
-.blockquote, blockquote {font-family: Neucha};
-.code, code, pre        {font-family: 'Share Tech Mono'};
+@import url(https://fonts.googleapis.com/css?family='Limelight');
+@import url(https://fonts.googleapis.com/css?family='Roboto Mono');
+@import url(https://fonts.googleapis.com/css?family='Lekton');
+@import url(https://fonts.googleapis.com/css?family='Meddon');
+@import url(https://fonts.googleapis.com/css?family='Trykker');
+body, .step             {font-family: Lekton};
+table, tbody, del       {font-family: Trykker};
+h1, h2, h3              {font-family: Limelight};
+.blockquote, blockquote {font-family: Meddon};
+.code, code, pre        {font-family: 'Roboto Mono'};
 
 .fallback-message {
     line-height: 1.3;
@@ -1765,9 +1730,9 @@ img[src*="http://img.youtube.com/vi/"] {
 body {
     background: #fff;
     background:
-            linear-gradient( aliceblue, transparent),
-            linear-gradient(90deg, peachpuff, transparent),
-            linear-gradient(-90deg, lemonchiffon, transparent);
+            linear-gradient( lightyellow, transparent),
+            linear-gradient(90deg, thistle, transparent),
+            linear-gradient(-90deg, aqua, transparent);
     background-blend-mode: screen
 }
 
@@ -1779,8 +1744,8 @@ body {
     min-height: 768px;
     padding: 9px 9px;
     margin: 9px auto;
-    color: navy;
-    text-shadow: 0 1px 2px darkolivegreen;
+    color: chocolate;
+    text-shadow: 0 1px 2px chocolate;
     box-sizing: border-box;
     font-size: 30px
 }
