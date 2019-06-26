@@ -18,6 +18,7 @@
 * Facil usar librerias en C/C++/JavaScript.
 * Administrador de Paquetes y herramientas.
 * Documentacion online completa con ejemplos
+* Targets comunidad LLVM,Vulkan,WebGL,OpenGL,etc
 
 -----
 
@@ -411,28 +412,6 @@ suite "Nombre del test":
 
 -----
 
-##### CrossCompilar
-
-Basicamente hay que pasarle la ruta donde esta el Compilador.
-
-```bash
-$ mkdir /tmp/prueba_nim_crosscompile ; cd /tmp/prueba_nim_crosscompile/
-
-$ echo 'echo "Hola Mundo"' > hello.nim
-
-$ nim c --cpu:amd64 --os:windows --gcc.exe:x86_64-w64-mingw32-gcc \
-        --gcc.linkerexe:x86_64-w64-mingw32-gcc hello.nim
-
-$ wine hello.exe
-Hola Mundo
-```
-
-Las libs de crosscompile se instalan instalando `mingw-w64-gcc` (Arch).
-
-*Dependera un poco que tan amigable es tu Distro con las Libs de crosscompile.*
-
------
-
 ##### Templates
 
 <sub>Template reemplazan su invocacion con su contenido en tiempo de compilacion.</sub>
@@ -586,11 +565,18 @@ Ejemplos:
 
 ##### Instalar
 
+**Linux & Mac**
 - [ChooseNim](https://github.com/dom96/choosenim#choosenim)
-- Windows, es [1 ZIP.](https://nim-lang.org/install_windows.html)
+
+```
+curl https://nim-lang.org/choosenim/init.sh -sSf | sh
+```
+
+**Windows**
+- [1 ZIP.](https://nim-lang.org/install_windows.html)
+
+**Otros**
 - [Docker](https://hub.docker.com/r/nimlang/nim/), imagen `nimlang/nim`.
-- Os X, igual a Linux.
-- Linux, paquete de Distro o ChooseNim.
 - Manual, codigo fuente en cualquier OS.
 
 *Solo requiere un Compilador de C.*
