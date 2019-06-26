@@ -453,13 +453,13 @@ templatecita("primer argumento", "segundo argumento"):
 import macros
 
 macro generate_hello(): typed =
-  parseStmt """proc hello() = echo "hi" """
+  parseStmt("""proc hello() = echo "hi" """)
 
 generate_hello()  # Generate a proc via Macros.
 hello()
 
-expandMacros:      # Generar y ver el codigo generado por el Macro.
-  generate_hello()
+expandMacros:      # Debug
+  generate_hello() # Generar y ver el codigo generado por el Macro.
 ```
 
 *Codigo que hackea codigo a nivel de AST en ejecucion !*
