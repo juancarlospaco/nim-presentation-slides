@@ -539,7 +539,7 @@ echo editDistance("Gato", "Pato")
 
 #### Diff
 
-```
+```nim
 # 2 txt ("The Call of Cthulhu", Lovecraft)
 let txt0 = """I have looked upon all the universe has to hold of horror,
 even skies of spring and flowers of summer must ever be poison to me."""
@@ -559,6 +559,8 @@ while toknizr.kind != gtEof:
   getNextToken(toknizr, langNim)
   echo toknizr.kind
 ```
+
+- Todo esto es Libreria Standard.
 
 -----
 
