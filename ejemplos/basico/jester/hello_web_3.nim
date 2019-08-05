@@ -1,5 +1,6 @@
-import re, htmlgen, net, json, xmltree, strtabs, ospaths  # Nim Standard Library
+import re, htmlgen, net, json, xmltree, strtabs, os       # Nim Standard Library
 import jester                                             # nimble install jester
+
 
 const demoIndex = """<h1> &hearts; Jester Demo 👑 </h1> <hr>
 <ul> <!-- This HTML string is for Demo purpoes only, not required -->
@@ -24,6 +25,7 @@ const demoIndex = """<h1> &hearts; Jester Demo 👑 </h1> <hr>
   <li> <a href="/404">/404</a> </li>
   <li> <form method="POST" action="/post"><input type="submit" value="POST"><input type="hidden" name="key" value="value"></form> </li>
 </ul> """
+
 
 func exampleFunction(): string =    # This is a function.
   return "Example Function"
