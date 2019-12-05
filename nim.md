@@ -58,7 +58,15 @@ $ nim c --asm hello.nim      # Assembler (Machine Code)
 
 -----
 
-##### Syntaxis
+##### Sintaxis Python para Nim
+
+![Sintaxis Python para Nim](pylib.png)
+
+- https://github.com/Yardanico/nimpylib
+
+-----
+
+##### Sintaxis Nim
 
 - Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.
 - Comentarios son Documentacion (RST/Markdown) empiezan con `##`.
