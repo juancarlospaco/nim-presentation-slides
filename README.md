@@ -27,4 +27,10 @@ For English version see `nim-en-presentation.html` *(English version is Alpha)*.
 
 </details>
 
-[**&DoubleUpArrow;**](#nim-presentation-slides "Go to the top")
+
+# Stars
+
+![Star nim-presentation-slides on GitHub](https://starchart.cc/juancarlospaco/nim-presentation-slides.svg "Star nim-presentation-slides on GitHub!")
+
+
+[  ⬆️  ⬆️  ⬆️  ⬆️  ](#Nim-presentation-slides "Go to top")
