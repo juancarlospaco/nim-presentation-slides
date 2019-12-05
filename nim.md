@@ -335,38 +335,6 @@ Compilar:
 
 -----
 
-##### PyLib
-
-- Copia *(aun mas)* la syntaxis de Python en Nim.
-- `nimble install pylib`, luego `import pylib`.
-
-```python
->>> import pylib
->>> for i in range(10):   # Mimic Pythons range()
-      print(i, endl=" ")  # Mimic Pythons print()
-0 1 2 3 4 5 6 7 8 9
->>> print(json_loads("""{"clave": "valor"}""")  #  Mimic Pythons json.loads(str)
-{"clave": "valor"}
->>> print(sys.platform)              #  Mimic Pythons sys.*
-"linux"
->>> print(platform.processor)        #  Mimic Pythons platform.*
-"amd64"
->>> print(int('9'))    # integer from char.
->>> print("" or "b")   #  Mimic Pythons str or str
-"b"
->>> print("a" or "b")
-"a"
->>> timeit(100):  # Mimic Pythons timeit.timeit("code_to_benchmark", number=int)
-      sleep(9)    # Repeats this code 100 times. Output is very informative.
-2018-05-09T02:01:33 TimeIt: 100 Repetitions on 920 milliseconds, and 9 microseconds, CPU Time 0.00128.
->>> with_open("archivo.txt", 'r'):  # Mimics Pythons with open(file, mode='r') as file:
-      while not end_of_file(file):  # File is automatically assigned to file variable.
-        print(file.read_line())     # No need for " as file", just path and mode.
-                                    # File is closed automatically.
-```
-
------
-
 ##### Unittests
 
 - Tests Runner amigable, `nim c -r test.nim`.
