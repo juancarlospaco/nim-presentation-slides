@@ -19,7 +19,7 @@ For English version see `nim-en-presentation.html` *(English version is Alpha)*.
   <summary>Preview Screenshots</summary><br>
 
 
-![Preview Screenshot](nim-slide0.jpg "WIP Screenshot")
+![Preview Screenshot](nim-slide0.jpg)
 
 
 ![Rlyeh HackLab Flyer](rlyeh-hacklab-flyer.png "Art by <redacted>, Rlyeh HackLab Flyer")
