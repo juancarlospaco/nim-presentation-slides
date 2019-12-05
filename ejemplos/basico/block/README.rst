@@ -1,2 +1,4 @@
+Basic Block examples
+====================
 
-nim c -r bloquecito.nim
+**Compile & Run:** ``nim c -r file.nim`` on the command line terminal.

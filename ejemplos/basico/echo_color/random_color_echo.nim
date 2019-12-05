@@ -1,6 +1,8 @@
 import terminal, random
+
 randomize()
 setBackgroundColor(bgBlack)
+
 for i in 0..9:
-  setForegroundColor([fgRed, fgGreen, fgYellow, fgBlue, fgMagenta, fgCyan, fgWhite].rand)
+  setForegroundColor( sample([fgRed, fgGreen, fgYellow, fgBlue, fgMagenta, fgCyan, fgWhite]) )
   echo i

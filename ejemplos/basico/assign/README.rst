@@ -1,2 +1,5 @@
 
-Simplest possible Variables Assign examples.
+Simplest possible Variable Assign examples
+==========================================
+
+**Compile & Run:** ``nim c -r file.nim`` on the command line terminal.

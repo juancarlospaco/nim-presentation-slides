@@ -1,5 +1,4 @@
 
-
 when nimvm:
   echo "Running in Compile-Time"
 else:
@@ -17,6 +16,15 @@ when defined(cpp):
 
 when defined(objc):
   echo "Target is Objetive C"
+
+
+# 64Bits / 32Bits
+
+
+when sizeof(int) >= 8:
+  echo "Hardware is 64Bits"
+else:
+  echo "Hardware is 32Bits"
 
 
 # All Backend Architectures.

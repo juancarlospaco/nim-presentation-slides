@@ -1,9 +1,10 @@
-
-- nim c -r critbit_as_set_empty.nim
-- nim c -r critbit_as_set.nim
-
-- nim c -r critbit_as_dict_empty.nim
-- nim c -r critbit_as_dict.nim
+Basic CritBit (Critical Bit Trees) examples
+===========================================
 
 
-https://cr.yp.to/critbit.html
+**Compile & Run:** ``nim c -r file.nim`` on the command line terminal.
+
+
+Whats CritBit Critical Bit Trees?.
+
+* https://cr.yp.to/critbit.html

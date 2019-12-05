@@ -30,3 +30,9 @@ Tamanio en Bytes (Size):            { sizeof(int) }
 Maximo numero representable (Max):  { high(int)   }
 Minimo numero representable (Min):  { low(int)    }
 """
+
+echo fmt"""UInt64
+Tamanio en Bytes (Size):            { sizeof(uint64) }
+Maximo numero representable (Max):  { high(uint64)   }
+Minimo numero representable (Min):  { low(uint64)    }
+"""

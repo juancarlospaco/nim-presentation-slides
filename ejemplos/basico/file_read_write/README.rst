@@ -1,2 +1,5 @@
+Simple read file and write file examples
+========================================
 
-Simple read file and write file example.
+
+**Compile & Run:** ``nim c -r file.nim`` on the command line terminal.

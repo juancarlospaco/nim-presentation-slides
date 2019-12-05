@@ -1,4 +1,4 @@
-var foo = "Assign"
+var foo = "Assign"  # Declaration + Assign.
 var bar = "some"
 var baz = "Variables"
 
@@ -9,7 +9,7 @@ var
   c = "Shorter"
 
 
-var x, y, z: string  # Declaration
-x = "Declared"
+var x, y, z: string  # Declaration.
+x = "Declared"       # Assign.
 y = "and then"
 z = "Assigned"
