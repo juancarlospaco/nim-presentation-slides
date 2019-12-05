@@ -26,33 +26,7 @@
 
 ### Hola Mundo!
 
-```bash
-$ echo 'echo "Hola Mundo"' > hello.nim
-
-$ nim c -r hello.nim         # C
-Hola Mundo
-
-$ nim cpp -r hello.nim       # C++
-Hola Mundo
-
-$ nim objc -r hello.nim      # ObjectiveC
-Hola Mundo
-
-$ nim c --os:windows hello.nim
-$ wine hello.exe             # C (Windows)
-Hola Mundo
-
-$ nim js -d:nodejs hello.nim # NodeJS (JavaScript)
-$ nodejs hello.js
-Hola Mundo
-
-$ nim e hello.nim            # NimScript (Interpreted)
-Hola Mundo
-
-$ nim js hello.nim           # JavaScript (Frontend)
-
-$ nim c --asm hello.nim      # Assembler (Machine Code)
-```
+![Hola Mundo](helloworld.png "Hola Mundo")
 
 [<sub>Codigo de todos los slides esta en el Repo</sub>](ejemplos/hello.nim)
 
