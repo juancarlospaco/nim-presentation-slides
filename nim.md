@@ -20,7 +20,7 @@
 * Documentacion online completa con ejemplos.
 * Targets comunidad LLVM,Vulkan,WebGL,OpenGL,etc.
 * Frontend, Backend, DevOps, GUI, IoT, ML, AI, etc.
-* >1500 Paquetes, segundo en crecimiento luego de NPM.
+* 1500+ Paquetes, segundo en crecimiento luego de NPM.
 
 -----
 
@@ -62,7 +62,7 @@ $ nim c --asm hello.nim      # Assembler (Machine Code)
 
 ![Sintaxis Python para Nim](pylib.png)
 
-- https://github.com/Yardanico/nimpylib
+<sub>https://github.com/Yardanico/nimpylib<sub>
 
 -----
 
