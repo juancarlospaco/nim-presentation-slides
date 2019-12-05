@@ -16,15 +16,14 @@
 * Linux, Windows, Mac, Web, Raspi, ARM, etc
 * Facil hacer modulos de Python y NodeJS.
 * Facil usar librerias en C/C++/JavaScript.
-* Administrador de Paquetes con Scripting.
+* Administrador de Paquetes, 1500+ Paquetes.
 * Documentacion online completa con ejemplos.
 * Targets comunidad LLVM,Vulkan,WebGL,OpenGL,etc.
 * Frontend, Backend, DevOps, GUI, IoT, ML, AI, etc.
-* 1500+ Paquetes, segundo en crecimiento luego de NPM.
 
 -----
 
-### Hola Mundo!
+##### Hola Mundo!
 
 ![Hola Mundo](helloworld.png "Hola Mundo")
 
