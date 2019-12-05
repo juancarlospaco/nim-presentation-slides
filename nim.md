@@ -19,7 +19,7 @@
 * Administrador de Paquetes, 1500+ Paquetes.
 * Documentacion online completa con ejemplos.
 * Targets comunidad LLVM,Vulkan,WebGL,OpenGL,etc.
-* Frontend, Backend, DevOps, GUI, IoT, ML, AI, etc.
+* Todo tu Stack con 1 lenguaje, Backend & Frontend.
 
 -----
 
