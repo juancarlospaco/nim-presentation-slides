@@ -1,2 +1,5 @@
+Simple Embebed file examples
+============================
 
-``nim c -r embed.nim``
+
+**Compile & Run:** ``nim c -r file.nim`` on the command line terminal.

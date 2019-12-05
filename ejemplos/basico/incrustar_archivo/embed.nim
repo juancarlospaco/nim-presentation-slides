@@ -1,4 +1,4 @@
 
-const incrustadote = static_read("README.txt")
+const incrustadote = static_read("README.rst")
 
 echo incrustadote
