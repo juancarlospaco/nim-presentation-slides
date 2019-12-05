@@ -1,4 +1,7 @@
+Simple example of Generating HTML
+=================================
 
-Simple example of Generating HTML, this generates a Link anchor.
+* This generates a Link anchor.
 
-``nim c -r linky.nim``
+
+**Compile & Run:** ``nim c -r file.nim`` on the command line terminal.
