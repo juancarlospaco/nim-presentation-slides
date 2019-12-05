@@ -1,2 +1,5 @@
+Pure Functional Programming proc examples
+=========================================
 
-Pure Functional Programming proc example.
+
+**Compile & Run:** ``nim c -r file.nim`` on the command line terminal.

@@ -1,2 +1,5 @@
+Basic Anonymous Function examples
+=================================
 
-``nim c -r lambda.nim``
+
+**Compile & Run:** ``nim c -r file.nim`` on the command line terminal.

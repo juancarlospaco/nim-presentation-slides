@@ -1,14 +1,5 @@
+Basic Hello World examples
+==========================
 
-# http://linkode.org/#yUMlOf6JwzPfLGV1ulezc5
 
-# C
-
-``$ nim c -r hello.nim``
-
-Hola Mundo
-
-# C++
-
-``$ nim cpp -r hello.nim``
-
-Hola Mundo
+**Compile & Run:** ``nim c -r file.nim`` on the command line terminal.

@@ -1,5 +1,7 @@
+Basic Functions examples
+========================
 
-``nim c -r funcion.nim``
+**Compile & Run:** ``nim c -r file.nim`` on the command line terminal.
 
 
 ## Ejemplos minimos de funciones. Aca vemos como ir mejorando una misma funcion.
