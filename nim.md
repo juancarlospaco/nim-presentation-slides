@@ -12,13 +12,15 @@
 * Python Syntax y rendimiento de C.
 * Compilado (1 archivo binario ejecutable).
 * Tipado estatico fuerte con Inferencia.
-* Compila a C / C++ / JavaScript (DOM API).
+* Compila C/C++/ObjC/JavaScript/NodeJS (DOM API).
 * Linux, Windows, Mac, Web, Raspi, ARM, etc
-* Facil hacer modulos de Python.
+* Facil hacer modulos de Python y NodeJS.
 * Facil usar librerias en C/C++/JavaScript.
-* Administrador de Paquetes y herramientas.
-* Documentacion online completa con ejemplos
-* Targets comunidad LLVM,Vulkan,WebGL,OpenGL,etc
+* Administrador de Paquetes con Scripting.
+* Documentacion online completa con ejemplos.
+* Targets comunidad LLVM,Vulkan,WebGL,OpenGL,etc.
+* Frontend, Backend, DevOps, GUI, IoT, ML, AI, etc.
+* >1500 Paquetes, segundo en crecimiento luego de NPM.
 
 -----
 
@@ -37,17 +39,19 @@ $ nim objc -r hello.nim      # ObjectiveC
 Hola Mundo
 
 $ nim c --os:windows hello.nim
-$ wine hello.exe             # Windows
+$ wine hello.exe             # C (Windows)
 Hola Mundo
 
-$ nim js -d:nodejs hello.nim # NodeJS
+$ nim js -d:nodejs hello.nim # NodeJS (JavaScript)
 $ nodejs hello.js
 Hola Mundo
 
-$ nim e hello.nim            # NimScript
+$ nim e hello.nim            # NimScript (Interpreted)
 Hola Mundo
 
-$ nim js hello.nim           # Web (Frontend)
+$ nim js hello.nim           # JavaScript (Frontend)
+
+$ nim c --asm hello.nim      # Assembler (Machine Code)
 ```
 
 [<sub>Codigo de todos los slides esta en el Repo</sub>](ejemplos/hello.nim)
@@ -205,7 +209,8 @@ Nim         | Python  | Ejemplo Nim    | Ejemplo Python  | Comentarios          
 
 ##### Velocidad
 
-- Nim fue pensado para ir muy rapido.
+- Cualquier performance alcanzable con C es alcanzable con Nim.
+- Puede usar Assembler inlined directamente.
 - Usa poca RAM y funciona rapido en PC viejas.
 - No necesita "preparar un ambiente" en la PC.
 
