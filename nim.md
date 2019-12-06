@@ -66,6 +66,18 @@
 
 -----
 
+##### Importar Nim en Python
+
+**Nimporter:**
+
+Compila extensiones Nim para Python al importarlas automaticamente!.
+Simplemente importas codigo Nim como si fuera codigo Python.
+
+![](importer.png)
+
+- https://github.com/Pebaz/nimporter
+
+
 ##### Sintaxis Nim
 
 - Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.
