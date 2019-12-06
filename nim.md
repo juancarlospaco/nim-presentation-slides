@@ -29,24 +29,49 @@
 
 -----
 
-#### Para que sirve?
+### Las APIs mas bonitas que vas a ver
 
-* Todo tu Stack con 1 lenguaje, Backend & Frontend.
-* Frontend funciona similar a Svelte.
-* Python funciona similar a Cython.
-* Backend funciona similar a Rust.
-* Interoperabilidad con C/JS. Deploy simple (`scp`).
+- Compile-Time Postgres/SQLite ORM (Raw-Query Performance).
+- `UNION`, `JOIN`, `INTERSECT`, `CASE`, SQL Prepared, and more.
+
+![](gatabase.png)
+
+-----
+
+#### Las APIs mas bonitas que vas a ver
+
+- Async MultiThread Web Framework Jester.
+
+![](jester.png)
+
+-----
+
+#### Las APIs mas bonitas que vas a ver
+
+<sub>Frontend Client-Side Reactive VirtualDOM SPA Framework Karax.</sub>
+
+![](karax.png)
+
+-----
+
+##### Para que sirve?
+
+* Frontend funciona similar a Svelte. Python simil Cython. Backend onda Rust.
+* Databases (Postgres y SQLite en std lib, Compile-Time ORM, Mongo).
+* Machine Learning, AI, HPC, Tensors (PyTorch, Arraymancer, Laser).
+* FullStack web frameworks (NimWC, Karax, Jester, HTTPBeast).
+* Desktop GUI (GTK3, Qt5 QML, OpenGL, WebView JS, WxWidget).
+* Translation (Nimterlingua). Design (compila Figma a App con Fidget).
+
+##### Que ventajas tiene?
+
+* Todo tu Stack con 1 lenguaje, Backend+Frontend, Assembly a WebAssembly.
+* Interoperabilidad con C/JS. Deploy simple (`scp`). CompileTime FFI. HCR.
 * Usualmente lleva menos lineas de codigo que Python.
 * Mas rapido de aprender comparado con Rust o C++.
 * Binarios mas chicos que Rust y Go. Compilacion rapida.
 * Programacion Inmutable, Funcional y OOP al mismo tiempo.
 * AutoDocumentador y AutoFormateador de Codigo integrados.
-* Databases (Postgres y SQLite en std lib, Compile-Time ORM).
-* Machine Learning, AI, HPC (PyTorch, Arraymancer, Laser).
-* FullStack web frameworks (NimWC, Karax, Jester, HTTPBeast).
-* Desktop GUI (GTK3, Qt5 QML, OpenGL, WebView JS, Terminal).
-* Translation (Nimterlingua traduce codigo sin modificarlo).
-* Design (compila Figma a App con Fidget).
 
 -----
 
@@ -80,6 +105,7 @@ Simplemente importas codigo Nim como si fuera codigo Python.
 ##### Nim en Python Virtualenv
 
 Instala Nim adentro de un Virtuelenv de Python. PIP instalable.
+Podes hacer JavaScript Frontend y tener todo integrado en 1 Virtualenv.
 
 ![](nimvenv.png)
 
@@ -87,34 +113,20 @@ Instala Nim adentro de un Virtuelenv de Python. PIP instalable.
 
 -----
 
-##### Sintaxis Nim
-
-- Bloques de codigo por Indentacion, no Tabs, no Brackets, no Semicolon.
-- Comentarios son Documentacion (RST/Markdown) empiezan con `##`.
-- Tracebacks a color simil Python con linea, posicion y tipo de error.
-- Templates, reemplazan su invocacion con su contenido en compilacion.
-- Macros, bloques que agregan funcionalidad en tiempo de ejecucion.
-- Overload en funciones, dependiendo el tipo de argumento.
-- Exportar objetos con `*`, `cosa` es privado, `cosa*` es publico.
-- `import modulo` importa todo lo que tenga `*` en `modulo.nim`.
-- [Algunos modulos de Python fueron clonados en Nim.](https://nimble.directory/search?query=python)
-- Nim esta escrito en Nim, facil de hackear.
-
------
-
 ##### Herramientas
 
-- Linters `nim check`, `nimble check`.
-- Documentacion `nim doc`, `nim rst2html`, `nim rst2tex`
-- Template de nuevo projecto `nimble init`.
-- Task Runner `nimble tasks` *(tipo Grunt/Gulp)*.
-- Paquetes y docs hosteados https://nimble.directory
-- Publicar paquete `nimble publish` *(PR en GitHub)*.
-- NimInst autogenerador de instaladores (InnoSetup, Bash).
-- NimScript para reemplazar Bash.
-- `nimpretty` formateador de codigo (ala GoFmt, AutoPep8)
-- `c2nim` para portar codigo C a Nim.
-- Toda herramienta de C/C++ sirve (gdb, etc).
+- `nim check`, `nimble check` ➡️ Linters
+- `nim doc`, `nim rst2html`, `nim rst2tex` ➡️ Documentacion
+- `nimble init` ➡️ Template de projecto
+- `nimble tasks` ➡️ Task Runner
+- `nimble publish` ➡️ Publicar paquetes
+- `nimpretty` ➡️ AutoFormateador de codigo
+- `niminst` ➡️ AutoGenerador de instaladores
+- `testament` ➡️ Tests Runner avanzado
+- `c2nim` ➡️ Portar codigo C a Nim
+- `koch` ➡️ Desarrollar Nim en si mismo
+- https://nimble.directory ➡️ Registro de Paquetes
+- Toda herramienta de C/C++/JS sirve (gdb, etc).
 
 -----
 
