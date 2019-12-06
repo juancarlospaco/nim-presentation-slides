@@ -13,17 +13,15 @@
 * Compilado (1 archivo binario ejecutable).
 * Tipado estatico fuerte con Inferencia.
 * Compila C/C++/ObjC/JavaScript/NodeJS (DOM API).
-* Linux, Windows, Mac, Web, Raspi, ARM, etc
-* Facil hacer modulos de Python y NodeJS.
-* Facil usar librerias en C/C++/JavaScript.
+* Linux, Windows, Mac, Web, Raspi, ARM, IoT, etc.
+* Facil hacer modulos Python. Facil usar librerias C.
 * Administrador de Paquetes, 1500+ Paquetes.
 * Documentacion online completa con ejemplos.
 * Targets comunidad LLVM,Vulkan,WebGL,OpenGL,etc.
-* Todo tu Stack con 1 lenguaje, Backend+Frontend.
 
 -----
 
-##### Hola Mundo!
+##### echo "Hola Mundo"
 
 ![Hola Mundo](helloworld.png "Hola Mundo")
 
@@ -31,11 +29,40 @@
 
 -----
 
+#### Para que sirve?
+
+* Todo tu Stack con 1 lenguaje, Backend & Frontend.
+* Frontend funciona similar a Svelte.
+* Python funciona similar a Cython.
+* Backend funciona similar a Rust.
+* Interoperabilidad con C/JS. Deploy simple (`scp`).
+* Usualmente lleva menos lineas de codigo que Python.
+* Mas rapido de aprender comparado con Rust o C++.
+* Binarios mas chicos que Rust y Go. Compilacion rapida.
+* Programacion Inmutable, Funcional y OOP al mismo tiempo.
+* AutoDocumentador y AutoFormateador de Codigo integrados.
+* Databases (Postgres y SQLite en std lib, Compile-Time ORM).
+* Machine Learning, AI, HPC (PyTorch, Arraymancer, Laser).
+* FullStack web frameworks (NimWC, Karax, Jester, HTTPBeast).
+* Desktop GUI (GTK3, Qt5 QML, OpenGL, WebView JS, Terminal).
+* Translation (Nimterlingua traduce codigo sin modificarlo).
+* Design (compila Figma a App con Fidget).
+
+-----
+
+##### Python usando Nim
+
+![](ftr.png)
+
+- Libreria cliente HTTPS con web scraper multi-threading.
+
+-----
+
 ##### Sintaxis Python para Nim
 
 ![Sintaxis Python para Nim](pylib.png)
 
-<sub>https://github.com/Yardanico/nimpylib<sub>
+<sub>https://github.com/Yardanico/nimpylib</sub>
 
 -----
 
