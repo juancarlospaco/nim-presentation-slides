@@ -152,7 +152,8 @@ Podes hacer JavaScript Frontend y tener todo integrado en 1 Virtualenv.
 
 ![inim](inim.gif)
 
-- `nimble install inim` o `nim secret`.
+- `nimble install inim`.
+- Hay una libreria que integra Nim en Jupyter Notebook.
 
 -----
 
