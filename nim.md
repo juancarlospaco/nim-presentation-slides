@@ -66,17 +66,26 @@
 
 -----
 
-##### Importar Nim en Python
-
-**Nimporter:**
+##### Nimporter: Importar Nim en Python
 
 Compila extensiones Nim para Python al importarlas automaticamente!.
 Simplemente importas codigo Nim como si fuera codigo Python.
 
-![](importer.png)
+![](nimporter.png)
 
 - https://github.com/Pebaz/nimporter
 
+-----
+
+##### Nim en Python Virtualenv
+
+Instala Nim adentro de un Virtuelenv de Python. PIP instalable.
+
+![](nimvenv.png)
+
+- https://pypi.org/project/nim-install
+
+-----
 
 ##### Sintaxis Nim
 
